@@ -8,6 +8,18 @@ const StyledWrapper = styled.div`
   align-items: end;
   width: 100%;
   height: 7vh;
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
+  @media (min-width: 600px) {
+    justify-content: center;
+  }
+  @media (min-width: 992px) {
+    justify-content: center;
+  }
+  @media (min-width: 1024px) {
+     justify-content: end;
+  }
 `
 const StyledFooterText = styled.span`
   text-transform: uppercase;

@@ -20,6 +20,18 @@ const StyledButton = styled.button`
   background-color: #fff;
   border-radius: 20px;
   margin-top: 60px;
+  @media (max-width: 600px) {
+    margin-top: 20px;
+  }
+  @media (min-width: 600px) {
+    margin-top: 20px;
+  }
+  @media (min-width: 992px) {
+    margin-top: 60px;
+  }
+  @media (min-width: 1024px) {
+    margin-top: 60px;
+  }
   cursor: pointer;
   :hover  {
     border: 4px dashed orange;
