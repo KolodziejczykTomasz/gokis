@@ -5,7 +5,7 @@ import styled from "styled-components"
 const StyledWrapper = styled.div`
   display: flex;
   height: 20vh;
-  margin-top: 60px;
+  margin-top: 40px;
   justify-content: center;
   align-items: center;
   max-width: 1250px;

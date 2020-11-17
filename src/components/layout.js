@@ -1,5 +1,4 @@
 import React from 'react'
-import Hero from "./hero"
 import Main from "./main"
 import Footer from "./footer"
 
@@ -10,11 +9,11 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
   padding: 0;
   max-width: 1250px;  
+  height: auto;
 `;
 
 const Layout =()=> (
-<StyledWrapper>
-    <Hero/>
+<StyledWrapper> 
     <Main/>
     <Footer />
 </StyledWrapper>
