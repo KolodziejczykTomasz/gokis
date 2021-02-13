@@ -8,6 +8,7 @@ const StyledWrapper = styled.div`
   align-items: end;
   width: 100%;
   height: 7vh;
+  background-color: grey;
   @media (max-width: 600px) {
     justify-content: center;
   }

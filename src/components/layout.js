@@ -1,22 +1,18 @@
-import React from 'react'
-import Main from "./main"
+import React from "react"
+import Navbar from "./navbar"
 import Footer from "./footer"
 
-import styled from "styled-components"
+import GlobalStyle from "../assets/styles/globalStyle"
+import Hero from "./hero"
 
-const StyledWrapper = styled.div`
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 1250px;  
-  height: auto;
-`;
-
-const Layout =()=> (
-<StyledWrapper> 
-    <Main/>
+const Layout = ({ children }) => (
+  <>
+    <GlobalStyle />
+    <Navbar />
+    <Hero />
+    {children}
     <Footer />
-</StyledWrapper>
-);
+  </>
+)
 
-export default Layout;
+export default Layout

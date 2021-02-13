@@ -13,22 +13,10 @@ const StyledWrapper = styled.div`
   height: 90%; 
 `
 
-const StyledWrapperImages = styled.img`
-display: block;
-  margin: 0 auto;
-  width: 80%;
-  max-width: 800px;
-  max-height: 90%;
-`
 
 const IndexPage = ({ data }) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-    <StyledWrapperImages
-      src={data.file.childImageSharp.fluid.src}
-      srcSet={data.file.childImageSharp.fluid.srcSet}
-      sizes={data.file.childImageSharp.fluid.sizes}
-    />
+    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" /> 
     <Layout />
   </StyledWrapper>
 )
