@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import About from "../components/about"
+import CardList from "../components/cardlist"
+import Footer from "../components/footer"
 import BreakeSection from "../components/breakeSection"
 
 const StyledWrapper = styled.div`
@@ -23,6 +25,8 @@ const IndexPage = ({ data }) => (
     <BreakeSection>O nas</BreakeSection>
     <About />
     <BreakeSection>Aktualności</BreakeSection>
+    <CardList/>
+    <Footer />
   </StyledWrapper>
 )
 

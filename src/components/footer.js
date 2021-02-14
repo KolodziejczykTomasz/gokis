@@ -1,42 +1,63 @@
 import React from "react"
-
 import styled from "styled-components"
 
-const StyledWrapper = styled.div`
-  display: flex;
-  justify-content: end;
-  align-items: end;
+const Wrapper = styled.div`
+  display: grid;
   width: 100%;
-  height: 7vh;
   background-color: grey;
-  @media (max-width: 600px) {
-    justify-content: center;
-  }
-  @media (min-width: 600px) {
-    justify-content: center;
-  }
-  @media (min-width: 992px) {
-    justify-content: center;
-  }
-  @media (min-width: 1024px) {
-     justify-content: end;
-  }
 `
-const StyledFooterText = styled.span`
+
+const WrapperTop = styled.div`
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  color: #fff;
+`
+
+const WrapperBottom = styled.div`
+  display: grid;
+  grid-template-columns: 0.3fr 0.4fr 0.3fr;
+  color: #fff;
+  place-items: center;
+  padding-bottom: 10px;
+`
+
+const Copyright = styled.span`
   text-transform: uppercase;
-  color: #717171;
+  color: #fff;
   font-size: 12px;
   padding-right: 5px;
 `
 
 const Footer = () => {
   return (
-    <StyledWrapper>
-      <StyledFooterText>
-        © {new Date().getFullYear()}, Webside developed by
-        <span> NETTOM</span>
-      </StyledFooterText>
-    </StyledWrapper>
+    <Wrapper>
+      <WrapperTop>
+        <div>
+          <h1>Kontakt</h1>
+          <p>Gminny Ośrodek Kultury i Sportu</p>
+          <ul>
+            <li>Pilnik 2</li>
+            <li>11-100 Lidzbark Warmiński</li>
+            <li>tel. 89767....</li>
+            <li>mail:...</li>
+          </ul>
+        </div>
+        <div>
+          <h1>Jak dojechać</h1>
+          Mapa
+        </div>
+      </WrapperTop>
+      <WrapperBottom>
+        <div>Deklaracja dostępności</div>
+        <div>Polityka bezpieczeństwa</div>
+        <div>
+          <Copyright>
+            © {new Date().getFullYear()}, Webside developed by
+            <span> NETTOM</span>
+          </Copyright>
+        </div>
+      </WrapperBottom>
+    </Wrapper>
   )
 }
 
