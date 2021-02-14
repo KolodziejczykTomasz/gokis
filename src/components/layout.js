@@ -1,5 +1,5 @@
 import React from "react"
-import Navbar from "./navbar"
+import Navigation from "./navigation"
 import Footer from "./footer"
 
 import GlobalStyle from "../assets/styles/globalStyle"
@@ -8,7 +8,7 @@ import Hero from "./hero"
 const Layout = ({ children }) => (
   <>
     <GlobalStyle />
-    <Navbar />
+    <Navigation />
     <Hero />
     {children}
     <Footer />

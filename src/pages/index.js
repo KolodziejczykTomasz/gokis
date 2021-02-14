@@ -3,6 +3,7 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
+import About from "../components/about"
 
 const StyledWrapper = styled.div`
   display: block;
@@ -18,6 +19,7 @@ const IndexPage = ({ data }) => (
   <StyledWrapper>
     <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" /> 
     <Layout />
+    <About />
   </StyledWrapper>
 )
 

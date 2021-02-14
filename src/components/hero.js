@@ -1,16 +1,44 @@
 import React from "react"
+import { Carousel } from "react-bootstrap"
+import Hero1 from '../assets/images/hero/hero1.jpg'
+import Hero2 from "../assets/images/hero/hero2.jpg"
+import Hero3 from "../assets/images/hero/hero3.jpg"
+import Hero4 from "../assets/images/hero/hero4.jpg"
+
+import "bootstrap/dist/css/bootstrap.min.css"
+
 
 const Hero = () => (
-  <section class="hero is-medium has-carousel">
-    <div id="carousel-demo" class="hero-carousel">
-      <div class="item-1">1</div>
-      <div class="item-2">2</div>
-      <div class="item-3">3</div>
-    </div>
-    <div class="hero-head"></div>
-    <div class="hero-body"></div>
-    <div class="hero-foot"></div>
-  </section>
+  <Carousel>
+    <Carousel.Item interval={1000}>
+      <img className="d-block w-100" src={Hero1} alt="First slide" />
+      <Carousel.Caption>
+        <h3>Gminny Ośrodek Kultury i Sportu w Pilniku</h3>
+        <p>-ZAPRASZAMY-</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item interval={500}>
+      <img className="d-block w-100" src={Hero2} alt="Third slide" />
+      <Carousel.Caption>
+        <h3>Gminny Ośrodek Kultury i Sportu w Pilniku</h3>
+        <p>-ZAPRASZAMY-</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+      <img className="d-block w-100" src={Hero3} alt="Third slide" />
+      <Carousel.Caption>
+        <h3>Gminny Ośrodek Kultury i Sportu w Pilniku</h3>
+        <p>-ZAPRASZAMY-</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+      <img className="d-block w-100" src={Hero4} alt="Third slide" />
+      <Carousel.Caption>
+        <h3>Gminny Ośrodek Kultury i Sportu w Pilniku</h3>
+        <p>-ZAPRASZAMY-</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+  </Carousel>
 )
 
 export default Hero
