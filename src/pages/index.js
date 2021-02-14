@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import About from "../components/about"
+import BreakeSection from "../components/breakeSection"
 
 const StyledWrapper = styled.div`
   display: block;
@@ -17,9 +18,11 @@ const StyledWrapper = styled.div`
 
 const IndexPage = ({ data }) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" /> 
+    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
     <Layout />
+    <BreakeSection>O nas</BreakeSection>
     <About />
+    <BreakeSection>Aktualności</BreakeSection>
   </StyledWrapper>
 )
 
