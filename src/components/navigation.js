@@ -18,7 +18,7 @@ const Navigation = () => (
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">          
+        <Nav className="mr-auto">
           <Nav.Link href="#pricing">O nas</Nav.Link>
           <NavDropdown title="Pracownie" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">
@@ -47,11 +47,28 @@ const Navigation = () => (
           </NavDropdown>
         </Nav>
         <Nav>
-          <Nav.Link
-            eventKey={2}
-            href="https://www.facebook.com/Gminny-Ośrodek-Kultury-i-Sportu-w-Pilniku-401376726727548"
-          >
-            Facebook
+          <Nav.Link>
+            <a
+              href="https://www.survio.com/survey/d/Y6T2L3U1S9D8R8R1G"
+              target="_blank"
+              without
+              rel="noreferrer"
+              style={{
+                display: "inline-block",
+                textDecoration: "none",
+                backgroundColor: "#1B54D6",
+                color: "#ffffff",
+                fontFamily: "Arial, Helvetica, sans-serif",
+                borderRadius: "4px",
+                padding: "11px 25px",
+                fontSize: "14px",
+                lineHeight: "180%",
+                fontWeight: "bold",
+                letterSpacing: "0.5px",
+              }}
+            >
+              Prześlij zgłoszenie do konkursu
+            </a>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

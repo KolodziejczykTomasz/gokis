@@ -7,6 +7,7 @@ import About from "../components/about"
 import CardList from "../components/cardlist"
 import Footer from "../components/footer"
 import BreakeSection from "../components/breakeSection"
+import ButtonList from "../components/buttonlist"
 
 const StyledWrapper = styled.div`
   display: block;
@@ -25,7 +26,9 @@ const IndexPage = ({ data }) => (
     <BreakeSection>O nas</BreakeSection>
     <About />
     <BreakeSection>Aktualności</BreakeSection>
-    <CardList/>
+    <CardList />
+    <BreakeSection>Pracownie</BreakeSection>
+    <ButtonList />
     <Footer />
   </StyledWrapper>
 )

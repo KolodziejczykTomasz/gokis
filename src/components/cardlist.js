@@ -5,8 +5,8 @@ import styled from "styled-components"
 
 const Wrapper = styled.div`
   display: flex;
-justify-content: space-between;
-margin-bottom: 70px;
+  justify-content: space-between;
+  margin-bottom: 70px;
 `
 
 const CardList = () => (
