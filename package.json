@@ -24,8 +24,10 @@
     "react": "^16.12.0",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.12.0",
+    "react-facebook-player": "^0.1.0",
     "react-helmet": "^6.1.0",
     "react-iframe": "^1.8.0",
+    "react-player": "^2.8.2",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {

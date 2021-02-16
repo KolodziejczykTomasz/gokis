@@ -13,9 +13,7 @@ const CardList = () => (
   <>
     <Wrapper>
       <CardItem />
-      <CardItem />
-      <CardItem />
-      <CardItem />
+   
     </Wrapper>
   </>
 )
