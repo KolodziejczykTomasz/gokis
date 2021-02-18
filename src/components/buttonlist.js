@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   margin-bottom: 75px;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
 `
 
 const ButtonList = () => (

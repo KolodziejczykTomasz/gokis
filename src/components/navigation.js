@@ -1,12 +1,28 @@
 import React from "react"
 import { Navbar, Nav, NavDropdown } from "react-bootstrap"
+import { FaFacebookSquare } from "react-icons/fa"
 import Logo from "../assets/images/logo.jpg"
 
 import "bulma/css/bulma.css"
+import './navigation.css'
+import styled from "styled-components"
+
+const IconFacebook = styled(FaFacebookSquare)`
+  font-size: 40px;
+  color: #536e79;
+  transition: 0.7s;
+  text-align: left;
+  &:hover {
+    color: blue;
+  }
+`
+
+
+
 
 const Navigation = () => (
   <>
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+    <Navbar collapseOnSelect expand="lg" bg="white" fixed="top" variant="light">
       <Navbar.Brand href="#home">
         <img
           src={Logo}
@@ -18,9 +34,24 @@ const Navigation = () => (
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#pricing">O nas</Nav.Link>
-          <NavDropdown title="Pracownie" id="collasible-nav-dropdown">
+        <Nav
+          className="mr-auto"
+          style={{
+            margin: "0 auto",
+            textTransform: "uppercase",
+            fontSize: "20px",
+            fontWeight: 600,
+            color: "black",
+          }}
+        >
+          <Nav.Link href="#pricing" className="NavLinkItem">
+            O nas
+          </Nav.Link>
+          <NavDropdown
+            className="NavLinkItem"
+            title="Pracownie"
+            id="collasible-nav-dropdown"
+          >
             <NavDropdown.Item href="#action/3.1">
               Zespół Ludowy Furman
             </NavDropdown.Item>
@@ -47,28 +78,11 @@ const Navigation = () => (
           </NavDropdown>
         </Nav>
         <Nav>
-          <Nav.Link>
-            <a
-              href="https://www.survio.com/survey/d/Y6T2L3U1S9D8R8R1G"
-              target="_blank"
-              without
-              rel="noreferrer"
-              style={{
-                display: "inline-block",
-                textDecoration: "none",
-                backgroundColor: "#1B54D6",
-                color: "#ffffff",
-                fontFamily: "Arial, Helvetica, sans-serif",
-                borderRadius: "4px",
-                padding: "11px 25px",
-                fontSize: "14px",
-                lineHeight: "180%",
-                fontWeight: "bold",
-                letterSpacing: "0.5px",
-              }}
-            >
-              Prześlij zgłoszenie do konkursu
-            </a>
+          <Nav.Link
+            eventKey={2}
+            href="https://www.facebook.com/Gminny-Ośrodek-Kultury-i-Sportu-w-Pilniku-401376726727548"
+          >
+            <IconFacebook />
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

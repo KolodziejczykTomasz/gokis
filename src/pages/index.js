@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import About from "../components/about"
-import CardList from "../components/cardlist"
 import Footer from "../components/footer"
 import BreakeSection from "../components/breakeSection"
 import ButtonList from "../components/buttonlist"
@@ -15,9 +14,8 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
   padding: 0;
   max-width: 1250px;
-  height: 90%; 
+  height: 90%;
 `
-
 
 const IndexPage = ({ data }) => (
   <StyledWrapper>
@@ -25,8 +23,6 @@ const IndexPage = ({ data }) => (
     <Layout />
     <BreakeSection>O nas</BreakeSection>
     <About />
-    <BreakeSection>Aktualności</BreakeSection>
-    <CardList />
     <BreakeSection>Pracownie</BreakeSection>
     <ButtonList />
     <Footer />
