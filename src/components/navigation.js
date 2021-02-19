@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar, Nav, NavDropdown } from "react-bootstrap"
+import { Navbar, Nav } from "react-bootstrap"
 import { FaFacebookSquare } from "react-icons/fa"
 import Logo from "../assets/images/logo.jpg"
 
@@ -18,11 +18,9 @@ const IconFacebook = styled(FaFacebookSquare)`
 `
 
 
-
-
 const Navigation = () => (
   <>
-    <Navbar collapseOnSelect expand="lg" bg="white" fixed="top" variant="light">
+    <Navbar collapseOnSelect expand="lg" bg="white" fixed="top" variant="light" className="NavbarTop">
       <Navbar.Brand href="#home">
         <img
           src={Logo}
@@ -44,38 +42,15 @@ const Navigation = () => (
             color: "black",
           }}
         >
-          <Nav.Link href="#pricing" className="NavLinkItem">
+          <Nav.Link href="#about" className="NavLinkItem">
             O nas
           </Nav.Link>
-          <NavDropdown
-            className="NavLinkItem"
-            title="Pracownie"
-            id="collasible-nav-dropdown"
-          >
-            <NavDropdown.Item href="#action/3.1">
-              Zespół Ludowy Furman
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Kapela ludowa Rogóżanie
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">
-              Zespół wokalno-instrumentalny ContraBand'a
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">
-              Gminna Orkiestra Dęta
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.5">Mażoretki</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.6">
-              Zespół muzyczny „ Klika z Pilnika ”
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.7">
-              Klub tenisa stołowego
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.8">Rolny Skład</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.9">
-              Dziecięcy zespół wokalny Bel Canto
-            </NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Link href="#projects" className="NavLinkItem">
+            Pracownie
+          </Nav.Link>
+          <Nav.Link href="#contact" className="NavLinkItem">
+            Kontakt
+          </Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link

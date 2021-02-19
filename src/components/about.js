@@ -1,4 +1,5 @@
 import React from "react"
+import BreakeSection from "../components/breakeSection"
 import Logo from "../assets/images/logo.jpg"
 import styled from "styled-components"
 
@@ -24,7 +25,8 @@ const Description = styled.div`
 `
 
 const About = () => (
-  <>
+  <div id="about" style={{ marginTop: "100px" }}>
+    <BreakeSection>O nas</BreakeSection>
     <Section>
       <PhotoWrapper>
         <Photo src={Logo} alt="Logo" />
@@ -41,7 +43,7 @@ const About = () => (
         </Description>
       </Content>
     </Section>
-  </>
+  </div>
 )
 
 export default About

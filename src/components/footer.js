@@ -42,7 +42,7 @@ const Copyright = styled.span`
 const Footer = () => {
   return (
     <WrapperFullWidth>
-      <Wrapper>
+      <Wrapper id="contact">
         <WrapperTop>
           <div>
             <h1 style={{ paddingBottom: "40px" }}>Kontakt</h1>

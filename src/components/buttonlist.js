@@ -1,4 +1,5 @@
 import React from "react"
+import BreakeSection from "../components/breakeSection"
 import styled from "styled-components"
 import ButtonItem from "../components/buttonitem"
 
@@ -11,8 +12,9 @@ const Wrapper = styled.div`
 `
 
 const ButtonList = () => (
-  <>
-    <Wrapper>
+  <div id="projects" style={{marginTop: '100px'}}>
+    <BreakeSection>Pracownie</BreakeSection>
+    <Wrapper >
       <ButtonItem>Zespół Ludowy Furman</ButtonItem>
       <ButtonItem>Kapela ludowa Rogóżanie</ButtonItem>
       <ButtonItem>Zespół wokalno-instrumentalny ContraBand'a</ButtonItem>
@@ -22,7 +24,7 @@ const ButtonList = () => (
       <ButtonItem>Rolny Skład</ButtonItem>
       <ButtonItem>Dziecięcy zespół wokalny Bel Canto</ButtonItem>
     </Wrapper>
-  </>
+  </div>
 )
 
 export default ButtonList

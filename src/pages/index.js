@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import styled from "styled-components"
 import About from "../components/about"
 import Footer from "../components/footer"
-import BreakeSection from "../components/breakeSection"
 import ButtonList from "../components/buttonlist"
 
 const StyledWrapper = styled.div`
@@ -20,10 +19,9 @@ const StyledWrapper = styled.div`
 const IndexPage = ({ data }) => (
   <StyledWrapper>
     <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-    <Layout />
-    <BreakeSection>O nas</BreakeSection>
+    <Layout /> 
     <About />
-    <BreakeSection>Pracownie</BreakeSection>
+  
     <ButtonList />
     <Footer />
   </StyledWrapper>

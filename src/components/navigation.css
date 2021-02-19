@@ -1,3 +1,8 @@
+.NavbarTop {
+  margin: -10px 10px;
+  padding: 0;
+}
+
 .NavLinkItem {
   display: flex;
   padding: 0 20px;
@@ -9,25 +14,25 @@
   text-decoration: none;
   justify-content: center;
   align-items: center;
-  color: #000;
-  border: 5px dotted transparent;
+  color: black !important;
+  border: 2px dotted transparent;
   position: relative;
   overflow: hidden;
    z-index: 1;
 }
 
 .NavLinkItem:after{
-transition: 0.3s;
+    transition: 0.3s;
     content: "";
     position: absolute;
     display: block;
     width: 100%;
     left: 0;
     bottom: 0;
-    height: 8px;
+    height: 5px;
     color: black !important;
     z-index: -1;
-    border: 5px dotted transparent;
+    border: 2px dotted transparent;
 }
 
 .NavLinkItem:after:active{
@@ -40,7 +45,24 @@ transition: 0.3s;
   .NavLinkItem:nth-child(2):after {
     background: rgb(0, 119, 179);
   }
-  
+ .NavLinkItem:nth-child(3):after {
+    background: rgb(69, 100, 255);
+  }
+  .NavLinkItem:nth-child(4):after {
+    background: rgb(73, 133, 0);
+  }
+  .NavLinkItem:nth-child(5):after {
+    background: rgb(236, 0, 0);
+  }
+  .NavLinkItem:nth-child(6):after {
+    background: rgb(114, 0, 255);
+  }
+  .NavLinkItem:nth-child(7):after {
+    background: rgb(128, 64, 0);
+  }
+  .NavLinkItem:nth-child(8):after {
+   background: rgb(215, 58, 30);
+  }
 
    .NavLinkItem:hover  {
     color: #fff;
