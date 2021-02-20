@@ -10,32 +10,32 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 const Hero = () => (
   <Carousel>
-    <Carousel.Item interval={1000}>
+    <Carousel.Item interval={1500}>
       <img className="d-block w-100" src={Hero1} alt="First slide" />
       <Carousel.Caption>
-        <h3>Gminny Ośrodek Kultury i Sportu w Pilniku</h3>
-        <p>-ZAPRASZAMY-</p>
+        <h1>Gminny Ośrodek Kultury i Sportu w Pilniku</h1>
+        <h2>-ZAPRASZAMY-</h2>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item interval={500}>
       <img className="d-block w-100" src={Hero2} alt="Third slide" />
       <Carousel.Caption>
-        <h3>Gminny Ośrodek Kultury i Sportu w Pilniku</h3>
-        <p>-ZAPRASZAMY-</p>
+        <h1>Gminny Ośrodek Kultury i Sportu w Pilniku</h1>
+        <h2>-ZAPRASZAMY-</h2>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
       <img className="d-block w-100" src={Hero3} alt="Third slide" />
       <Carousel.Caption>
-        <h3>Gminny Ośrodek Kultury i Sportu w Pilniku</h3>
-        <p>-ZAPRASZAMY-</p>
+        <h1>Gminny Ośrodek Kultury i Sportu w Pilniku</h1>
+        <h2>-ZAPRASZAMY-</h2>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
       <img className="d-block w-100" src={Hero4} alt="Third slide" />
       <Carousel.Caption>
-        <h3>Gminny Ośrodek Kultury i Sportu w Pilniku</h3>
-        <p>-ZAPRASZAMY-</p>
+        <h1>Gminny Ośrodek Kultury i Sportu w Pilniku</h1>
+        <h2>-ZAPRASZAMY-</h2>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>

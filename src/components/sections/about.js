@@ -1,6 +1,6 @@
 import React from "react"
-import BreakeSection from "../components/breakeSection"
-import Logo from "../assets/images/logo.jpg"
+import BreakeSection from "../breakeSection"
+import Logo from "../../assets/images/logo.jpg"
 import styled from "styled-components"
 
 const Section = styled.div`
@@ -12,7 +12,11 @@ const PhotoWrapper = styled.div`
   justify-content: center;
   align-self: center;
 `
-const Photo = styled.img``
+const Photo = styled.img`
+  display: block;
+  width: 75%;
+  margin: 0 auto;
+`
 
 const Content = styled.div`
   display: flex;
@@ -20,8 +24,8 @@ const Content = styled.div`
 `
 const Description = styled.div`
   padding: 30px 20px 30px 40px;
-  font-size: 24px;
-  line-height: 35px;
+  font-size: 18px;
+  line-height: 32px;
 `
 
 const About = () => (

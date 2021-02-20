@@ -1,10 +1,10 @@
 import React from "react"
 import { Navbar, Nav } from "react-bootstrap"
 import { FaFacebookSquare } from "react-icons/fa"
-import Logo from "../assets/images/logo.jpg"
+import Logo from "../../assets/images/logo.jpg"
 
 import "bulma/css/bulma.css"
-import './navigation.css'
+import "./navigation.css"
 import styled from "styled-components"
 
 const IconFacebook = styled(FaFacebookSquare)`
@@ -13,14 +13,20 @@ const IconFacebook = styled(FaFacebookSquare)`
   transition: 0.7s;
   text-align: left;
   &:hover {
-    color: blue;
+    color: #1877f2;
   }
 `
 
-
 const Navigation = () => (
-  <>
-    <Navbar collapseOnSelect expand="lg" bg="white" fixed="top" variant="light" className="NavbarTop">
+  <div id="home">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      bg="white"
+      fixed="top"
+      variant="light"
+      className="NavbarTop"
+    >
       <Navbar.Brand href="#home">
         <img
           src={Logo}
@@ -32,16 +38,13 @@ const Navigation = () => (
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav
-          className="mr-auto"
-          style={{
-            margin: "0 auto",
-            textTransform: "uppercase",
-            fontSize: "20px",
-            fontWeight: 600,
-            color: "black",
-          }}
-        >
+        <Nav className="mr-auto" style={{ margin: "0 auto", color: "white" }}>
+          <Nav.Link href="#home" className="NavLinkItem">
+            Home
+          </Nav.Link>
+          <Nav.Link href="#news" className="NavLinkItem">
+            Aktualności
+          </Nav.Link>
           <Nav.Link href="#about" className="NavLinkItem">
             O nas
           </Nav.Link>
@@ -62,6 +65,6 @@ const Navigation = () => (
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-  </>
+  </div>
 )
 export default Navigation

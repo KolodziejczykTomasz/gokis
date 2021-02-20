@@ -10,7 +10,7 @@ const Wrapper = styled(Link)`
   margin: 10px 15px;
   padding: 10px 15px;
   height: 100%;
-  font-size: 1.4rem;
+  font-size: 16px;
   font-weight: 400;
   line-height: 27px;
   text-transform: uppercase;
@@ -63,6 +63,10 @@ const Wrapper = styled(Link)`
   :nth-child(8) {
     border-color: rgb(215, 58, 30);
   }
+  :nth-child(9) {
+    border-color: rgb(0, 119, 179);
+  }
+
   :first-child:after {
     background: rgb(215, 58, 30);
   }
@@ -87,6 +91,10 @@ const Wrapper = styled(Link)`
   :nth-child(8):after {
     background: rgb(215, 58, 30);
   }
+  :nth-child(9):after {
+    background: rgb(0, 119, 179);
+  }
+
   :hover {
     color: #fff;
     position: relative;
@@ -100,9 +108,9 @@ const Wrapper = styled(Link)`
     border: 3px dotted #c23b37 !important;
   }
 `
-const ButtonItem = ({ children }) => (
+const ButtonItem = ({ children, linkItem }) => (
   <>
-    <Wrapper>{children}</Wrapper>
+    <Wrapper href={linkItem}>{children}</Wrapper>
   </>
 )
 

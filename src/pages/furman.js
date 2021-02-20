@@ -3,7 +3,7 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
-import About from "../components/sections/about"
+import Furman from "../components/sections/furman"
 import Footer from "../components/footer"
 import ButtonList from "../components/sections/buttonlist"
 
@@ -16,11 +16,11 @@ const StyledWrapper = styled.div`
   height: 90%;
 `
 
-const IndexPage = ({ data }) => (
+const FurmanPage = ({ data }) => (
   <StyledWrapper>
     <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
     <Layout /> 
-    <About />  
+    <Furman />  
     <ButtonList />
     <Footer />
   </StyledWrapper>
@@ -40,4 +40,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default FurmanPage
