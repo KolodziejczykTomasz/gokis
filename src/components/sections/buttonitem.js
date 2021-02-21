@@ -110,7 +110,7 @@ const Wrapper = styled(Link)`
 `
 const ButtonItem = ({ children, linkItem }) => (
   <>
-    <Wrapper href={linkItem}>{children}</Wrapper>
+    <Wrapper to={linkItem}>{children}</Wrapper>
   </>
 )
 

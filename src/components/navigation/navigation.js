@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "gatsby"
 import { Navbar, Nav } from "react-bootstrap"
 import { FaFacebookSquare } from "react-icons/fa"
 import Logo from "../../assets/images/logo.jpg"
@@ -39,21 +40,21 @@ const Navigation = () => (
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto" style={{ margin: "0 auto", color: "white" }}>
-          <Nav.Link href="#home" className="NavLinkItem">
+          <Link to="/#home" className="NavLinkItem">
             Home
-          </Nav.Link>
-          <Nav.Link href="#news" className="NavLinkItem">
+          </Link>
+          <Link to="/#news" className="NavLinkItem">
             Aktualności
-          </Nav.Link>
-          <Nav.Link href="#about" className="NavLinkItem">
+          </Link>
+          <Link to="/#about" className="NavLinkItem">
             O nas
-          </Nav.Link>
-          <Nav.Link href="#projects" className="NavLinkItem">
+          </Link>
+          <Link to="/#projects" className="NavLinkItem">
             Pracownie
-          </Nav.Link>
-          <Nav.Link href="#contact" className="NavLinkItem">
+          </Link>
+          <Link to="/#contact" className="NavLinkItem">
             Kontakt
-          </Nav.Link>
+          </Link>
         </Nav>
         <Nav>
           <Nav.Link
