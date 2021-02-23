@@ -1,20 +1,19 @@
 import React from "react"
-import { Card, Button } from "react-bootstrap"
-import { FacebookProvider, EmbeddedPost } from "react-facebook"
+import { Card } from "react-bootstrap"
 
-const CardItem = () => (
+
+const CardItem = ({ newsItem: { data, title, excerpt, url } }) => (
   <>
-    <Card style={{ width: "18rem" }}>
-      <FacebookProvider appId="241343664305984">
-        <EmbeddedPost
-          href="https://www.facebook.com/Gminny-Ośrodek-Kultury-i-Sportu-w-Pilniku-401376726727548/videos/2F401376726727548/"
-          width="287"
-        />
-      </FacebookProvider>
+    <Card style={{ width: "18rem", height: "auto", minHeight: "730px",marginRight: "15px" }}>
       <Card.Body>
-        <Card.Title>Koncert Walentynkowy </Card.Title>
-        <Card.Text></Card.Text>
-        <Button variant="primary">Zobacz więcej</Button>
+        <Card.Title>
+          {title} <hr />
+          <Card.Img variant="top" src={url} />
+          <p>
+            <small>Data publikacji: {data}</small>
+          </p>
+        </Card.Title>
+        <Card.Text>{excerpt}</Card.Text>
       </Card.Body>
     </Card>
   </>

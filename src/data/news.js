@@ -1,4 +1,4 @@
-import foto1 from '../assets/images/news/walentyki2021.png'
+import foto1 from '../assets/images/news/walentynki2021.png'
 import foto2 from "../assets/images/news/spiewamy_2021.jpg"
 import foto3 from "../assets/images/news/angielski.jpg"
 
@@ -50,7 +50,7 @@ export const news = [
         p10: "",
       },
     ],
-    url: { foto1 },
+    url: foto1,
     link: "",
     gallery: [
       {
@@ -122,7 +122,7 @@ export const news = [
         p10: "",
       },
     ],
-    url: { foto2 },
+    url: foto2,
     link: "",
     gallery: [
       {
@@ -196,7 +196,7 @@ export const news = [
         p10: "",
       },
     ],
-    url: { foto3 },
+    url: foto3,
     link: "",
     gallery: [
       {
