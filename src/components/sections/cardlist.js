@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { graphql } from "gatsby"
 import CardItem from "./carditem"
 import { news as newsData } from "../../data/news"
 
@@ -48,3 +49,27 @@ const CardList = () => {
 }
 
 export default CardList
+
+export const query= graphql`
+      {
+        allMdx {
+          nodes {
+            frontmatter {
+              data
+              slug
+              title
+              featuredImage {
+                childImageSharp {
+                  fluid(maxHeight: 200, maxWidth: 200) {
+                    src
+                    srcSet
+                    tracedSVG
+                  }
+                }
+              }
+            }
+            excerpt(pruneLength: 150)
+          }
+        }
+      }
+    `
