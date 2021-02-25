@@ -1,21 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import CardItem from "./carditem"
-import { news as newsData } from "../../data/news"
 
 import styled from "styled-components"
-
-const mockAPI = (success) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (newsData) {
-        resolve([ ...newsData ])
-      } else {
-        reject({ message: "Error" })
-      }
-    }, 2000)
-  })
-}
 
 const Wrapper = styled.div`
   display: flex;
@@ -24,52 +11,52 @@ const Wrapper = styled.div`
   margin-bottom: 70px;
 `
 
-const CardList = () => {
-  const [news, setNews] = useState([])
-  const [isLoading, setLoadingState] = useState([])
-
-  useEffect(() => {
-    setLoadingState(true)
-    mockAPI()
-      .then(data => {
-        setLoadingState(false)
-        setNews(data)
-      })
-      .catch(err => console.log(err))
-  }, [])
-
+const CardList = ({ data }) => {
+  const {
+    allMdx: { nodes },
+  } = data
   return (
     <Wrapper>
-      {<h1>{isLoading ? "Loading" : null}</h1>}
-      {news.map(newsItem => (
-        <CardItem key={newsItem.id} newsItem={newsItem} />
-      ))}
+      {nodes.map(
+        ({
+          frontmatter: { title, slug, featuredImage, published },
+          excerpt,
+        }) => (
+          <CardItem
+            title={title}
+            slug={slug}
+            excerpt={excerpt}
+            published={published}
+            featuredImage={featuredImage.childImageSharp.fluid}
+          />
+        )
+      )}
     </Wrapper>
   )
 }
-
 export default CardList
 
-export const query= graphql`
-      {
-        allMdx {
-          nodes {
-            frontmatter {
-              data
-              slug
-              title
-              featuredImage {
-                childImageSharp {
-                  fluid(maxHeight: 200, maxWidth: 200) {
-                    src
-                    srcSet
-                    tracedSVG
-                  }
-                }
+export const query = graphql`
+  {
+    allMdx {
+      nodes {
+        frontmatter {
+          published
+          slug
+          title
+          featuredImage {
+            childImageSharp {
+              fluid(maxHeight: 200, maxWidth: 200) {
+                src
+                srcSet
+                tracedSVG
               }
             }
-            excerpt(pruneLength: 150)
           }
         }
+        excerpt(pruneLength: 150)
       }
-    `
+    }
+  }
+`
+
