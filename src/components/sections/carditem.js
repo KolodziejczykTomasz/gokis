@@ -1,8 +1,9 @@
 import React from "react"
 import { Card } from "react-bootstrap"
 
-const CardItem = (title, featuredImage, published, excerpt) => (
-  <>
+const CardItem = ({title, featuredImage, published, excerpt}) => {
+ return(
+ <>
     <Card
       style={{
         width: "18rem",
@@ -22,7 +23,7 @@ const CardItem = (title, featuredImage, published, excerpt) => (
         <Card.Text>{excerpt}</Card.Text>
       </Card.Body>
     </Card>
-  </>
-)
+  </>)
+}
 
 export default CardItem

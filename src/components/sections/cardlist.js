@@ -1,6 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
-import CardItem from "./carditem"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import CardItem from "../../components/sections/carditem"
 
 import styled from "styled-components"
 
@@ -11,52 +11,47 @@ const Wrapper = styled.div`
   margin-bottom: 70px;
 `
 
-const CardList = ({ data }) => {
-  const {
-    allMdx: { nodes },
-  } = data
-  return (
-    <Wrapper>
-      {nodes.map(
-        ({
-          frontmatter: { title, slug, featuredImage, published },
-          excerpt,
-        }) => (
-          <CardItem
-            title={title}
-            slug={slug}
-            excerpt={excerpt}
-            published={published}
-            featuredImage={featuredImage.childImageSharp.fluid}
-          />
-        )
-      )}
-    </Wrapper>
-  )
-}
-export default CardList
-
-export const query = graphql`
-  {
-    allMdx {
-      nodes {
-        frontmatter {
-          published
-          slug
-          title
-          featuredImage {
-            childImageSharp {
-              fluid(maxHeight: 200, maxWidth: 200) {
-                src
-                srcSet
-                tracedSVG
+const CardList = () => {
+  const { edges: posts } = data.allMdx
+  const data = useStaticQuery(graphql`
+    {
+      allMdx {
+        nodes {
+          frontmatter {
+            published
+            slug
+            title
+            featuredImage {
+              childImageSharp {
+                fluid(maxHeight: 200, maxWidth: 200) {
+                  src
+                }
               }
             }
           }
+          excerpt(pruneLength: 150)
         }
-        excerpt(pruneLength: 150)
       }
     }
-  }
-`
+  `)
+  return (
+    <div>
+      {posts.map(({ node }) => {
+        const { title } = node.frontmatter
+        return (
+          <div key={node.id}>
+            <header>
+              <div>{title}</div>
+              <div>Posting By</div>
+            </header>
+            <p>{node.excerpt}</p>
+            <Link to={node.fields.slug}>View Article</Link>
+            <hr />
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
+export default CardList

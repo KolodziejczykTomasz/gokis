@@ -6,7 +6,7 @@ import styled from "styled-components"
 import About from "../components/sections/about"
 import Footer from "../components/footer"
 import ButtonList from "../components/sections/buttonlist"
-import News from "../components/sections/news"
+import NewsPage from "../components/sections/news"
 
 const StyledWrapper = styled.div`
   display: block;
@@ -17,12 +17,12 @@ const StyledWrapper = styled.div`
   height: 90%;
 `
 
-const IndexPage = ({ data }) => (
+const IndexPage = ( props ) => (
   <StyledWrapper>
     <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
     <Layout />
     <About />
-    <News />
+    <NewsPage {...props} />
     <ButtonList />
     <Footer />
   </StyledWrapper>
@@ -30,13 +30,20 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   {
-    file(name: { eq: "logo" }) {
-      childImageSharp {
-        fluid(quality: 90) {
-          src
-          srcSet
-          sizes
+    allMdx {
+      nodes {
+        frontmatter {
+          title
+          slug
+          featuredImage {
+            childImageSharp {
+              fluid(maxWidth: 200, maxHeight: 200) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
         }
+        excerpt(pruneLength: 50)
       }
     }
   }
