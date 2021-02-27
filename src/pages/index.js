@@ -30,11 +30,12 @@ const IndexPage = ( props ) => (
 
 export const query = graphql`
   {
-    allMdx {
+    allMdx(sort: { fields: frontmatter___published }) {
       nodes {
         frontmatter {
           title
           slug
+          published
           featuredImage {
             childImageSharp {
               fluid(maxWidth: 200, maxHeight: 200) {
@@ -43,7 +44,7 @@ export const query = graphql`
             }
           }
         }
-        excerpt(pruneLength: 50)
+        excerpt(pruneLength: 200)
       }
     }
   }

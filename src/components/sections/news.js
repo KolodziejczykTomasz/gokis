@@ -4,9 +4,11 @@ import CardItem from "../../components/sections/carditem"
 import styled from "styled-components"
 
 const ArticlesWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 50px;
+  display: flex;
+  margin-bottom: 75px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 `
 
 const NewsPage = ({ data }) => {
@@ -19,13 +21,17 @@ const NewsPage = ({ data }) => {
         <BreakeSection>Aktualności</BreakeSection>
         <ArticlesWrapper>
           {nodes.map(
-            ({ excerpt, featuredImage, frontmatter: { title, published } }) => (
+            ({
+              excerpt,
+              frontmatter: { title, published, featuredImage, slug },
+            }) => (
               <CardItem
                 key={title}
                 title={title}
                 excerpt={excerpt}
                 published={published}
-                featuredImage={featuredImage}
+                slug={slug}
+                image={featuredImage.childImageSharp.fluid}
               />
             )
           )}
