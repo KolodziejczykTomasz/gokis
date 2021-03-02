@@ -17,13 +17,14 @@ const CardBody = styled.div`
 
 const CardTitle = styled.div`
   font-size: 22px;
+  font-weight: 500;
+  text-align: center;
 `
 
-const StyledImage = styled(Image)`
-  width: 95%;
-  height: auto;
+const StyledImage = styled(Image)` 
+  width: auto;
+  max-height: 250px;
   margin: 30px auto 0 auto;
-  object-fit: cover;
   -moz-box-shadow: 2px 2px 6px 0px #444;
   -webkit-box-shadow: 2px 2px 6px 0px #444;
   box-shadow: 2px 2px 6px 0px #444;

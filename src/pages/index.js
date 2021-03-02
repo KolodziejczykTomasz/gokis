@@ -38,7 +38,7 @@ export const query = graphql`
           published
           featuredImage {
             childImageSharp {
-              fluid(maxWidth: 200, maxHeight: 200) {
+              fluid {
                 ...GatsbyImageSharpFluid_tracedSVG
               }
             }

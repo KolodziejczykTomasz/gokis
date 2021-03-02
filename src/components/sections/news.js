@@ -3,12 +3,20 @@ import BreakeSection from "../breakeSection"
 import CardItem from "../../components/sections/carditem"
 import styled from "styled-components"
 
+const Container = styled.div`
+ margin: 0 auto;
+ width: 90%;
+`
+
 const ArticlesWrapper = styled.div`
   display: flex;
   margin-bottom: 75px;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  &:last-child {
+    justify-content: flex-end;
+  }
 `
 
 const NewsPage = ({ data }) => {
@@ -16,7 +24,7 @@ const NewsPage = ({ data }) => {
     allMdx: { nodes },
   } = data
   return (
-    <>
+    <Container>
       <div id="news" style={{ marginTop: "100px" }}>
         <BreakeSection>Aktualności</BreakeSection>
         <ArticlesWrapper>
@@ -37,7 +45,7 @@ const NewsPage = ({ data }) => {
           )}
         </ArticlesWrapper>
       </div>
-    </>
+    </Container>
   )
 }
 
