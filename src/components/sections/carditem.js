@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Image from "gatsby-image"
+import {Link } from 'gatsby'
 
 const CardBody = styled.div`
   display: grid;
@@ -10,9 +11,18 @@ const CardBody = styled.div`
   padding: 10px 10px;
   margin-right: 15px;
   margin-bottom: 25px;
-  -moz-box-shadow: 1px 1px 3px 0px #444;
+  -moz-box-shadow: 1px 1px 1px 0px #444;
+  -webkit-box-shadow: 1px 1px 1px 0px #444;
+  box-shadow: 1px 1px 1px 0px #444;
+  color: black;
+  text-decoration: none;
+  :hover {
+    color: black;
+    text-decoration: none;
+      -moz-box-shadow: 1px 1px 3px 0px #444;
   -webkit-box-shadow: 1px 1px 3px 0px #444;
   box-shadow: 1px 1px 3px 0px #444;
+  }
 `
 
 const CardTitle = styled.div`
@@ -43,9 +53,9 @@ const CardFotter = styled.div`
   align-content: center;
 `
 
-const CardItem = ({ title, image, published, excerpt }) => {
+const CardItem = ({ title, image, published, excerpt, slug }) => {
   return (
-    <CardBody>
+    <CardBody as={Link} to={`articles/${slug}`}>
       <CardTitle>
         {title} <hr />
         <StyledImage fluid={image} />

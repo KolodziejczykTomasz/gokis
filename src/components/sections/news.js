@@ -34,7 +34,7 @@ const NewsPage = ({ data }) => {
               frontmatter: { title, published, featuredImage, slug },
             }) => (
               <CardItem
-                key={title}
+                key={slug}
                 title={title}
                 excerpt={excerpt}
                 published={published}
