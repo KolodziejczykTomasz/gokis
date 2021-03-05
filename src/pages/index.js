@@ -30,7 +30,7 @@ const IndexPage = ( props ) => (
 
 export const query = graphql`
   {
-    allMdx(sort: { fields: frontmatter___published }) {
+    allMdx(sort: { fields: frontmatter___published, order: DESC }) {
       nodes {
         frontmatter {
           title
