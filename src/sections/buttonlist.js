@@ -1,7 +1,7 @@
 import React from "react"
-import BreakeSection from "../../components/breakeSection"
+import BreakeSection from "../components/breakeSection"
 import styled from "styled-components"
-import ButtonItem from "./buttonitem"
+import ButtonItem from "../components/buttonitem"
 
 const Wrapper = styled.div`
   display: flex;

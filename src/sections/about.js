@@ -1,6 +1,6 @@
 import React from "react"
-import BreakeSection from "../breakeSection"
-import Logo from "../../assets/images/logo.jpg"
+import BreakeSection from "../components/breakeSection"
+import Logo from "../assets/images/logo.jpg"
 import styled from "styled-components"
 
 const Section = styled.div`
@@ -28,22 +28,26 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const Klika = () => (
-  <div id="klika" style={{ marginTop: "100px" }}>
-    <BreakeSection>Zespół muzyczny „Klika z Pilnika”</BreakeSection>
+const About = () => (
+  <div id="about" style={{ marginTop: "100px" }}>
+    <BreakeSection>O nas</BreakeSection>
     <Section>
       <PhotoWrapper>
         <Photo src={Logo} alt="Logo" />
       </PhotoWrapper>
       <Content>
         <Description>
-          Zespół muzyki dance – Mierzejewski, Darek, Edek, Wojtek. Grupa
-          wykonuje własne aranżacje znanych przebojów dance i disco polo w nieco
-          rockowej konwencji. <p>Prowadzi: Andrzej Mierzejewski</p>
+          Cele i zadania GOKiS w Pilniku to: organizowanie zespołowego
+          uczestnictwa w kulturze, prowadzenie różnorodnych form edukacji
+          regionalnej, organizowanie imprez o charakterze indywidualnym,
+          rekreacyjnym i masowym. Ponadto celami jest współpraca z
+          organizacjami, stowarzyszeniami, zakładami pracy i szkołami oraz
+          upowszechnianie i popularyzacja historii i tradycji lokalnej
+          społeczności.
         </Description>
       </Content>
     </Section>
   </div>
 )
 
-export default Klika
+export default About

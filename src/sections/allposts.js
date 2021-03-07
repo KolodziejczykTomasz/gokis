@@ -1,6 +1,6 @@
 import React from "react"
-import BreakeSection from "../breakeSection"
-import CardItem from "./carditem"
+import BreakeSection from "../components/breakeSection"
+import PostItem from "../components/postItem"
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -9,14 +9,8 @@ const Container = styled.div`
 `
 
 const ArticlesWrapper = styled.div`
-  display: flex;
-  margin-bottom: 75px;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  &:last-child {
-    justify-content: flex-end;
-  }
+
+  margin-bottom: 75px; 
 `
 
 const AllPost = ({ data }) => {
@@ -33,7 +27,7 @@ const AllPost = ({ data }) => {
               excerpt,
               frontmatter: { title, published, featuredImage, slug },
             }) => (
-              <CardItem
+              <PostItem
                 key={slug}
                 title={title}
                 excerpt={excerpt}

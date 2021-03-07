@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import BreakeSection from "../breakeSection"
-import CardItem from "../../components/sections/carditem"
+import BreakeSection from "../components/breakeSection"
+import CardItem from "../components/carditem"
 import styled from "styled-components"
 
 const Container = styled.div`

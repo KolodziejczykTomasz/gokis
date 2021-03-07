@@ -3,9 +3,9 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
-import Rolny from "../components/sections/rolny"
+import Rolny from "../sections/rolny"
 import Footer from "../components/footer"
-import ButtonList from "../components/sections/buttonlist"
+import ButtonList from "../sections/buttonlist"
 
 const StyledWrapper = styled.div`
   display: block;

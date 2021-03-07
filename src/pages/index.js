@@ -3,10 +3,10 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
-import About from "../components/sections/about"
+import About from "../sections/about"
 import Footer from "../components/footer"
-import ButtonList from "../components/sections/buttonlist"
-import NewsPage from "../components/sections/news"
+import ButtonList from "../sections/buttonlist"
+import NewsPage from "../sections/news"
 
 const StyledWrapper = styled.div`
   display: block;

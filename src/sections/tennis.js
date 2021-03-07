@@ -1,6 +1,6 @@
 import React from "react"
-import BreakeSection from "../breakeSection"
-import Logo from "../../assets/images/logo.jpg"
+import BreakeSection from "../components/breakeSection"
+import Logo from "../assets/images/logo.jpg"
 import styled from "styled-components"
 
 const Section = styled.div`
@@ -28,26 +28,25 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const About = () => (
-  <div id="about" style={{ marginTop: "100px" }}>
-    <BreakeSection>O nas</BreakeSection>
+const Tennis = () => (
+  <div id="tennis" style={{ marginTop: "100px" }}>
+    <BreakeSection>Klub tenisa stołowego</BreakeSection>
     <Section>
       <PhotoWrapper>
         <Photo src={Logo} alt="Logo" />
       </PhotoWrapper>
       <Content>
         <Description>
-          Cele i zadania GOKiS w Pilniku to: organizowanie zespołowego
-          uczestnictwa w kulturze, prowadzenie różnorodnych form edukacji
-          regionalnej, organizowanie imprez o charakterze indywidualnym,
-          rekreacyjnym i masowym. Ponadto celami jest współpraca z
-          organizacjami, stowarzyszeniami, zakładami pracy i szkołami oraz
-          upowszechnianie i popularyzacja historii i tradycji lokalnej
-          społeczności.
+          Program sekcji tenisa stołowego dla dzieci i dorosłych zaprojektowany
+          jest tak, aby promować rekreacyjną stronę aktywności fizycznej, która
+          łączy w sobie dobrą zabawę i pasję w gronie znajomych. 
+          <p>Treningi tenisa stołowego, dla juniorów i seniorów- w poniedziałki i środy o
+          godz.17.00-20.00</p>
+          <p>Prowadzi: Marcin Dadura</p>
         </Description>
       </Content>
     </Section>
   </div>
 )
 
-export default About
+export default Tennis

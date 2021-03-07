@@ -1,6 +1,6 @@
 import React from "react"
-import BreakeSection from "../breakeSection"
-import Logo from "../../assets/images/logo.jpg"
+import BreakeSection from "../components/breakeSection"
+import Logo from "../assets/images/logo.jpg"
 import styled from "styled-components"
 
 const Section = styled.div`

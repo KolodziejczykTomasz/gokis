@@ -3,9 +3,9 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
-import Contraband from "../components/sections/contraband"
+import Contraband from "../sections/contraband"
 import Footer from "../components/footer"
-import ButtonList from "../components/sections/buttonlist"
+import ButtonList from "../sections/buttonlist"
 
 const StyledWrapper = styled.div`
   display: block;

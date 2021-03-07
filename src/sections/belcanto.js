@@ -1,6 +1,6 @@
 import React from "react"
-import BreakeSection from "../breakeSection"
-import Logo from "../../assets/images/logo.jpg"
+import BreakeSection from "../components/breakeSection"
+import Logo from "../assets/images/logo.jpg"
 import styled from "styled-components"
 
 const Section = styled.div`
@@ -28,9 +28,9 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const ContraBand = () => (
-  <div id="contraBand" style={{ marginTop: "100px" }}>
-    <BreakeSection>Zespół wokalno-instrumentalny ContraBand'a</BreakeSection>
+const Belcanto = () => (
+  <div id="belcanto" style={{ marginTop: "100px" }}>
+    <BreakeSection>Dziecięcy zespół wokalny Bel Canto</BreakeSection>
     <Section>
       <PhotoWrapper>
         <Photo src={Logo} alt="Logo" />
@@ -42,7 +42,7 @@ const ContraBand = () => (
           ma już za sobą wiele koncertów. Swój repertuar opiera głównie na
           muzyce rozrywkowej i muzyce nurtu gospels. Można ich usłyszeć podczas
           imprez gminnych, powiatowych oraz okolicznościowych. Muzyków połączyła
-          wspólna pasja, miłość do muzyki i przyjaźń.           <p>Instruktorem jest Ewelina
+          wspólna pasja, miłość do muzyki i przyjaźń. <p>Instruktorem jest Ewelina
           Banach-Bardońska.</p>
         </Description>
       </Content>
@@ -50,4 +50,4 @@ const ContraBand = () => (
   </div>
 )
 
-export default ContraBand
+export default Belcanto

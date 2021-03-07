@@ -17,7 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allMdx.nodes.forEach(post => {
     createPage({
-      path: `articles/${post.frontmatter.slug}`,
+      path: `/${post.frontmatter.slug}`,
       component: blogPostTemplate,
       context: {
         slug: post.frontmatter.slug,

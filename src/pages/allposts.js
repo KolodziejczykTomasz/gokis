@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import Footer from "../components/footer"
-import AllPost from "../components/sections/allposts"
+import AllPost from "../sections/allposts"
 
 const StyledWrapper = styled.div`
   display: block;
@@ -40,7 +40,7 @@ export const query = graphql`
             }
           }
         }
-        excerpt(pruneLength: 200)
+        excerpt
       }
     }
   }
