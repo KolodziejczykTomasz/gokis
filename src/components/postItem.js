@@ -3,73 +3,116 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import { Link } from "gatsby"
 
-const CardBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding: 10px 10px;
-  margin-right: 15px;
-  margin-bottom: 25px;
-  -moz-box-shadow: 1px 1px 1px 0px #444;
-  -webkit-box-shadow: 1px 1px 1px 0px #444;
-  box-shadow: 1px 1px 1px 0px #444;
-  color: black;
+const CardWrapper = styled.div`
+  height: 100%;
+  margin-bottom: 50px;
+  -moz-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+`
+
+const CardHeader = styled.div`
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  color: rgb(236, 0, 0);
+  font-weight: 600;
+`
+const CardHeaderTitle = styled.div`
+  font-size: 22px;
+  line-height: 30px;
+`
+
+const CardHeaderDate = styled.div`
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: rgb(236, 0, 0);
+  border: none;
+  margin-right: 75px;
+  width: 150px;
+  margin-top: 20px;
   text-decoration: none;
+  text-align: center;
+  border: 1px solid transparent;
   :hover {
-    color: black;
-    text-decoration: none;
-    -moz-box-shadow: 1px 1px 3px 0px #444;
-    -webkit-box-shadow: 1px 1px 3px 0px #444;
-    box-shadow: 1px 1px 3px 0px #444;
+    border: 1px solid rgb(236, 0, 0);
+    color: rgb(236, 0, 0);
+    background-color: #fff;
   }
 `
 
-const CardTitle = styled.div`
-display: block;
-width: 100%;
-  font-size: 22px;
-  font-weight: 500;
+const CardMain = styled.div`
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  font-size: 15px;
+`
+const CardMainPhoto = styled.div`
+  margin-bottom: 10px;
+`
+
+const CardMainPhotoItem = styled(Image)`
+  width: 80%;
+  display: grid;
+  object-fit: cover;
+  align-items: right;
+  -moz-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+`
+
+const ButtonMore = styled.div`
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: rgb(236, 0, 0);
+  border: none;
+  margin-right: 75px;
+  width: 150px;
+  margin-top: 20px;
+  text-decoration: none;
+  float: right;
   text-align: center;
+  border: 1px solid transparent;
+  :hover  {
+    border: 1px solid rgb(236, 0, 0);
+    color: rgb(236, 0, 0);
+    background-color: #fff;
+    text-decoration: none;  }
 `
 
-const StyledImage = styled(Image)`
-  width: 60%;
-  max-width: 500px;
-  max-height: 400px;
-  margin: 50px auto 70px auto;
-  -moz-box-shadow: 2px 2px 6px 0px #444;
-  -webkit-box-shadow: 2px 2px 6px 0px #444;
-  box-shadow: 2px 2px 6px 0px #444;
+const CardMainContent = styled.div`
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+  text-align: justify;
+  hyphens: auto;
+  word-wrap: break-word;
 `
 
-const CardExcerpt = styled.div`
-  margin: 10px 10px 100px 10px;
-`
-
-const CardFotter = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  padding: 0 5px 5px 5px;
-  align-content: center;
+const CardFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `
 
 const PostItem = ({ title, image, published, excerpt, slug }) => {
   return (
-    <CardBody as={Link} to={`/${slug}`}>
-      <CardTitle>
-        {title} <hr />
-        <StyledImage fluid={image} />
-      </CardTitle>
-      <CardExcerpt>{excerpt}</CardExcerpt>
-      <CardFotter>
-        <hr />
-        <small>Data publikacji: {published}</small>
-      </CardFotter>
-    </CardBody>
+    <CardWrapper>
+      <CardHeader>
+        <CardHeaderDate>{published}</CardHeaderDate>
+        <CardHeaderTitle>{title}</CardHeaderTitle>
+      </CardHeader>
+      <CardMain>
+        <CardMainPhoto>
+          <CardMainPhotoItem fluid={image} />
+        </CardMainPhoto>
+        <CardMainContent>{excerpt}</CardMainContent>
+      </CardMain>
+      <CardFooter>
+        <ButtonMore as={Link} to={`/${slug}`}>
+          Czytaj więcej
+        </ButtonMore>
+      </CardFooter>
+    </CardWrapper>
   )
 }
 
