@@ -51,11 +51,11 @@ const ButtonMore = styled.button`
     left: 0;
     width: 100%;
     height: 100%;
-    background: #c23b37;
+    background: rgb(236, 0, 0);
     font-size: 15px;
     line-height: 40;
-    z-index: -1;    
-    color: black !important; 
+    z-index: -1;
+    color: black !important;
     transition: top 0.3s ease-in-out;
   }
   :hover:after {
@@ -63,10 +63,10 @@ const ButtonMore = styled.button`
     bottom: auto;
     top: 90%;
     color: black !important;
-    border: 1px solid #c23b37;
+    border: 1px solid rgb(236, 0, 0);
   }
   :focus {
-    border: 3px dotted #c23b37;
+    border: 3px dotted rgb(236, 0, 0);
   }
 
   &:focus,
@@ -78,7 +78,7 @@ const ButtonMore = styled.button`
 
   &:hover {
     color: black !important;
-    border: 1px solid #c23b37;
+    border: 1px solid rgb(236, 0, 0);
   }
 `
 

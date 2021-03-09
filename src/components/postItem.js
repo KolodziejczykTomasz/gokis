@@ -3,14 +3,6 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import { Link } from "gatsby"
 
-const CardWrapper = styled.div`
-  height: 100%;
-  margin-bottom: 50px;
-  -moz-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
-`
-
 const CardHeader = styled.div`
   display: grid;
   grid-template-columns: 0.3fr 0.7fr;
@@ -34,11 +26,6 @@ const CardHeaderDate = styled.div`
   text-decoration: none;
   text-align: center;
   border: 1px solid transparent;
-  :hover {
-    border: 1px solid rgb(236, 0, 0);
-    color: rgb(236, 0, 0);
-    background-color: #fff;
-  }
 `
 
 const CardMain = styled.div`
@@ -73,11 +60,21 @@ const ButtonMore = styled.div`
   float: right;
   text-align: center;
   border: 1px solid transparent;
-  :hover  {
+  
+  & :hover {
     border: 1px solid rgb(236, 0, 0);
     color: rgb(236, 0, 0);
     background-color: #fff;
-    text-decoration: none;  }
+    text-decoration: none;
+  }
+`
+
+const CardWrapper = styled.div`
+  height: 100%;
+  margin-bottom: 50px;
+  -moz-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
 `
 
 const CardMainContent = styled.div`
@@ -98,7 +95,7 @@ const PostItem = ({ title, image, published, excerpt, slug }) => {
   return (
     <CardWrapper>
       <CardHeader>
-        <CardHeaderDate>{published}</CardHeaderDate>
+        <CardHeaderDate className="date">{published}</CardHeaderDate>
         <CardHeaderTitle>{title}</CardHeaderTitle>
       </CardHeader>
       <CardMain>
@@ -108,7 +105,7 @@ const PostItem = ({ title, image, published, excerpt, slug }) => {
         <CardMainContent>{excerpt}</CardMainContent>
       </CardMain>
       <CardFooter>
-        <ButtonMore as={Link} to={`/${slug}`}>
+        <ButtonMore as={Link} to={`/${slug}`} className="more">
           Czytaj więcej
         </ButtonMore>
       </CardFooter>

@@ -53,17 +53,39 @@ const CardFotter = styled.div`
   align-content: center;
 `
 
+const ButtonMore = styled.div`
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: rgb(236, 0, 0);
+  border: none;
+  margin-right: 0;
+  width: 150px;  
+  text-decoration: none;
+  float: right;
+  text-align: center;
+  border: 1px solid transparent;
+
+  & :hover {
+    border: 1px solid rgb(236, 0, 0);
+    color: rgb(236, 0, 0);
+    background-color: #fff;
+    text-decoration: none;
+  }
+`
+
+
 const CardItem = ({ title, image, published, excerpt, slug }) => {
   return (
-    <CardBody as={Link} to={`/${slug}`}>
+    <CardBody >
       <CardTitle>
         {title} <hr />
         <StyledImage fluid={image} />
       </CardTitle>
-      <CardExcerpt>{excerpt}</CardExcerpt>
+      <CardExcerpt>{excerpt}</CardExcerpt>      
       <CardFotter>
         <hr />
-        <small>Data publikacji: {published}</small>
+        <small>Data publikacji: {published}</small><ButtonMore as={Link} to={`/${slug}`}>Więcej</ButtonMore>
       </CardFotter>
     </CardBody>
   )
