@@ -28,57 +28,58 @@ const ArticlesWrapper = styled.div`
   }
 `
 
-const ButtonMore = styled.button`
+const ButtonMore = styled(Link)`
   display: block;
-  margin: 30px auto 0 auto;
+  min-width: 200px;
+  width: auto;
+  min-height: 40px;
+  margin: 10px 15px;
+  padding: 10px 15px;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+  text-transform: uppercase;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  border: 1px solid rgb(215, 58, 30);
   position: relative;
   overflow: hidden;
-  width: auto;
-  padding: 15px 30px;
-  border: none;
-  text-transform: uppercase;
-  font-size: 16px;
-  background: none;
-  color: white;
   z-index: 1;
-  letter-spacing: 1.2px;
-  border: 1px solid #c23b37;
-  :after {
+  transition: .2s; 
+  :after {    
     content: "";
     position: absolute;
     display: block;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background: rgb(236, 0, 0);
-    font-size: 15px;
-    line-height: 40;
-    z-index: -1;
+    left: 0;
+    bottom: 0;
+    height: 2px;
     color: black !important;
-    transition: top 0.3s ease-in-out;
+    z-index: -1;
+    text-decoration: none;
+    border: 2px solid rgb(215, 58, 30);
+    :active {
+      bottom: 40px;
+    }
+  }
+  :first-child {
+    border-color: rgb(215, 58, 30);
+  }
+  :hover {
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+    background-color: rgb(215, 58, 30);
   }
   :hover:after {
-    left: 0;
-    bottom: auto;
-    top: 90%;
-    color: black !important;
-    border: 1px solid rgb(236, 0, 0);
+    width: 100%;
+    height: 100%;
   }
   :focus {
-    border: 3px dotted rgb(236, 0, 0);
-  }
-
-  &:focus,
-  &:hover,
-  &:visited,
-  &:active {
-    text-decoration: none;
-  }
-
-  &:hover {
-    color: black !important;
-    border: 1px solid rgb(236, 0, 0);
+    border: 3px dotted rgb(215, 58, 30) !important;
   }
 `
 
@@ -87,9 +88,9 @@ const NewsPage = ({ data }) => {
     allMdx: { nodes },
   } = data
   return (
-    <Container style={{ marginTop: "100px" }}> 
-       <BreakeSection>Aktualności</BreakeSection>
-      <Wrapper id="news" >      
+    <Container style={{ marginTop: "100px" }}>
+      <BreakeSection>Aktualności</BreakeSection>
+      <Wrapper id="news">
         <ArticlesWrapper>
           {nodes
             .slice(0, 3)
@@ -109,10 +110,8 @@ const NewsPage = ({ data }) => {
               )
             )}
         </ArticlesWrapper>
-        <ButtonMore as={Link} to="/allposts">
-          Wszystkie aktualności
-        </ButtonMore>
-      </Wrapper>
+        <ButtonMore to="/allposts">Wszystkie aktualności</ButtonMore>
+      </Wrapper>     
     </Container>
   )
 }

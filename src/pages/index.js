@@ -8,6 +8,7 @@ import Footer from "../components/footer"
 import ButtonList from "../sections/buttonlist"
 import NewsPage from "../sections/news"
 
+
 const StyledWrapper = styled.div`
   display: block;
   width: 100%;
@@ -17,14 +18,14 @@ const StyledWrapper = styled.div`
   height: 90%;
 `
 
-const IndexPage = ( props ) => (
-  <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-    <Layout />
-    <About />
-    <NewsPage {...props} />
-    <ButtonList />
-    <Footer />
+const IndexPage = props => (
+  <StyledWrapper>   
+      <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
+      <Layout /> 
+      <About />
+      <NewsPage {...props} />
+      <ButtonList />
+      <Footer />   
   </StyledWrapper>
 )
 
