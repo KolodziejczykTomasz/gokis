@@ -55,7 +55,7 @@ const CardFotter = styled.div`
 
 const ButtonMore = styled.div`
   display: block;
-  padding: 10px 15px;
+  padding: 10px 15px 10px 15px;
   color: #fff;
   background-color: rgb(236, 0, 0);
   border: none;

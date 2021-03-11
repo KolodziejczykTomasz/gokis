@@ -1,6 +1,6 @@
 import React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -19,13 +19,17 @@ const StyledWrapper = styled.div`
 `
 
 const Section = styled.div`
-  display: grid;
-  grid-template-columns: 0.4fr 0.6fr;
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 920px) {
+      flex-direction: column;
+  }
 `
 const PhotoWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-self: center;
+  width: 40%;
 `
 const Photo = styled(Image)`
   display: block;
@@ -48,8 +52,13 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%; 
+  height: 100%;
+  width: 60%;
   position: relative;
+  @media (max-width: 920px) {
+      width: 100%;
+    padding: 0 30px;
+  }
 `
 const ContentHeader = styled.div`
   display: flex;
@@ -75,8 +84,39 @@ const Description = styled.div`
   padding: 30px 20px 30px 40px;
   font-size: 18px;
   line-height: 32px;
-
+  width: 100%;
+  @media (max-width: 920px) {
+      width: 100%;
+    padding: 30px 5px;
+  }
 `
+
+const ButtonMore = styled.div`
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: rgb(236, 0, 0);
+  border: none;
+  margin-right: 0;
+  margin-bottom: 70px;
+  width: 150px;
+  text-decoration: none;
+  float: right;
+  text-align: center;
+  border: 1px solid transparent;
+  & :hover {
+    border: 1px solid rgb(236, 0, 0);
+    color: rgb(236, 0, 0);
+    background-color: #fff;
+    text-decoration: none;
+  }
+`
+const ButtonWrapper = styled.div`
+  width: 100%;
+  height: 80px;
+  margin-bottom: 50px;
+`
+
 export const query = graphql`
   query querySingleArticle($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
@@ -113,6 +153,11 @@ const PostLayout = ({ data }) => {
             <Description>
               <MDXRenderer>{data.mdx.body}</MDXRenderer>
             </Description>
+            <ButtonWrapper>
+              <ButtonMore as={Link} to="/allposts">
+                Powrót
+              </ButtonMore>
+            </ButtonWrapper>
             <ContentHeader>
               <Published>
                 <small>Publikacja: {data.mdx.frontmatter.published}</small>

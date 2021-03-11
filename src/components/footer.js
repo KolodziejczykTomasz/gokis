@@ -1,10 +1,11 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
-const WrapperFullWidth = styled.div` 
+const WrapperFullWidth = styled.div`
   margin: 0;
   width: 100%;
-  height: 100%;  
+  height: 100%;
   background-color: black;
   position: relative;
 `
@@ -30,6 +31,14 @@ const WrapperBottom = styled.div`
   color: #fff;
   place-items: center;
   padding-bottom: 10px;
+  & a {
+    text-decoration: none;
+    color: #fff;
+  }
+  & a:hover {
+    text-decoration: none;
+    color: red;
+  }
 `
 
 const Copyright = styled.span`
@@ -55,8 +64,7 @@ const Footer = () => {
             </ul>
             <ul>
               <li>tel. 665 988 473</li>
-              <li>tel. 89 767 40 17</li>
-              <li>email: e.bardonska@gokispilnik.pl</li>
+              <li>email: poczta@gokispilnik.pl</li>
             </ul>
           </div>
           <div>
@@ -74,8 +82,12 @@ const Footer = () => {
           </div>
         </WrapperTop>
         <WrapperBottom>
-          <div>Deklaracja dostępności</div>
-          <div>Polityka bezpieczeństwa</div>
+          <div>
+            <Link to="/accessible">Deklaracja dostępności</Link>
+          </div>
+          <div>
+            <Link to="/rodo">Polityka bezpieczeństwa</Link>
+          </div>
           <div>
             <Copyright>
               © {new Date().getFullYear()}, Webside developed by

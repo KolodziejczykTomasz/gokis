@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 
 const ButtonList = () => (
   <div id="projects" style={{ marginTop: "100px" }}>
-    <BreakeSection>Pracownie</BreakeSection>
+    <BreakeSection>Zajęcia</BreakeSection>
     <Wrapper>
       <ButtonItem linkItem="/furman">Zespół Ludowy Furman</ButtonItem>
       <ButtonItem linkItem="/rogoz">Kapela ludowa Rogóżanie</ButtonItem>

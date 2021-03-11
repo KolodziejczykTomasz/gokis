@@ -50,7 +50,7 @@ const Navigation = () => (
             O nas
           </Link>
           <Link to="/#projects" className="NavLinkItem">
-            Pracownie
+            Zajęcia
           </Link>
           <Link to="/#contact" className="NavLinkItem">
             Kontakt
