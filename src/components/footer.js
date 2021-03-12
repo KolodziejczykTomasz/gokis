@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { FaRegEnvelope, FaMobileAlt } from "react-icons/fa"
 import styled from "styled-components"
 
 const WrapperFullWidth = styled.div`
@@ -63,8 +64,14 @@ const Footer = () => {
               <li>11-100 Lidzbark Warmiński</li>
             </ul>
             <ul>
-              <li>tel. 665 988 473</li>
-              <li>email: poczta@gokispilnik.pl</li>
+              <li>
+                <FaMobileAlt style={{marginRight: '10px'}}/>
+                +48 665 988 473
+              </li>
+              <li>
+                <FaRegEnvelope style={{marginRight: '10px'}}/>
+                poczta@gokispilnik.pl
+              </li>
             </ul>
           </div>
           <div>
