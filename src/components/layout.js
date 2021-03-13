@@ -1,6 +1,6 @@
 import React from "react"
 import Navigation from "../components/navigation/navigation"
-import Hero from "./hero"
+import { Hero } from "./hero"
 import GlobalStyle from "../assets/styles/globalStyle"
 import CookieConsent from "react-cookie-consent"
 

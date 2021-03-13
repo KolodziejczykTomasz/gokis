@@ -1,55 +1,158 @@
-import React from "react"
-import { Carousel } from "react-bootstrap"
-import Hero1 from "../assets/images/hero/hero1.jpg"
-import Hero2 from "../assets/images/hero/hero2.jpg"
-import Hero4 from "../assets/images/hero/hero4.jpg"
+import React, { useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa"
+import Image from "gatsby-image"
 
-import "bootstrap/dist/css/bootstrap.min.css"
 import styled from "styled-components"
 
-const SlideItem = styled.img`
+const Wrapper = styled.div`
+  display: block;
+  max-height: 500px;
+  width: 100%;
+  position: relative;
+`
+const Photo = styled(Image)`
+  display: block;
+  position: relative;
+`
+const Menu = styled.div`
+  position: absolute;
+  display: flex;
+  width: 100%;
+  z-index: 999;
+  bottom: 40px;
+`
+
+const WrapperButtonLeft = styled.div`
+  position: absolute;
+  left: 20px;
+  top: 0;
+`
+
+const WrapperButtonRight = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 0;
+`
+const ButtonLeft = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 44px;
+  color: black;
+  background: white;
+  border-radius: 50%;
+  z-index: 999;
+  transition: 0.3s;
+  :hover {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+  }
+`
+
+const ButtonRight = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 44px;
+  color: black;
+  background: white;
+  border-radius: 50%;
+  z-index: 999;
+  transition: 0.3s;
+  :hover {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+  }
+`
+
+const HeroText = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  left: 10%;
+  right: 10%;
+  z-index: 999;
+  bottom: 30px;
+  background-color: rgba(0,  0,  0,  0.7);
+  color: white;
+`
+
+const Title = styled.div`
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 700px;
+  text-align: center;
+  font-size: 48px;
 `
 
-const CaptionBackground = styled.div`
-  background-color: rgba(0,  0,  0,  0.5);
+
+const SubTitle = styled.div`
+  display: block;
   width: 100%;
-  padding: 25px 0;
+  text-align: center;
+  font-size: 28px;
 `
 
-const Hero = () => (
-  <Carousel>
-    <Carousel.Item interval={1500}>
-      <SlideItem src={Hero1} alt="First slide" />
-      <Carousel.Caption>
-        <CaptionBackground>
-          <h1>Gminny Ośrodek Kultury i Sportu w Pilniku</h1>
-          <h2>-ZAPRASZAMY-</h2>
-        </CaptionBackground>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item interval={500}>
-      <SlideItem src={Hero2} alt="Third slide" />
-      <Carousel.Caption>
-        <CaptionBackground>
-          <h1>Gminny Ośrodek Kultury i Sportu w Pilniku</h1>
-          <h2>-ZAPRASZAMY-</h2>
-        </CaptionBackground>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
-      <SlideItem src={Hero4} alt="Third slide" />
-      <Carousel.Caption>
-        <CaptionBackground>
-          <h1>Gminny Ośrodek Kultury i Sportu w Pilniku</h1>
-          <h2>-ZAPRASZAMY-</h2>
-        </CaptionBackground>
-      </Carousel.Caption>
-    </Carousel.Item>
-  </Carousel>
-)
+export const Hero = () => {
+  const [index, setIndex] = useState(0)
+  const { allFile } = useStaticQuery(
+    graphql`
+      query {
+        allFile(filter: { relativeDirectory: { eq: "hero" } }) {
+          edges {
+            node {
+              id
+              name
+              childImageSharp {
+                fluid(maxHeight: 400) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  )
 
-export default Hero
+  const length = allFile.edges.length - 1
+  const handleNext = () =>
+    index === length ? setIndex(0) : setIndex(index + 1)
+  const handlePrevious = () =>
+    index === 0 ? setIndex(length) : setIndex(index - 1)
+  const { node } = allFile.edges[index]
+  return (
+    <Wrapper>
+      <div>
+        <Photo
+          fluid={node.childImageSharp.fluid}
+          key={node.id}
+          alt={node.name.replace(/-/g, " ").substring(2)}
+        />
+        <HeroText>
+          <Title >Gminny Ośrodek Kultury i Sportu w Pilniku</Title>
+          <SubTitle>-ZAPRASZAMY-</SubTitle>
+        </HeroText>
+      </div>
+      <Menu>
+        <WrapperButtonLeft>
+          <ButtonLeft onClick={() => handlePrevious()}>
+            <FaAngleLeft />
+          </ButtonLeft>
+        </WrapperButtonLeft>
+        <WrapperButtonRight>
+          <ButtonRight onClick={() => handleNext()}>
+            <FaAngleRight />
+          </ButtonRight>
+        </WrapperButtonRight>
+      </Menu>
+    </Wrapper>
+  )
+}

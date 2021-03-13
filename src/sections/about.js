@@ -3,6 +3,11 @@ import BreakeSection from "../components/breakeSection"
 import Logo from "../assets/images/logo.jpg"
 import styled from "styled-components"
 
+const Wrapper = styled.div`
+  display: block;
+  margin-top: 550px;
+`
+
 const Section = styled.div`
   display: grid;
   grid-template-columns: 0.4fr 0.6fr;
@@ -29,11 +34,11 @@ const Description = styled.div`
 `
 
 const About = () => (
-  <div id="about" style={{ marginTop: "100px" }}>
+  <Wrapper id="about">
     <BreakeSection>O nas</BreakeSection>
     <Section>
       <PhotoWrapper>
-        <Photo src={Logo} alt="Logo" />
+        <Photo src={Logo} alt="Logo Gminego Ośrodka Kultury i Sportu" />
       </PhotoWrapper>
       <Content>
         <Description>
@@ -47,7 +52,7 @@ const About = () => (
         </Description>
       </Content>
     </Section>
-  </div>
+  </Wrapper>
 )
 
 export default About

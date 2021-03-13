@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "gatsby"
+import { Link } from "gatsby"
 import { Navbar, Nav } from "react-bootstrap"
 import { FaFacebookSquare } from "react-icons/fa"
 import Logo from "../../assets/images/logo.jpg"
@@ -7,6 +7,7 @@ import Logo from "../../assets/images/logo.jpg"
 import "bulma/css/bulma.css"
 import "./navigation.css"
 import styled from "styled-components"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const IconFacebook = styled(FaFacebookSquare)`
   font-size: 40px;
@@ -59,8 +60,11 @@ const Navigation = () => (
         <Nav>
           <Nav.Link
             eventKey={2}
+            target="_blank"
             href="https://www.facebook.com/Gminny-Ośrodek-Kultury-i-Sportu-w-Pilniku-401376726727548"
           >
+            <span class="sr-only">Opens in new window</span>
+            <i aria-hidden="true"></i>
             <IconFacebook />
           </Nav.Link>
         </Nav>

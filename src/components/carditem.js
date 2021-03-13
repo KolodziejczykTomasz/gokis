@@ -44,8 +44,7 @@ const CardImage = styled.div`
 `
 
 const StyledImage = styled(Image)`
-  display: flex;
-  flex-shrink: 1;
+  display: flex; 
   margin: 0 auto;
   height: 100%;
   width: 100%;
@@ -91,19 +90,17 @@ const ButtonMore = styled.div`
   }
 `
 
-const CardItem = ({ title, image, published, excerpt, slug }) => {
+const CardItem = ({ title, altText, image, published, excerpt, slug }) => {
   return (
     <CardBody>
       <CardTitle>{title}</CardTitle>
-      <CardDate>
-        <small>
-          <FaRegCalendarAlt style={{ marginRight: "5px", marginTop: "-3px" }} />{" "}
-          {published}
-        </small>
+      <CardDate style={{ fontSize: "14px" }}>
+        <FaRegCalendarAlt style={{ marginRight: "5px", marginTop: "-3px" }} />
+        {published}
       </CardDate>
       <hr />
       <CardImage>
-        <StyledImage fluid={image} />
+        <StyledImage fluid={image} alt={altText} />
       </CardImage>
       <CardExcerpt>{excerpt}</CardExcerpt>
       <CardFotter>

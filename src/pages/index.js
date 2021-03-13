@@ -35,7 +35,8 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
-          slug
+          slug        
+          altText
           published
           featuredImage {
             childImageSharp {

@@ -31,9 +31,7 @@ export const query = graphql`
     file(name: { eq: "logo" }) {
       childImageSharp {
         fluid(quality: 90) {
-          src
-          srcSet
-          sizes
+          src          
         }
       }
     }

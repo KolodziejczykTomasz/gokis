@@ -34,13 +34,13 @@ const WrapperText = styled.div`
 
 const BreakeSection = ({ children }) => (
   <WrapperStartBreakeLine>
-    <WrapperItemLeft id="wrapperItemLeft">
+    <WrapperItemLeft>
       <hr style={{ borderTop: "1.5px solid #1680BC" }} />
     </WrapperItemLeft>
-    <WrapperItemCentral id="wrapperItemCentral">
-      <WrapperText id="wrapperText">{children}</WrapperText>
+    <WrapperItemCentral>
+      <WrapperText>{children}</WrapperText>
     </WrapperItemCentral>
-    <WrapperItemRight id="wrapperItemRight">
+    <WrapperItemRight>
       <hr style={{ borderTop: "1.5px solid #1680BC" }} />
     </WrapperItemRight>
   </WrapperStartBreakeLine>

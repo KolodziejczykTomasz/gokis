@@ -39,6 +39,7 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "prettier": "2.1.2"
   },
   "keywords": [

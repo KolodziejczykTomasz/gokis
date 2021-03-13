@@ -80,8 +80,7 @@ const CardWrapper = styled.div`
 const CardMainContent = styled.div`
   display: flex;
   align-items: center;
-  padding-right: 50px;
-  text-align: justify;
+  padding-right: 50px;  
   hyphens: auto;
   word-wrap: break-word;
 `
@@ -91,7 +90,7 @@ const CardFooter = styled.div`
   justify-content: flex-end;
 `
 
-const PostItem = ({ title, image, published, excerpt, slug }) => {
+const PostItem = ({ title, altText, image, published, excerpt, slug }) => {
   return (
     <CardWrapper>
       <CardHeader>
@@ -100,7 +99,7 @@ const PostItem = ({ title, image, published, excerpt, slug }) => {
       </CardHeader>
       <CardMain>
         <CardMainPhoto>
-          <CardMainPhotoItem fluid={image} />
+          <CardMainPhotoItem fluid={image} alt={altText} />
         </CardMainPhoto>
         <CardMainContent>{excerpt}</CardMainContent>
       </CardMain>

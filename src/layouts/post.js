@@ -73,11 +73,13 @@ const Published = styled.div`
   display: block;
   width: 50%;
   border-top: 1px solid #444;
+  font-size: 14px;
 `
 const Author = styled.div`
   display: block;
   width: 50%;
   border-top: 1px solid #444;
+  font-size: 14px;
 `
 
 const Description = styled.div`
@@ -123,7 +125,8 @@ export const query = graphql`
       frontmatter {
         title
         slug
-        published
+        published    
+        altText
         featuredImage {
           childImageSharp {
             fixed(width: 500) {
@@ -147,6 +150,7 @@ const PostLayout = ({ data }) => {
           <PhotoWrapper>
             <Photo
               fixed={data.mdx.frontmatter.featuredImage.childImageSharp.fixed}
+              alt={data.mdx.frontmatter.altText}
             />
           </PhotoWrapper>
           <Content>
@@ -160,10 +164,10 @@ const PostLayout = ({ data }) => {
             </ButtonWrapper>
             <ContentHeader>
               <Published>
-                <small>Publikacja: {data.mdx.frontmatter.published}</small>
+                Publikacja: {data.mdx.frontmatter.published}
               </Published>
               <Author>
-                <small>Autor: Admin</small>
+               Autor: Admin
               </Author>
             </ContentHeader>
           </Content>
