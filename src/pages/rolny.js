@@ -18,9 +18,9 @@ const StyledWrapper = styled.div`
 
 const RolnyPage = ({ data }) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-    <Layout /> 
-    <Rolny />  
+    <SEO title="GOKIS" name="Rolny Skład" />
+    <Layout />
+    <Rolny />
     <ButtonList />
     <Footer />
   </StyledWrapper>

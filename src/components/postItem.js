@@ -104,7 +104,12 @@ const PostItem = ({ title, altText, image, published, excerpt, slug }) => {
         <CardMainContent>{excerpt}</CardMainContent>
       </CardMain>
       <CardFooter>
-        <ButtonMore as={Link} to={`/${slug}`} className="more">
+        <ButtonMore
+          aria-label="Czytaj więcej"
+          as={Link}
+          to={`/${slug}`}
+          className="more"
+        >
           Czytaj więcej
         </ButtonMore>
       </CardFooter>

@@ -18,9 +18,9 @@ const StyledWrapper = styled.div`
 
 const MazoretkiPage = ({ data }) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-    <Layout /> 
-    <Mazoretki />  
+    <SEO title="GOKIS" name="Mażoretki" />
+    <Layout />
+    <Mazoretki />
     <ButtonList />
     <Footer />
   </StyledWrapper>

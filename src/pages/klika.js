@@ -18,9 +18,9 @@ const StyledWrapper = styled.div`
 
 const KlikaPage = ({ data }) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-    <Layout /> 
-    <Klika />  
+    <SEO title="GOKIS" name="Zespół muzyczny „Klika z Pilnika”" />
+    <Layout />
+    <Klika />
     <ButtonList />
     <Footer />
   </StyledWrapper>

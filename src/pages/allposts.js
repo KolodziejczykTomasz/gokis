@@ -17,7 +17,7 @@ const StyledWrapper = styled.div`
 
 const AllPostPage = ( props ) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
+    <SEO title="GOKIS" name="Wszystkie aktualności" />
     <Layout />   
     <AllPost {...props} />    
     <Footer />

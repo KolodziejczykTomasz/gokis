@@ -41,19 +41,44 @@ const Navigation = () => (
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto" style={{ margin: "0 auto", color: "white" }}>
-          <Link to="/#home" className="NavLinkItem">
+          <Link
+            role="navigation"
+            aria-label=" Strona główna"
+            to="/#home"
+            className="NavLinkItem"
+          >
             Home
           </Link>
-          <Link to="/#news" className="NavLinkItem">
+          <Link
+            role="navigation"
+            aria-label=" Aktualności"
+            to="/#news"
+            className="NavLinkItem"
+          >
             Aktualności
           </Link>
-          <Link to="/#about" className="NavLinkItem">
+          <Link
+            role="navigation"
+            aria-label="O nas"
+            to="/#about"
+            className="NavLinkItem"
+          >
             O nas
           </Link>
-          <Link to="/#projects" className="NavLinkItem">
+          <Link
+            role="navigation"
+            aria-label="Zajęcia"
+            to="/#projects"
+            className="NavLinkItem"
+          >
             Zajęcia
           </Link>
-          <Link to="/#contact" className="NavLinkItem">
+          <Link
+            role="navigation"
+            aria-label="Kontakt"
+            to="/#contact"
+            className="NavLinkItem"
+          >
             Kontakt
           </Link>
         </Nav>

@@ -106,7 +106,7 @@ const CardItem = ({ title, altText, image, published, excerpt, slug }) => {
       <CardFotter>
         <hr />
 
-        <ButtonMore as={Link} to={`/${slug}`}>
+        <ButtonMore as={Link} aria-label="Więcej" to={`/${slug}`}>
           Więcej
         </ButtonMore>
       </CardFotter>

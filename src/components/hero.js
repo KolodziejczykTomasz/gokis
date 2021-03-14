@@ -5,9 +5,14 @@ import Image from "gatsby-image"
 
 import styled from "styled-components"
 
+const Section = styled.div`
+  display: block;
+`
+
 const Wrapper = styled.div`
   display: block;
-  max-height: 500px;
+  height: auto;
+  max-height: 920px;
   width: 100%;
   position: relative;
 `
@@ -20,7 +25,7 @@ const Menu = styled.div`
   display: flex;
   width: 100%;
   z-index: 999;
-  bottom: 40px;
+  bottom: 40%;
 `
 
 const WrapperButtonLeft = styled.div`
@@ -80,7 +85,7 @@ const HeroText = styled.div`
   left: 10%;
   right: 10%;
   z-index: 999;
-  bottom: 30px;
+  bottom: 30%;
   background-color: rgba(0,  0,  0,  0.7);
   color: white;
 `
@@ -91,7 +96,6 @@ const Title = styled.div`
   text-align: center;
   font-size: 48px;
 `
-
 
 const SubTitle = styled.div`
   display: block;
@@ -127,32 +131,34 @@ export const Hero = () => {
     index === length ? setIndex(0) : setIndex(index + 1)
   const handlePrevious = () =>
     index === 0 ? setIndex(length) : setIndex(index - 1)
-  const { node } = allFile.edges[index]
+  const { node, name } = allFile.edges[index]
   return (
-    <Wrapper>
-      <div>
-        <Photo
-          fluid={node.childImageSharp.fluid}
-          key={node.id}
-          alt={node.name.replace(/-/g, " ").substring(2)}
-        />
-        <HeroText>
-          <Title >Gminny Ośrodek Kultury i Sportu w Pilniku</Title>
-          <SubTitle>-ZAPRASZAMY-</SubTitle>
-        </HeroText>
-      </div>
-      <Menu>
-        <WrapperButtonLeft>
-          <ButtonLeft onClick={() => handlePrevious()}>
-            <FaAngleLeft />
-          </ButtonLeft>
-        </WrapperButtonLeft>
-        <WrapperButtonRight>
-          <ButtonRight onClick={() => handleNext()}>
-            <FaAngleRight />
-          </ButtonRight>
-        </WrapperButtonRight>
-      </Menu>
-    </Wrapper>
+    <Section>
+      <Wrapper>
+        <div>
+          <Photo
+            fluid={node.childImageSharp.fluid}
+            key={node.id}
+            alt={node.name}
+          />
+          <HeroText>
+            <Title>Gminny Ośrodek Kultury i Sportu w Pilniku</Title>
+            <SubTitle>-ZAPRASZAMY-</SubTitle>
+          </HeroText>
+        </div>
+        <Menu>
+          <WrapperButtonLeft>
+            <ButtonLeft onClick={() => handlePrevious()}>
+              <FaAngleLeft />
+            </ButtonLeft>
+          </WrapperButtonLeft>
+          <WrapperButtonRight>
+            <ButtonRight onClick={() => handleNext()}>
+              <FaAngleRight />
+            </ButtonRight>
+          </WrapperButtonRight>
+        </Menu>
+      </Wrapper>
+    </Section>
   )
 }

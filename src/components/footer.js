@@ -65,11 +65,11 @@ const Footer = () => {
             </ul>
             <ul>
               <li>
-                <FaMobileAlt style={{marginRight: '10px'}}/>
+                <FaMobileAlt style={{ marginRight: "10px" }} />
                 +48 665 988 473
               </li>
               <li>
-                <FaRegEnvelope style={{marginRight: '10px'}}/>
+                <FaRegEnvelope style={{ marginRight: "10px" }} />
                 poczta@gokispilnik.pl
               </li>
             </ul>
@@ -90,10 +90,22 @@ const Footer = () => {
         </WrapperTop>
         <WrapperBottom>
           <div>
-            <Link to="/accessible">Deklaracja dostępności</Link>
+            <Link
+              role="navigation"
+              aria-label="Deklaracja dostępności"
+              to="/accessible"
+            >
+              Deklaracja dostępności
+            </Link>
           </div>
           <div>
-            <Link to="/rodo">Polityka bezpieczeństwa</Link>
+            <Link
+              role="navigation"
+              aria-label="Polityka bezpieczeństwa"
+              to="/rodo"
+            >
+              Polityka bezpieczeństwa
+            </Link>
           </div>
           <div>
             <Copyright>

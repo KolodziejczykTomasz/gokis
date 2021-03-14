@@ -18,7 +18,7 @@ const StyledWrapper = styled.div`
 
 const BelcantoPage = ({ data }) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
+    <SEO title="GOKIS" name="Dziecięcy zespół wokalny Bel Canto" />
     <Layout />
     <Belcanto />
     <ButtonList />

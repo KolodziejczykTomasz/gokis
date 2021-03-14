@@ -33,13 +33,13 @@ const Rolny = () => (
     <BreakeSection>Rolny Skład</BreakeSection>
     <Section>
       <PhotoWrapper>
-        <Photo src={Logo} alt="Logo" />
+        <Photo src={Logo} alt="Rolny Skład" />
       </PhotoWrapper>
       <Content>
         <Description>
           Zespół muzyczny poruszający się w klimatach rocka progresywnego.
-          Wykonuje kompozycje własne, jak i covery. <p>Prowadzi: Paweł
-          Rolikowski</p>
+          Wykonuje kompozycje własne, jak i covery.{" "}
+          <p>Prowadzi: Paweł Rolikowski</p>
         </Description>
       </Content>
     </Section>

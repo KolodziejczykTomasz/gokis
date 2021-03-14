@@ -13,6 +13,7 @@ const Layout = ({ children }) => (
     <CookieConsent
       location="bottom"
       buttonText="Akceptuję"
+      aria-label="Akceptuję"
       cookieName="myAwesomeCookieName2"
       style={{ background: "#2B373B", fontSize: "12px" }}
       buttonStyle={{ color: "#4e503b", fontSize: "13px" }}

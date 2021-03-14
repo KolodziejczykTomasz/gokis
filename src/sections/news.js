@@ -97,11 +97,12 @@ const NewsPage = ({ data }) => {
             .map(
               ({
                 excerpt,
-                frontmatter: { title, published, featuredImage, slug },
+                frontmatter: { title, altText, published, featuredImage, slug },
               }) => (
                 <CardItem
                   key={slug}
                   title={title}
+                  altText={altText}
                   excerpt={excerpt}
                   published={published}
                   slug={slug}
@@ -111,7 +112,7 @@ const NewsPage = ({ data }) => {
             )}
         </ArticlesWrapper>
         <ButtonMore to="/allposts">Wszystkie aktualności</ButtonMore>
-      </Wrapper>     
+      </Wrapper>
     </Container>
   )
 }

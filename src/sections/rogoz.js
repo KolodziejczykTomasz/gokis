@@ -33,7 +33,7 @@ const Rogoz = () => (
     <BreakeSection>Kapela ludowa Rogóżanie</BreakeSection>
     <Section>
       <PhotoWrapper>
-        <Photo src={Logo} alt="Logo" />
+        <Photo src={Logo} alt="Gminny Ośrodek Kultury i Sportu" />
       </PhotoWrapper>
       <Content>
         <Description>

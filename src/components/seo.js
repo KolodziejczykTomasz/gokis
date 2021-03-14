@@ -67,9 +67,9 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `pl`,
   meta: [],
-  description: `Gminny Ośrodek Kultury i Sportu w Pilniku`,
+  description: `Gminny Ośrodek Kultury i Sportu`,
 }
 
 SEO.propTypes = {

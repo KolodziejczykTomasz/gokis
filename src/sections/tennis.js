@@ -33,15 +33,17 @@ const Tennis = () => (
     <BreakeSection>Klub tenisa stołowego</BreakeSection>
     <Section>
       <PhotoWrapper>
-        <Photo src={Logo} alt="Logo" />
+        <Photo src={Logo} alt="Klub tenisa stołowego" />
       </PhotoWrapper>
       <Content>
         <Description>
           Program sekcji tenisa stołowego dla dzieci i dorosłych zaprojektowany
           jest tak, aby promować rekreacyjną stronę aktywności fizycznej, która
-          łączy w sobie dobrą zabawę i pasję w gronie znajomych. 
-          <p>Treningi tenisa stołowego, dla juniorów i seniorów- w poniedziałki i środy o
-          godz.17.00-20.00</p>
+          łączy w sobie dobrą zabawę i pasję w gronie znajomych.
+          <p>
+            Treningi tenisa stołowego, dla juniorów i seniorów- w poniedziałki i
+            środy o godz.17.00-20.00
+          </p>
           <p>Prowadzi: Marcin Dadura</p>
         </Description>
       </Content>

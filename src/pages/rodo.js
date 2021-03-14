@@ -26,7 +26,7 @@ padding: 40px 0;
 
 const RodoPage = () => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
+    <SEO title="GOKIS" name="POLITYKA PRYWATNOŚCI" />
     <Layout />
     <Wrapper>
       <Title>POLITYKA PRYWATNOŚCI</Title>

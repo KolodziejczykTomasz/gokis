@@ -18,9 +18,9 @@ const StyledWrapper = styled.div`
 
 const FurmanPage = ({ data }) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-    <Layout /> 
-    <Furman />  
+    <SEO title="GOKIS" name="Zespół Ludowy Furman" />
+    <Layout />
+    <Furman />
     <ButtonList />
     <Footer />
   </StyledWrapper>

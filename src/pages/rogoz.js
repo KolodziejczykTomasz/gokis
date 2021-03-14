@@ -18,9 +18,9 @@ const StyledWrapper = styled.div`
 
 const RogozPage = ({ data }) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-    <Layout /> 
-    <Rogoz />  
+    <SEO title="GOKIS" name="Kapela ludowa Rogóżanie" />
+    <Layout />
+    <Rogoz />
     <ButtonList />
     <Footer />
   </StyledWrapper>

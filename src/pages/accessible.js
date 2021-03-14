@@ -27,7 +27,7 @@ const SubTitle = styled.h2`
 
 const AccessiblePage = () => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
+    <SEO title="GOKIS" name="Deklaracja dostępności" />
     <Layout />
     <Wrapper>
       <Title>Deklaracja dostępności</Title>
@@ -75,10 +75,12 @@ const AccessiblePage = () => (
 
       <SubTitle>Dostępność architektoniczna</SubTitle>
       <p>
-        Siedziba Gminnego Ośrodka Kultury i Sportu w Pilniku znajduje się w budynku przy
-        miejscowości Pilnik nr 2. Budynek jest wyposażony pochylnię. Przed wejściem do budynku znajduje się parking z
-        miejscami dla osób niepełnosprawnych. Nie ma przeciwwskazań wstępu osoby
-        niepełnosprawnej z psem asystującym. Gminny Ośrodek Kultury i Sportu nie ma możliwości zapewnienia tłumacza języka migowego na miejscu lub
+        Siedziba Gminnego Ośrodka Kultury i Sportu w Pilniku znajduje się w
+        budynku przy miejscowości Pilnik nr 2. Budynek jest wyposażony
+        pochylnię. Przed wejściem do budynku znajduje się parking z miejscami
+        dla osób niepełnosprawnych. Nie ma przeciwwskazań wstępu osoby
+        niepełnosprawnej z psem asystującym. Gminny Ośrodek Kultury i Sportu nie
+        ma możliwości zapewnienia tłumacza języka migowego na miejscu lub
         online.
       </p>
     </Wrapper>

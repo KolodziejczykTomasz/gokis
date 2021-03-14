@@ -18,9 +18,9 @@ const StyledWrapper = styled.div`
 
 const OrkiestraPage = ({ data }) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-    <Layout /> 
-    <Orkiestra />  
+    <SEO title="GOKIS" name="Gminna Orkiestra Dęta" />
+    <Layout />
+    <Orkiestra />
     <ButtonList />
     <Footer />
   </StyledWrapper>

@@ -18,9 +18,9 @@ const StyledWrapper = styled.div`
 
 const TennisPage = ({ data }) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-    <Layout /> 
-    <Tennis />  
+    <SEO title="GOKIS" name="Klub tenisa stołowego" />
+    <Layout />
+    <Tennis />
     <ButtonList />
     <Footer />
   </StyledWrapper>

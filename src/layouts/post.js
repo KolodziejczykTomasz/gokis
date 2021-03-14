@@ -158,7 +158,7 @@ const PostLayout = ({ data }) => {
               <MDXRenderer>{data.mdx.body}</MDXRenderer>
             </Description>
             <ButtonWrapper>
-              <ButtonMore as={Link} to="/allposts">
+              <ButtonMore aria-label="Powrót" as={Link} to="/allposts">
                 Powrót
               </ButtonMore>
             </ButtonWrapper>
@@ -166,9 +166,7 @@ const PostLayout = ({ data }) => {
               <Published>
                 Publikacja: {data.mdx.frontmatter.published}
               </Published>
-              <Author>
-               Autor: Admin
-              </Author>
+              <Author>Autor: {data.mdx.frontmatter.author}</Author>
             </ContentHeader>
           </Content>
         </Section>

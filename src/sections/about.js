@@ -4,13 +4,13 @@ import Logo from "../assets/images/logo.jpg"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
-  display: block;
-  margin-top: 550px;
+  display: grid;
+  grid-template-columns: 1fr;
 `
 
 const Section = styled.div`
   display: grid;
-  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-columns: 0.4fr 0.6fr; 
 `
 const PhotoWrapper = styled.div`
   display: flex;
@@ -34,11 +34,11 @@ const Description = styled.div`
 `
 
 const About = () => (
-  <Wrapper id="about">
+  <Wrapper id="about" style={{ marginTop: "100px" }}>
     <BreakeSection>O nas</BreakeSection>
     <Section>
       <PhotoWrapper>
-        <Photo src={Logo} alt="Logo Gminego Ośrodka Kultury i Sportu" />
+        <Photo src={Logo} alt="Gminny Ośrodek Kultury i Sportu" />
       </PhotoWrapper>
       <Content>
         <Description>

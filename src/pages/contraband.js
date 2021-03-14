@@ -18,9 +18,9 @@ const StyledWrapper = styled.div`
 
 const ContrabandPage = ({ data }) => (
   <StyledWrapper>
-    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-    <Layout /> 
-    <Contraband />  
+    <SEO title="GOKIS" name="Zespół wokalno-instrumentalny ContraBand'a" />
+    <Layout />
+    <Contraband />
     <ButtonList />
     <Footer />
   </StyledWrapper>
