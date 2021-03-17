@@ -39,60 +39,67 @@ const Wrapper = styled(Link)`
       bottom: 40px;
     }
   }
-  :first-child {
+  :nth-child(1n) {
     border-color: rgb(215, 58, 30);
-  }
-  :nth-child(2) {
-    border-color: rgb(0, 119, 179);
-  }
-  :nth-child(3) {
-    border-color: rgb(69, 100, 255);
-  }
-  :nth-child(4) {
-    border-color: rgb(73, 133, 0);
-  }
-  :nth-child(5) {
-    border-color: rgb(236, 0, 0);
-  }
-  :nth-child(6) {
-    border-color: rgb(114, 0, 255);
-  }
-  :nth-child(7) {
-    border-color: rgb(128, 64, 0);
-  }
-  :nth-child(8) {
-    border-color: rgb(215, 58, 30);
-  }
-  :nth-child(9) {
-    border-color: rgb(0, 119, 179);
   }
 
-  :first-child:after {
+  :nth-child(2n) {
+    border-color: rgb(0, 119, 179);
+  }
+  :nth-child(3n) {
+    border-color: rgb(69, 100, 255);
+  }
+  :nth-child(4n) {
+    border-color: rgb(73, 133, 0);
+  }
+  :nth-child(5n) {
+    border-color: rgb(236, 0, 0);
+  }
+  :nth-child(6n) {
+    border-color: rgb(114, 0, 255);
+  }
+  :nth-child(7n) {
+    border-color: rgb(128, 64, 0);
+  }
+  :nth-child(8n) {
+    border-color: rgb(215, 58, 30);
+  }
+  :nth-child(9n) {
+    border-color: rgb(0, 119, 179);
+  }
+  :nth-child(10n) {
+    border-color: orange;
+  }
+
+  :nth-child(1n):after {
     background: rgb(215, 58, 30);
   }
-  :nth-child(2):after {
+  :nth-child(2n):after {
     background: rgb(0, 119, 179);
   }
-  :nth-child(3):after {
+  :nth-child(3n):after {
     background: rgb(69, 100, 255);
   }
-  :nth-child(4):after {
+  :nth-child(4n):after {
     background: rgb(73, 133, 0);
   }
-  :nth-child(5):after {
+  :nth-child(5n):after {
     background: rgb(236, 0, 0);
   }
-  :nth-child(6):after {
+  :nth-child(6n):after {
     background: rgb(114, 0, 255);
   }
-  :nth-child(7):after {
+  :nth-child(7n):after {
     background: rgb(128, 64, 0);
   }
-  :nth-child(8):after {
+  :nth-child(8n):after {
     background: rgb(215, 58, 30);
   }
-  :nth-child(9):after {
+  :nth-child(9n):after {
     background: rgb(0, 119, 179);
+  }
+  :nth-child(10n):after {
+    background: orange;
   }
 
   :hover {

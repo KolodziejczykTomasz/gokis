@@ -1,13 +1,13 @@
 import React from "react"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
+import { Media } from "../sections/media"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import About from "../sections/about"
 import Footer from "../components/footer"
 import ButtonList from "../sections/buttonlist"
 import NewsPage from "../sections/news"
-
 
 const StyledWrapper = styled.div`
   display: block;
@@ -19,13 +19,14 @@ const StyledWrapper = styled.div`
 `
 
 const IndexPage = props => (
-  <StyledWrapper>   
-      <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-      <Layout /> 
-      <About />
-      <NewsPage {...props} />
-      <ButtonList />
-      <Footer />   
+  <StyledWrapper>
+    <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
+    <Layout />
+    <About />
+    <NewsPage {...props} />
+    <ButtonList />
+    <Media />
+    <Footer />
   </StyledWrapper>
 )
 
@@ -35,7 +36,7 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
-          slug        
+          slug
           altText
           published
           featuredImage {

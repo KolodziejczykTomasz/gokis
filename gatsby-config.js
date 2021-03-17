@@ -23,6 +23,9 @@ module.exports = {
         path: `${__dirname}/src/data/articles`,
       },
     },
-    `gatsby-plugin-mdx`,  
+    `gatsby-plugin-mdx`,
+    `gatsby-remark-responsive-iframe`,
+    `gatsby-remark-embed-video`,
+    `gatsby-plugin-react-helmet`,
   ],
 }
