@@ -1,7 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
-import { Media } from "../sections/media"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import About from "../sections/about"
@@ -25,7 +24,6 @@ const IndexPage = props => (
     <About />
     <NewsPage {...props} />
     <ButtonList />
-    <Media />
     <Footer />
   </StyledWrapper>
 )

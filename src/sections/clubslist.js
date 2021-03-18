@@ -43,10 +43,23 @@ const ClubList = () => (
         </thead>
         <tbody>
           <tr>
+            <th>Regulanim korzystania ze świetlic wiejskich</th>
+            <td align="center">
+              <a
+                href="http://gokispilnik.pl/files/regulamin.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginleft: "15" }}
+              >
+                <FaFileDownload style={{ fontSize: 30 }} />
+              </a>
+            </td>
+          </tr>
+          <tr>
             <th>Wniosek o wynajęcie świetlicy</th>
             <td align="center">
               <a
-                href=""
+                href="http://gokispilnik.pl/files/regulamin.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ marginleft: "15" }}

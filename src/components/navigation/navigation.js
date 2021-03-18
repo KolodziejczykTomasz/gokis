@@ -76,6 +76,14 @@ const Navigation = () => (
           <Link
             role="navigation"
             aria-label="Kontakt"
+            to="/clubs"
+            className="NavLinkItem"
+          >
+            Świetlice
+          </Link>
+          <Link
+            role="navigation"
+            aria-label="Kontakt"
             to="/#contact"
             className="NavLinkItem"
           >
