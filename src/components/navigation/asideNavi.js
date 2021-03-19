@@ -1,4 +1,4 @@
-import React, { Framgnent } from "react"
+import React, { Fragment } from "react"
 import { FaSearch, FaSearchMinus, FaSearchPlus, FaAdjust } from "react-icons/fa"
 
 import styled from "styled-components"
@@ -33,45 +33,47 @@ const MenuItem = styled.div`
   }
 `
 
-const AsideNavi = () => {
-  return (
-    <Framgnent>
-      <Menu aria-label="Menu accesible" id="accesibleWrapper">
-        <MenuItem
-          as="button"
-          id="accesibleIcon"
-          aria-label="Powiększenie czcionki na stronie po kliknięciu"
-          aria-hidden="true"
-        >
-          <FaSearchPlus />
-        </MenuItem>
-        <MenuItem
-          as="button"
-          id="accesibleIcon"
-          aria-label="Zmniejszenie czcionki na stronie po kliknięciu"
-          aria-hidden="true"
-        >
-          <FaSearchMinus />
-        </MenuItem>
-        <MenuItem
-          as="button"
-          id="accesibleIcon"
-          aria-label="Zmiana kontrastu strony po kliknięciu"
-          aria-hidden="true"
-        >
-          <FaAdjust />
-        </MenuItem>
-        <MenuItem
-          as="button"
-          id="accesibleIcon"
-          aria-label="Przywrócenie początkowej wielkości czcionki na stronie po kliknięciu"
-          aria-hidden="true"
-        >
-          <FaSearch />
-        </MenuItem>
-      </Menu>
-    </Framgnent>
-  )
-}
+const AsideNavi = ({ Reset, Contrast, ShrinkFontSize, GrowFontSize }) => (
+  <Fragment>
+    <Menu aria-label="Menu accesible" id="accesibleWrapper">
+      <MenuItem
+        as="button"
+        id="accesibleIcon"
+        aria-label="Powiększenie czcionki na stronie po kliknięciu"
+        aria-hidden="true"
+        onClick={GrowFontSize}
+      >
+        <FaSearchPlus />
+      </MenuItem>
+      <MenuItem
+        as="button"
+        id="accesibleIcon"
+        aria-label="Zmniejszenie czcionki na stronie po kliknięciu"
+        aria-hidden="true"
+        onClick={ShrinkFontSize}
+      >
+        <FaSearchMinus />
+      </MenuItem>
+      <MenuItem
+        as="button"
+        id="accesibleIcon"
+        aria-label="Zmiana kontrastu strony po kliknięciu"
+        aria-hidden="true"
+        onClick={Contrast}
+      >
+        <FaAdjust />
+      </MenuItem>
+      <MenuItem
+        as="button"
+        id="accesibleIcon"
+        aria-label="Przywrócenie początkowej wielkości czcionki na stronie po kliknięciu"
+        aria-hidden="true"
+        onClick={Reset}
+      >
+        <FaSearch />
+      </MenuItem>
+    </Menu>
+  </Fragment>
+)
 
 export default AsideNavi
