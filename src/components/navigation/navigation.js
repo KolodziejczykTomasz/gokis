@@ -96,7 +96,7 @@ const Navigation = () => (
             target="_blank"
             href="https://www.facebook.com/Gminny-Ośrodek-Kultury-i-Sportu-w-Pilniku-401376726727548"
           >
-            <span class="sr-only">Opens in new window</span>
+            <span className="sr-only">Opens in new window</span>
             <i aria-hidden="true"></i>
             <IconFacebook />
           </Nav.Link>

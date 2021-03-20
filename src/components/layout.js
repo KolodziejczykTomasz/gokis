@@ -1,62 +1,19 @@
-import React, { useState } from "react"
+import React from "react"
 import { ThemeProvider } from "styled-components"
 import { Hero } from "./hero"
 import { theme } from "../assets/styles/theme/theme"
-import { Helmet } from "react-helmet"
 import Navigation from "../components/navigation/navigation"
 import GlobalStyle from "../assets/styles/globalStyle"
 import CookieConsent from "react-cookie-consent"
-import AsideNavi from "../components/navigation/asideNavi"
 
-import styled from "styled-components"
 
-const Wrapper = styled.div`
-  background-color: ${({ contrast, theme }) =>
-    contrast ? theme[contrast] : "white"}; ;
-`
 
-const initialFormState = {
-  fontSize: "16px",
-  contrast: "white",
-}
-
-const Layout = ({ children }) => {
-  const [contrast, setContrast] = useState(initialFormState)
-  const [fontSize, setFontSize] = useState(initialFormState)
-
-  const Reset = () => {
-    alert("Good job 🥳")
-  }
-
-  const Contrast = () => {
-    alert("Good job 🥳")
-  }
-
-  const GrowFontSize = () => {
-    alert("Good job 🥳")
-  }
-
-  const ShrinkFontSize = () => {
-    alert("Good job 🥳")
-  }
-
-  return (
+const Layout = ({ children}) => {
+    return (
     <>
       <ThemeProvider theme={theme}>
-        <Wrapper style={{ fontSize: fontSize, backgroundColor: contrast }}>
-          <Helmet activeColor={contrast}>
-            {contrast === "yellow" ? (
-              <style>{"html{ background-color:yellow}"}</style>
-            ) : null}
-          </Helmet>
-          <GlobalStyle />
-          <Navigation />
-          <AsideNavi
-            Reset={Reset}
-            Contrast={Contrast}
-            ShrinkFontSize={ShrinkFontSize}
-            GrowFontSize={GrowFontSize}
-          />
+        <GlobalStyle />    
+          <Navigation />          
           <Hero />
           {children}
           <CookieConsent
@@ -85,9 +42,8 @@ const Layout = ({ children }) => {
               Akceptuję "Politykę prywatności" i wykorzystania plików cookies w
               serwisie.
             </span>
-          </CookieConsent>
-        </Wrapper>
-      </ThemeProvider>
+          </CookieConsent>     
+      </ThemeProvider>     
     </>
   )
 }

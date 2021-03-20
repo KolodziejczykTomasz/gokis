@@ -26,7 +26,7 @@ const MenuItem = styled.div`
   align-items: center;
   background-color: blue;
   color: white;
-  transition: 0.2s;
+  transition: 0.3s;
   :hover {
     background-color: white;
     color: blue;
