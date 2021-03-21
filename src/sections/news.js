@@ -6,7 +6,16 @@ import styled from "styled-components"
 
 const Container = styled.div`
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
+  color: ${({ activeColor, value }) => {
+    if (activeColor !== "yellow") return "white"
+    return "black"
+  }};
+
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === "yellow") return "yellow"
+    return "transparent"
+  }};
 `
 
 const Wrapper = styled.div`
@@ -14,7 +23,7 @@ const Wrapper = styled.div`
   margin-top: 100px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
 `
 
 const ArticlesWrapper = styled.div`
@@ -83,14 +92,21 @@ const ButtonMore = styled(Link)`
   }
 `
 
-const NewsPage = ({ data }) => {
+
+
+
+const NewsPage = ({ data, activeSize, activeColor }) => {
   const {
     allMdx: { nodes },
   } = data
   return (
-    <Container style={{ marginTop: "100px" }}>
+    <Container
+      style={{ marginTop: "100px" }}
+      activeSize={activeSize}
+      activeColor={activeColor}
+    >
       <BreakeSection>Aktualności</BreakeSection>
-      <Wrapper id="news">
+      <Wrapper id="news" activeColor={activeColor} activeSize={activeSize}>
         <ArticlesWrapper>
           {nodes
             .slice(0, 3)

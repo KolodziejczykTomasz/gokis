@@ -3,6 +3,18 @@ import BreakeSection from "../components/breakeSection"
 import styled from "styled-components"
 import ButtonItem from "../components/buttonitem"
 
+const Section = styled.div`
+  color: ${({ activeColor, value }) => {
+    if (activeColor !== "yellow") return "white"
+    return "black"
+  }};
+
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === "yellow") return "yellow"
+    return "transparent"
+  }};
+`
+
 const Wrapper = styled.div`
   display: flex;
   margin-bottom: 75px;
@@ -11,8 +23,13 @@ const Wrapper = styled.div`
   align-items: center;
 `
 
-const ButtonList = () => (
-  <div id="projects" style={{ marginTop: "100px" }}>
+const ButtonList = ({ activeSize, activeColor }) => (
+  <Section
+    id="projects"
+    style={{ marginTop: "100px" }}
+    activeSize={activeSize}
+    activeColor={activeColor}
+  >
     <BreakeSection>Zajęcia</BreakeSection>
     <Wrapper>
       <ButtonItem linkItem="/furman">Zespół Ludowy Furman</ButtonItem>
@@ -31,7 +48,7 @@ const ButtonList = () => (
       </ButtonItem>
       <ButtonItem linkItem="/mazoretki">Mażoretki</ButtonItem>
     </Wrapper>
-  </div>
+  </Section>
 )
 
 export default ButtonList

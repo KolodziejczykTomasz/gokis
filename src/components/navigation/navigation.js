@@ -9,6 +9,8 @@ import "./navigation.css"
 import styled from "styled-components"
 import "bootstrap/dist/css/bootstrap.min.css"
 
+const Wrapper = styled.div``
+
 const IconFacebook = styled(FaFacebookSquare)`
   font-size: 40px;
   color: #536e79;
@@ -19,90 +21,106 @@ const IconFacebook = styled(FaFacebookSquare)`
   }
 `
 
-const Navigation = () => (
-  <div id="home">
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      bg="white"
-      fixed="top"
-      variant="light"
-      className="NavbarTop"
-    >
-      <Navbar.Brand href="#home">
-        <img
-          src={Logo}
-          width="90"
-          height="90"
-          className="d-inline-block align-top"
-          alt="GOKIS logo"
-        />
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto" style={{ margin: "0 auto", color: "white" }}>
-          <Link
-            role="navigation"
-            aria-label=" Strona główna"
-            to="/#home"
-            className="NavLinkItem"
-          >
-            Home
-          </Link>
-          <Link
-            role="navigation"
-            aria-label=" Aktualności"
-            to="/#news"
-            className="NavLinkItem"
-          >
-            Aktualności
-          </Link>
-          <Link
-            role="navigation"
-            aria-label="O nas"
-            to="/#about"
-            className="NavLinkItem"
-          >
-            O nas
-          </Link>
-          <Link
-            role="navigation"
-            aria-label="Zajęcia"
-            to="/#projects"
-            className="NavLinkItem"
-          >
-            Zajęcia
-          </Link>
-          <Link
-            role="navigation"
-            aria-label="Kontakt"
-            to="/clubs"
-            className="NavLinkItem"
-          >
-            Świetlice
-          </Link>
-          <Link
-            role="navigation"
-            aria-label="Kontakt"
-            to="/#contact"
-            className="NavLinkItem"
-          >
-            Kontakt
-          </Link>
-        </Nav>
-        <Nav>
-          <Nav.Link
-            eventKey={2}
-            target="_blank"
-            href="https://www.facebook.com/Gminny-Ośrodek-Kultury-i-Sportu-w-Pilniku-401376726727548"
-          >
-            <span className="sr-only">Opens in new window</span>
-            <i aria-hidden="true"></i>
-            <IconFacebook />
-          </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  </div>
-)
+const Navigation = ({ activeSize, activeColor }) => {
+  const getBackgroundColor = () => {
+    let color
+    if (activeColor === "yellow") {
+      color = "yellow"
+    } else color = "white"
+    return color
+  }
+
+  return (
+    <Wrapper id="home">
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        bg=""
+        fixed="top"
+        variant="light"
+        className="NavbarTop"
+        activeSize={activeSize}
+        activeColor={activeColor}
+        style={{
+          backgroundColor: getBackgroundColor(),
+        }}
+      >
+        <Navbar.Brand href="#home">
+          <img
+            src={Logo}
+            width="90"
+            height="90"
+            className="d-inline-block align-top"
+            alt="GOKIS logo"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto" style={{ margin: "0 auto", color: "white" }}>
+            <Link
+              role="navigation"
+              aria-label=" Strona główna"
+              to="/#home"
+              className="NavLinkItem"
+            >
+              Home
+            </Link>
+            <Link
+              role="navigation"
+              aria-label=" Aktualności"
+              to="/#news"
+              className="NavLinkItem"
+            >
+              Aktualności
+            </Link>
+            <Link
+              role="navigation"
+              aria-label="O nas"
+              to="/#about"
+              className="NavLinkItem"
+            >
+              O nas
+            </Link>
+            <Link
+              role="navigation"
+              aria-label="Zajęcia"
+              to="/#projects"
+              className="NavLinkItem"
+            >
+              Zajęcia
+            </Link>
+            <Link
+              role="navigation"
+              aria-label="Kontakt"
+              to="/clubs"
+              className="NavLinkItem"
+            >
+              Świetlice
+            </Link>
+            <Link
+              role="navigation"
+              aria-label="Kontakt"
+              to="/#contact"
+              className="NavLinkItem"
+            >
+              Kontakt
+            </Link>
+          </Nav>
+          <Nav>
+            <Nav.Link
+              eventKey={2}
+              target="_blank"
+              href="https://www.facebook.com/Gminny-Ośrodek-Kultury-i-Sportu-w-Pilniku-401376726727548"
+            >
+              <span className="sr-only">Opens in new window</span>
+              <i aria-hidden="true"></i>
+              <IconFacebook />
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </Wrapper>
+  )
+}
+
 export default Navigation

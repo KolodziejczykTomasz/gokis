@@ -6,6 +6,10 @@ import styled from "styled-components"
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === "yellow") return "yellow"
+    return "transparent"
+  }};
 `
 
 const Section = styled.div`
@@ -31,17 +35,26 @@ const Description = styled.div`
   padding: 30px 20px 30px 40px;
   font-size: 18px;
   line-height: 32px;
+  color: ${({ activeColor, value }) => {
+    if (activeColor !== "yellow") return "white"
+    return "black"
+  }};
 `
 
-const About = () => (
-  <Wrapper id="about" style={{ marginTop: "100px" }}>
+const About = ({ activeSize, activeColor }) => (
+  <Wrapper
+    id="about"
+    style={{ marginTop: "100px" }}
+    activeSize={activeSize}
+    activeColor={activeColor}
+  >
     <BreakeSection>O nas</BreakeSection>
     <Section>
       <PhotoWrapper>
         <Photo src={Logo} alt="Gminny Ośrodek Kultury i Sportu" />
       </PhotoWrapper>
       <Content>
-        <Description>
+        <Description activeSize={activeSize} activeColor={activeColor}>
           Cele i zadania GOKiS w Pilniku to: organizowanie zespołowego
           uczestnictwa w kulturze, prowadzenie różnorodnych form edukacji
           regionalnej, organizowanie imprez o charakterze indywidualnym,

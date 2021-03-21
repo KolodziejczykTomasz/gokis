@@ -8,7 +8,6 @@ const WrapperFullWidth = styled.div`
   margin: 0;
   width: 100%;
   height: 100%;
-
   position: relative;
 `
 
@@ -16,47 +15,83 @@ const Wrapper = styled.div`
   display: block;
   width: 100%;
   padding: 20px 20px;
-  background-color: ${({ activeColor, theme }) =>
-    activeColor ? theme[activeColor] : "black"};
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === "yellow") return "yellow"
+    return "black"
+  }};
   position: absolute;
 `
 
 const WrapperTop = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;
-  color: #fff;
+  color: ${({ activeColor, value }) => {
+    if (activeColor !== "yellow") return "white"
+    return "black"
+  }};
+  font-size: ${({ activeSize, value }) => {
+    if (activeSize !== 12) return `${activeSize}px`
+    return "12px"
+  }};
   margin-bottom: 75px;
+
+  & li {
+    font-size: ${({ activeSize, value }) => {
+      if (activeSize !== 20) return `${activeSize}px`
+      return "14px"
+    }};
+  }
 `
 
 const WrapperBottom = styled.div`
   display: grid;
   grid-template-columns: 0.3fr 0.4fr 0.3fr;
-  color: #fff;
+  color: ${({ activeColor, value }) => {
+    if (activeColor !== "yellow") return "white"
+    return "black"
+  }};
   place-items: center;
   padding-bottom: 10px;
-  & a {
-    text-decoration: none;
-    color: #fff;
-  }
+
   & a:hover {
     text-decoration: none;
     color: red;
   }
 `
 
+const Header = styled.p`
+  padding-bottom: 40px;
+  font-size: 40px;
+`
+
+const MenuItem = styled(Link)`
+  & span {
+    color: ${({ activeColor, value }) => {
+      if (activeColor !== "yellow") return "white"
+      return "black"
+    }};
+  }
+`
+
 const Copyright = styled.span`
   text-transform: uppercase;
-  color: #fff;
-  font-size: 12px;
   padding-right: 5px;
+  color: ${({ activeColor, value }) => {
+    if (activeColor !== "yellow") return "white"
+    return "black"
+  }};
+  font-size: ${({ activeSize, value }) => {
+    if (activeSize !== 12) return `${activeSize}px`
+    return "12px"
+  }};
 `
 
 const Footer = ({ activeSize, activeColor }) => (
-  <WrapperFullWidth activeSize={activeSize} activeColor={activeColor}>
-    <Wrapper style={{ fontSize: `${activeSize}px` }} id="contact" activeSize={activeSize} activeColor={activeColor}>
-      <WrapperTop>
-        <div >
-          <h1 style={{ paddingBottom: "40px" }}>Kontakt</h1>
+  <WrapperFullWidth>
+    <Wrapper id="contact" activeColor={activeColor}>
+      <WrapperTop activeSize={activeSize} activeColor={activeColor}>
+        <div>
+          <Header activeSize={activeSize}>Kontakt</Header>
           <ul>
             <li style={{ fontWeight: 600, fontSize: "20px" }}>
               Gminny Ośrodek Kultury i Sportu
@@ -76,7 +111,7 @@ const Footer = ({ activeSize, activeColor }) => (
           </ul>
         </div>
         <div>
-          <h1 style={{ paddingBottom: "40px" }}>Jak dojechać</h1>
+          <Header activeSize={activeSize}>Jak dojechać</Header>
           <div>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2338.3662267262666!2d20.555843415785766!3d54.12043688014852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e2f5078d6708b5%3A0x4b60b7e70795a017!2sGminny%20O%C5%9Brodek%20Kultury!5e0!3m2!1spl!2spl!4v1613416935177!5m2!1spl!2spl"
@@ -90,26 +125,29 @@ const Footer = ({ activeSize, activeColor }) => (
         </div>
       </WrapperTop>
       <WrapperBottom>
-        <div>
-          <Link
+        <div activeColor={activeColor} activeSize={activeSize}>
+          <MenuItem
             role="navigation"
             aria-label="Deklaracja dostępności"
             to="/accessible"
+            activeColor={activeColor}
+            activeSize={activeSize}
           >
-            Deklaracja dostępności
-          </Link>
+            <span>Deklaracja dostępności</span>
+          </MenuItem>
         </div>
-        <div>
-          <Link
+        <div activeColor={activeColor} activeSize={activeSize}>
+          <MenuItem
             role="navigation"
             aria-label="Polityka bezpieczeństwa"
             to="/rodo"
+            activeColor={activeColor}
           >
-            Polityka bezpieczeństwa
-          </Link>
+            <span>Polityka bezpieczeństwa</span>
+          </MenuItem>
         </div>
         <div>
-          <Copyright>
+          <Copyright activeColor={activeColor} activeSize={activeSize}>
             © {new Date().getFullYear()}, Webside developed by
             <span> NETTOM</span>
           </Copyright>
@@ -118,6 +156,5 @@ const Footer = ({ activeSize, activeColor }) => (
     </Wrapper>
   </WrapperFullWidth>
 )
-
 
 export default Footer
