@@ -21,10 +21,10 @@ const IconFacebook = styled(FaFacebookSquare)`
   }
 `
 
-const Navigation = ({ activeSize, activeColor }) => {
+const Navigation = ({ plusSize, minusSize, activeColor }) => {
   const getBackgroundColor = () => {
     let color
-    if (activeColor === "yellow") {
+    if (activeColor === true) {
       color = "yellow"
     } else color = "white"
     return color
@@ -39,8 +39,9 @@ const Navigation = ({ activeSize, activeColor }) => {
         fixed="top"
         variant="light"
         className="NavbarTop"
-        activeSize={activeSize}
         activeColor={activeColor}
+        plusSize={plusSize}
+        minusSize={minusSize}
         style={{
           backgroundColor: getBackgroundColor(),
         }}
@@ -56,12 +57,24 @@ const Navigation = ({ activeSize, activeColor }) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto" style={{ margin: "0 auto", color: "white" }}>
+          <Nav
+            className="mr-auto"
+            style={{
+              margin: "0 auto",
+              color: "white",
+              fontSize: `${16 + plusSize - minusSize}px`,
+            }}
+            plusSize={plusSize}
+            minusSize={minusSize}
+          >
             <Link
               role="navigation"
               aria-label=" Strona główna"
               to="/#home"
               className="NavLinkItem"
+              plusSize={plusSize}
+              minusSize={minusSize}
+              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
             >
               Home
             </Link>
@@ -70,6 +83,9 @@ const Navigation = ({ activeSize, activeColor }) => {
               aria-label=" Aktualności"
               to="/#news"
               className="NavLinkItem"
+              plusSize={plusSize}
+              minusSize={minusSize}
+              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
             >
               Aktualności
             </Link>
@@ -78,6 +94,9 @@ const Navigation = ({ activeSize, activeColor }) => {
               aria-label="O nas"
               to="/#about"
               className="NavLinkItem"
+              plusSize={plusSize}
+              minusSize={minusSize}
+              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
             >
               O nas
             </Link>
@@ -86,6 +105,9 @@ const Navigation = ({ activeSize, activeColor }) => {
               aria-label="Zajęcia"
               to="/#projects"
               className="NavLinkItem"
+              plusSize={plusSize}
+              minusSize={minusSize}
+              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
             >
               Zajęcia
             </Link>
@@ -94,6 +116,9 @@ const Navigation = ({ activeSize, activeColor }) => {
               aria-label="Kontakt"
               to="/clubs"
               className="NavLinkItem"
+              plusSize={plusSize}
+              minusSize={minusSize}
+              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
             >
               Świetlice
             </Link>
@@ -102,6 +127,9 @@ const Navigation = ({ activeSize, activeColor }) => {
               aria-label="Kontakt"
               to="/#contact"
               className="NavLinkItem"
+              plusSize={plusSize}
+              minusSize={minusSize}
+              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
             >
               Kontakt
             </Link>

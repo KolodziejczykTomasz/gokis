@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql, Link } from "gatsby"
 import Image from "gatsby-image"
@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import BreakeSection from "../components/breakeSection"
-
+import AsideNavi from "../components/navigation/asideNavi"
 import styled from "styled-components"
 
 const StyledWrapper = styled.div`
@@ -16,6 +16,10 @@ const StyledWrapper = styled.div`
   padding: 0;
   max-width: 1250px;
   height: 90%;
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === "yellow") return "yellow"
+    return "white"
+  }};
 `
 
 const Section = styled.div`
@@ -139,40 +143,81 @@ export const query = graphql`
     }
   }
 `
-const PostLayout = ({ data }) => {
+const PostLayout = ({ data}) => {
+
+  const [contrastColor, setContrastColor] = useState(false)
+  const [plusSize, setPlusSize] = useState(0)
+  const [minusSize, setMinusSize] = useState(0)
+
+  const Reset = () => {
+    setContrastColor("black"), setPlusSize(0), setMinusSize(0)
+  }
+
+  const Contrast = () => {
+    setContrastColor(!contrastColor)
+  }
+
+  const GrowFontSize = () => {
+    setPlusSize(plusSize + 1)
+  }
+
+  const ShrinkFontSize = () => {
+    setMinusSize(minusSize + 1)
+  }
+
   return (
-    <StyledWrapper>
-      <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-      <Layout />
-      <div id="article" style={{ marginTop: "100px", marginBottom: "100px" }}>
-        <BreakeSection>{data.mdx.frontmatter.title}</BreakeSection>
-        <Section>
-          <PhotoWrapper>
-            <Photo
-              fixed={data.mdx.frontmatter.featuredImage.childImageSharp.fixed}
-              alt={data.mdx.frontmatter.altText}
-            />
-          </PhotoWrapper>
-          <Content>
-            <Description>
-              <MDXRenderer>{data.mdx.body}</MDXRenderer>
-            </Description>
-            <ButtonWrapper>
-              <ButtonMore aria-label="Powrót" as={Link} to="/allposts">
-                Powrót
-              </ButtonMore>
-            </ButtonWrapper>
-            <ContentHeader>
-              <Published>
-                Publikacja: {data.mdx.frontmatter.published}
-              </Published>
-              <Author>Autor: {data.mdx.frontmatter.author}</Author>
-            </ContentHeader>
-          </Content>
-        </Section>
-      </div>
-      <Footer />
-    </StyledWrapper>
+    <>
+      <AsideNavi
+        Reset={Reset}
+        Contrast={Contrast}
+        ShrinkFontSize={ShrinkFontSize}
+        GrowFontSize={GrowFontSize}
+      />
+      <StyledWrapper
+        plusSize={plusSize}
+        minusSize={minusSize}
+        activeColor={contrastColor}
+      >
+        <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
+        <Layout />
+        <div id="article" style={{ marginTop: "100px", marginBottom: "100px" }}>
+          <BreakeSection>{data.mdx.frontmatter.title}</BreakeSection>
+          <Section
+            plusSize={plusSize}
+            minusSize={minusSize}
+            activeColor={contrastColor}
+          >
+            <PhotoWrapper>
+              <Photo
+                fixed={data.mdx.frontmatter.featuredImage.childImageSharp.fixed}
+                alt={data.mdx.frontmatter.altText}
+              />
+            </PhotoWrapper>
+            <Content
+              plusSize={plusSize}
+              minusSize={minusSize}
+              activeColor={contrastColor}
+            >
+              <Description>
+                <MDXRenderer>{data.mdx.body}</MDXRenderer>
+              </Description>
+              <ButtonWrapper>
+                <ButtonMore aria-label="Powrót" as={Link} to="/allposts">
+                  Powrót
+                </ButtonMore>
+              </ButtonWrapper>
+              <ContentHeader>
+                <Published>
+                  Publikacja: {data.mdx.frontmatter.published}
+                </Published>
+                <Author>Autor: {data.mdx.frontmatter.author}</Author>
+              </ContentHeader>
+            </Content>
+          </Section>
+        </div>
+        <Footer />
+      </StyledWrapper>
+    </>
   )
 }
 

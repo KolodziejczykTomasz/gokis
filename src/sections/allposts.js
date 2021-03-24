@@ -4,8 +4,12 @@ import PostItem from "../components/postItem"
 import styled from "styled-components"
 
 const Container = styled.div`
- margin: 0 auto;
- width: 90%;
+  margin: 0 auto;
+  width: 90%;
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === true) return "yellow"
+    return "white"
+  }};
 `
 
 const ArticlesWrapper = styled.div`
@@ -13,7 +17,7 @@ const ArticlesWrapper = styled.div`
   margin-bottom: 75px; 
 `
 
-const AllPost = ({ data }) => {
+const AllPost = ({ data, plusSize, minusSize, activeColor }) => {
   const {
     allMdx: { nodes },
   } = data

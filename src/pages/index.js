@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
-import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import About from "../sections/about"
@@ -9,6 +8,7 @@ import Footer from "../components/footer"
 import ButtonList from "../sections/buttonlist"
 import NewsPage from "../sections/news"
 import AsideNavi from "../components/navigation/asideNavi"
+
 
 const StyledWrapper = styled.div`
   display: block;
@@ -18,49 +18,77 @@ const StyledWrapper = styled.div`
   max-width: 1250px;
   height: 90%;
   color: ${({ activeColor, value }) => {
-    if (activeColor !== "yellow") return "white"
-    return "black"
+    if (activeColor === true) return "black"
+    return "white"
   }};
   background-color: ${({ activeColor, value }) => {
-    if (activeColor === "yellow") return "yellow"
+    if (activeColor === true) return "yellow"
     return "transparent"
   }};
 `
 
+
 const IndexPage = props => {
-  const [contrastColor, setContrastColor] = useState("")
-  const [fontSize, setFontSize] = useState(14)
+  const [contrastColor, setContrastColor] = useState(false)
+  const [plusSize, setPlusSize] = useState(0)
+  const [minusSize, setMinusSize] = useState(0)
+
+  
 
   const Reset = () => {
-    setContrastColor("black"), setFontSize(14)
+    setContrastColor("black"), setPlusSize(0), setMinusSize(0)
   }
 
   const Contrast = () => {
-    setContrastColor("yellow")
+    setContrastColor(!contrastColor)
   }
 
   const GrowFontSize = () => {
-    setFontSize(fontSize + 1)
+    setPlusSize(plusSize + 1)
   }
 
   const ShrinkFontSize = () => {
-    setFontSize(fontSize - 1)
+    setMinusSize(minusSize + 1)
   }
-
   return (
-    <StyledWrapper activeSize={fontSize} activeColor={contrastColor}>
+    <StyledWrapper
+      plusSize={plusSize}
+      minusSize={minusSize}
+      activeColor={contrastColor}
+    >
       <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-      <Layout activeSize={fontSize} activeColor={contrastColor} />
+      <Layout
+        plusSize={plusSize}
+        minusSize={minusSize}
+        activeColor={contrastColor}     
+      />
       <AsideNavi
         Reset={Reset}
         Contrast={Contrast}
         ShrinkFontSize={ShrinkFontSize}
         GrowFontSize={GrowFontSize}
       />
-      <About activeSize={fontSize} activeColor={contrastColor} />
-      <NewsPage {...props} activeSize={fontSize} activeColor={contrastColor} />
-      <ButtonList activeSize={fontSize} activeColor={contrastColor} />
-      <Footer activeSize={fontSize} activeColor={contrastColor} />
+      <About
+        plusSize={plusSize}
+        minusSize={minusSize}
+        activeColor={contrastColor}
+      />
+      <NewsPage
+        {...props}
+        plusSize={plusSize}
+        minusSize={minusSize}
+        activeColor={contrastColor}
+      />
+      <ButtonList
+        plusSize={plusSize}
+        minusSize={minusSize}
+        activeColor={contrastColor}
+      />
+      <Footer
+        plusSize={plusSize}
+        minusSize={minusSize}
+        activeColor={contrastColor}   
+      />
     </StyledWrapper>
   )
 }

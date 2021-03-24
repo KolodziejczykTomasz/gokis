@@ -8,13 +8,13 @@ const Container = styled.div`
   margin: 0 auto;
   width: 100%;
   color: ${({ activeColor, value }) => {
-    if (activeColor !== "yellow") return "white"
-    return "black"
+    if (activeColor === true) return "black"
+    return "white"
   }};
 
   background-color: ${({ activeColor, value }) => {
-    if (activeColor === "yellow") return "yellow"
-    return "transparent"
+    if (activeColor === true) return "yellow"
+    return "white"
   }};
 `
 
@@ -95,18 +95,25 @@ const ButtonMore = styled(Link)`
 
 
 
-const NewsPage = ({ data, activeSize, activeColor }) => {
+const NewsPage = ({ data, activeColor, plusSize, minusSize }) => {
   const {
     allMdx: { nodes },
   } = data
+
   return (
     <Container
       style={{ marginTop: "100px" }}
-      activeSize={activeSize}
       activeColor={activeColor}
+      plusSize={plusSize}
+      minusSize={minusSize}
     >
       <BreakeSection>Aktualności</BreakeSection>
-      <Wrapper id="news" activeColor={activeColor} activeSize={activeSize}>
+      <Wrapper
+        id="news"
+        activeColor={activeColor}
+        plusSize={plusSize}
+        minusSize={minusSize}
+      >
         <ArticlesWrapper>
           {nodes
             .slice(0, 3)
@@ -123,11 +130,20 @@ const NewsPage = ({ data, activeSize, activeColor }) => {
                   published={published}
                   slug={slug}
                   image={featuredImage.childImageSharp.fluid}
+                  plusSize={plusSize}
+                  minusSize={minusSize}
                 />
               )
             )}
         </ArticlesWrapper>
-        <ButtonMore to="/allposts">Wszystkie aktualności</ButtonMore>
+        <ButtonMore
+          plusSize={plusSize}
+          minusSize={minusSize}
+          style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+          to="/allposts"
+        >
+          Wszystkie aktualności
+        </ButtonMore>
       </Wrapper>
     </Container>
   )

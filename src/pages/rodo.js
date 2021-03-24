@@ -13,7 +13,10 @@ const StyledWrapper = styled.div`
   padding: 0;
   max-width: 1250px;
   height: 90%;
-  
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === true) return "yellow"
+    return "white"
+  }};
 `
 const Wrapper = styled.div`
 padding: 75px 20px;

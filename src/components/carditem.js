@@ -90,11 +90,28 @@ const ButtonMore = styled.div`
   }
 `
 
-const CardItem = ({ title, altText, image, published, excerpt, slug }) => {
+const CardItem = ({
+  title,
+  altText,
+  image,
+  published,
+  excerpt,
+  slug,
+  plusSize,
+  minusSize,
+}) => {
   return (
-    <CardBody>
+    <CardBody
+      plusSize={plusSize}
+      minusSize={minusSize}
+      style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+    >
       <CardTitle>{title}</CardTitle>
-      <CardDate style={{ fontSize: "14px" }}>
+      <CardDate
+        plusSize={plusSize}
+        minusSize={minusSize}
+        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+      >
         <FaRegCalendarAlt style={{ marginRight: "5px", marginTop: "-3px" }} />
         {published}
       </CardDate>
@@ -102,11 +119,24 @@ const CardItem = ({ title, altText, image, published, excerpt, slug }) => {
       <CardImage>
         <StyledImage fluid={image} alt={altText} />
       </CardImage>
-      <CardExcerpt>{excerpt}</CardExcerpt>
+      <CardExcerpt
+        plusSize={plusSize}
+        minusSize={minusSize}
+        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+      >
+        {excerpt}
+      </CardExcerpt>
       <CardFotter>
         <hr />
 
-        <ButtonMore as={Link} aria-label="Więcej" to={`/${slug}`}>
+        <ButtonMore
+          plusSize={plusSize}
+          minusSize={minusSize}
+          style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+          as={Link}
+          aria-label="Więcej"
+          to={`/${slug}`}
+        >
           Więcej
         </ButtonMore>
       </CardFotter>

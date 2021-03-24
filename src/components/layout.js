@@ -6,12 +6,16 @@ import Navigation from "../components/navigation/navigation"
 import GlobalStyle from "../assets/styles/globalStyle"
 import CookieConsent from "react-cookie-consent"
 
-const Layout = ({ children, activeSize, activeColor }) => {
+const Layout = ({ children, plusSize, minusSize, activeColor }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Navigation activeSize={activeSize} activeColor={activeColor} />
+        <Navigation
+          plusSize={plusSize}
+          minusSize={minusSize}
+          activeColor={activeColor}
+        />
         <Hero />
         {children}
         <CookieConsent

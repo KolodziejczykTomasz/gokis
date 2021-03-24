@@ -11,6 +11,10 @@ const StyledWrapper = styled.div`
   padding: 0;
   max-width: 1250px;
   height: 90%;
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === true) return "yellow"
+    return "white"
+  }};
 `
 
 const Wrapper = styled.div`
@@ -25,7 +29,16 @@ const SubTitle = styled.h2`
   text-align: center;
 `
 
-const AccessiblePage = () => (
+const AccessiblePage = () => {
+  
+  return(
+  <>
+  <AsideNavi
+        Reset={Reset}
+        Contrast={Contrast}
+        ShrinkFontSize={ShrinkFontSize}
+        GrowFontSize={GrowFontSize}
+      />
   <StyledWrapper>
     <SEO title="GOKIS" name="Deklaracja dostępności" />
     <Layout />
@@ -86,6 +99,7 @@ const AccessiblePage = () => (
     </Wrapper>
     <Footer />
   </StyledWrapper>
-)
+  </>
+)}
 
 export default AccessiblePage
