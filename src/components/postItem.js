@@ -31,7 +31,7 @@ const CardHeaderDate = styled.div`
 const CardMain = styled.div`
   display: grid;
   grid-template-columns: 0.3fr 0.7fr;
-  font-size: 15px;
+  font-size: 15px;  
 `
 const CardMainPhoto = styled.div`
   margin-bottom: 10px;
@@ -44,7 +44,7 @@ const CardMainPhotoItem = styled(Image)`
   align-items: right;
   -moz-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);  
 `
 
 const ButtonMore = styled.div`
@@ -60,7 +60,6 @@ const ButtonMore = styled.div`
   float: right;
   text-align: center;
   border: 1px solid transparent;
-  
   & :hover {
     border: 1px solid rgb(236, 0, 0);
     color: rgb(236, 0, 0);
@@ -71,7 +70,7 @@ const ButtonMore = styled.div`
 
 const CardWrapper = styled.div`
   height: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 50px;  
   -moz-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
   box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
@@ -80,28 +79,71 @@ const CardWrapper = styled.div`
 const CardMainContent = styled.div`
   display: flex;
   align-items: center;
-  padding-right: 50px;  
+  padding-right: 50px;
   hyphens: auto;
   word-wrap: break-word;
+ 
 `
 
 const CardFooter = styled.div`
   display: flex;
   justify-content: flex-end;
+
 `
 
-const PostItem = ({ title, altText, image, published, excerpt, slug }) => {
+const PostItem = ({
+  title,
+  altText,
+  image,
+  published,
+  excerpt,
+  slug,
+  plusSize,
+  minusSize,
+  activeColor,
+}) => {
   return (
-    <CardWrapper>
-      <CardHeader>
+    <CardWrapper
+      plusSize={plusSize}
+      minusSize={minusSize}
+      activeColor={activeColor}
+      style={{
+        fontSize: `${16 + plusSize - minusSize}px`,
+        backgroundColor: activeColor === true ? "yellow" : "white",
+      }}
+    >
+      <CardHeader
+        plusSize={plusSize}
+        minusSize={minusSize}
+        activeColor={activeColor}
+        style={{
+          fontSize: `${16 + plusSize - minusSize}px`,
+          backgroundColor: activeColor === true ? "yellow" : "white",
+        }}
+      >
         <CardHeaderDate className="date">{published}</CardHeaderDate>
         <CardHeaderTitle>{title}</CardHeaderTitle>
       </CardHeader>
-      <CardMain>
+      <CardMain
+        plusSize={plusSize}
+        minusSize={minusSize}
+        activeColor={activeColor}
+        style={{
+          fontSize: `${16 + plusSize - minusSize}px`,
+          backgroundColor: activeColor === true ? "yellow" : "white",
+        }}
+      >
         <CardMainPhoto>
           <CardMainPhotoItem fluid={image} alt={altText} />
         </CardMainPhoto>
-        <CardMainContent>{excerpt}</CardMainContent>
+        <CardMainContent
+          plusSize={plusSize}
+          minusSize={minusSize}
+          activeColor={activeColor}
+          style={{ backgroundColor: activeColor === true ? "yellow" : "white" }}
+        >
+          {excerpt}
+        </CardMainContent>
       </CardMain>
       <CardFooter>
         <ButtonMore

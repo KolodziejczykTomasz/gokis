@@ -28,15 +28,15 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const Rogoz = () => (
+const Rogoz = ({ plusSize, minusSize }) => (
   <div id="rogoz" style={{ marginTop: "100px" }}>
     <BreakeSection>Kapela ludowa Rogóżanie</BreakeSection>
-    <Section>
+    <Section style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
       <PhotoWrapper>
         <Photo src={Logo} alt="Gminny Ośrodek Kultury i Sportu" />
       </PhotoWrapper>
       <Content>
-        <Description>
+        <Description style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
           Kapela powstała we wsi Rogóż w Gminie Lidzbark Warmiński w sierpniu
           1991 roku. Tworzy ją 13 osób, które w tradycyjnych strojach
           warmińskich wykonują pieśni ludowe i biesiadne, przy akompaniamencie

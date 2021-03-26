@@ -114,7 +114,11 @@ const NewsPage = ({ data, activeColor, plusSize, minusSize }) => {
         plusSize={plusSize}
         minusSize={minusSize}
       >
-        <ArticlesWrapper>
+        <ArticlesWrapper
+          activeColor={activeColor}
+          plusSize={plusSize}
+          minusSize={minusSize}
+        >
           {nodes
             .slice(0, 3)
             .map(

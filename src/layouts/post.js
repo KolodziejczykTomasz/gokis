@@ -17,7 +17,7 @@ const StyledWrapper = styled.div`
   max-width: 1250px;
   height: 90%;
   background-color: ${({ activeColor, value }) => {
-    if (activeColor === "yellow") return "yellow"
+    if (activeColor === true) return "yellow"
     return "white"
   }};
 `
@@ -25,6 +25,7 @@ const StyledWrapper = styled.div`
 const Section = styled.div`
   display: flex;
   flex-direction: row;
+
   @media (max-width: 920px) {
       flex-direction: column;
   }
@@ -59,6 +60,7 @@ const Content = styled.div`
   height: 100%;
   width: 60%;
   position: relative;
+
   @media (max-width: 920px) {
       width: 100%;
     padding: 0 30px;
@@ -91,6 +93,7 @@ const Description = styled.div`
   font-size: 18px;
   line-height: 32px;
   width: 100%;
+
   @media (max-width: 920px) {
       width: 100%;
     padding: 30px 5px;
@@ -129,7 +132,7 @@ export const query = graphql`
       frontmatter {
         title
         slug
-        published    
+        published
         altText
         featuredImage {
           childImageSharp {
@@ -143,11 +146,10 @@ export const query = graphql`
     }
   }
 `
-const PostLayout = ({ data}) => {
-
-  const [contrastColor, setContrastColor] = useState(false)
+const PostLayout = ({ data }) => {
   const [plusSize, setPlusSize] = useState(0)
   const [minusSize, setMinusSize] = useState(0)
+  const [contrastColor, setContrastColor] = useState(false)
 
   const Reset = () => {
     setContrastColor("black"), setPlusSize(0), setMinusSize(0)
@@ -167,38 +169,37 @@ const PostLayout = ({ data}) => {
 
   return (
     <>
-      <AsideNavi
-        Reset={Reset}
-        Contrast={Contrast}
-        ShrinkFontSize={ShrinkFontSize}
-        GrowFontSize={GrowFontSize}
-      />
       <StyledWrapper
         plusSize={plusSize}
         minusSize={minusSize}
         activeColor={contrastColor}
+        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
       >
         <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
-        <Layout />
+        <Layout
+          plusSize={plusSize}
+          minusSize={minusSize}
+          activeColor={contrastColor}
+        />
+        <AsideNavi
+          Reset={Reset}
+          Contrast={Contrast}
+          ShrinkFontSize={ShrinkFontSize}
+          GrowFontSize={GrowFontSize}
+        />
         <div id="article" style={{ marginTop: "100px", marginBottom: "100px" }}>
           <BreakeSection>{data.mdx.frontmatter.title}</BreakeSection>
-          <Section
-            plusSize={plusSize}
-            minusSize={minusSize}
-            activeColor={contrastColor}
-          >
+          <Section>
             <PhotoWrapper>
               <Photo
                 fixed={data.mdx.frontmatter.featuredImage.childImageSharp.fixed}
                 alt={data.mdx.frontmatter.altText}
               />
             </PhotoWrapper>
-            <Content
-              plusSize={plusSize}
-              minusSize={minusSize}
-              activeColor={contrastColor}
-            >
-              <Description>
+            <Content>
+              <Description
+                style={{ fontSize: `${18 + plusSize - minusSize}px` }}
+              >
                 <MDXRenderer>{data.mdx.body}</MDXRenderer>
               </Description>
               <ButtonWrapper>
@@ -215,7 +216,11 @@ const PostLayout = ({ data}) => {
             </Content>
           </Section>
         </div>
-        <Footer />
+        <Footer
+          plusSize={plusSize}
+          minusSize={minusSize}
+          activeColor={contrastColor}
+        />
       </StyledWrapper>
     </>
   )

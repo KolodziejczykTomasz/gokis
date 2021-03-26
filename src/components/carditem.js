@@ -18,12 +18,16 @@ const CardBody = styled.div`
   box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
   color: black;
   text-decoration: none;
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === true) return "yellow"
+    return "white"
+  }};
   :hover {
     color: black;
     text-decoration: none;
     -moz-box-shadow: 1px 1px 3px 0px #444;
     -webkit-box-shadow: 1px 1px 3px 0px #444;
-    box-shadow: 1px 1px 3px 0px #444;    
+    box-shadow: 1px 1px 3px 0px #444;
   }
 `
 
@@ -59,6 +63,10 @@ const StyledImage = styled(Image)`
 
 const CardExcerpt = styled.div`
   margin: 60px 10px 60px 10px;
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === true) return "yellow"
+    return "white"
+  }};
 `
 
 const CardFotter = styled.div`
@@ -68,6 +76,10 @@ const CardFotter = styled.div`
   height: auto;
   padding: 0 5px 5px 5px;
   align-content: center;
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === true) return "yellow"
+    return "white"
+  }};
 `
 
 const ButtonMore = styled.div`
@@ -99,17 +111,20 @@ const CardItem = ({
   slug,
   plusSize,
   minusSize,
+  activeColor,
 }) => {
   return (
     <CardBody
       plusSize={plusSize}
       minusSize={minusSize}
+      activeColor={activeColor}
       style={{ fontSize: `${16 + plusSize - minusSize}px` }}
     >
       <CardTitle>{title}</CardTitle>
       <CardDate
         plusSize={plusSize}
         minusSize={minusSize}
+        activeColor={activeColor}
         style={{ fontSize: `${16 + plusSize - minusSize}px` }}
       >
         <FaRegCalendarAlt style={{ marginRight: "5px", marginTop: "-3px" }} />
@@ -122,6 +137,7 @@ const CardItem = ({
       <CardExcerpt
         plusSize={plusSize}
         minusSize={minusSize}
+        activeColor={activeColor}
         style={{ fontSize: `${16 + plusSize - minusSize}px` }}
       >
         {excerpt}
@@ -132,6 +148,7 @@ const CardItem = ({
         <ButtonMore
           plusSize={plusSize}
           minusSize={minusSize}
+          activeColor={activeColor}
           style={{ fontSize: `${16 + plusSize - minusSize}px` }}
           as={Link}
           aria-label="Więcej"

@@ -42,7 +42,12 @@ const AllPostPage = ( props ) => {
   }
 
   return (
-    <StyledWrapper>
+    <StyledWrapper
+      plusSize={plusSize}
+      minusSize={minusSize}
+      activeColor={contrastColor}
+      style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+    >
       <SEO title="GOKIS" name="Wszystkie aktualności" />
       <Layout
         plusSize={plusSize}

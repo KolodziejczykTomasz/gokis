@@ -28,7 +28,7 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const Rolny = () => (
+const Rolny = ({ plusSize, minusSize }) => (
   <div id="rolny" style={{ marginTop: "100px" }}>
     <BreakeSection>Rolny Skład</BreakeSection>
     <Section>
@@ -36,7 +36,7 @@ const Rolny = () => (
         <Photo src={Logo} alt="Rolny Skład" />
       </PhotoWrapper>
       <Content>
-        <Description>
+        <Description style={{ fontSize: `${18 + plusSize - minusSize}px` }}>
           Zespół muzyczny poruszający się w klimatach rocka progresywnego.
           Wykonuje kompozycje własne, jak i covery.{" "}
           <p>Prowadzi: Paweł Rolikowski</p>

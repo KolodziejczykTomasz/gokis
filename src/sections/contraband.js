@@ -28,22 +28,22 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const ContraBand = () => (
+const ContraBand = ({ plusSize, minusSize }) => (
   <div id="contraBand" style={{ marginTop: "100px" }}>
     <BreakeSection>Zespół wokalno-instrumentalny ContraBand'a</BreakeSection>
-    <Section>
+    <Section style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
       <PhotoWrapper>
         <Photo src={Logo} alt="Logo" />
       </PhotoWrapper>
       <Content>
-        <Description>
+        <Description style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
           Zespół wokalno-instrumentalny ContraBand'a powstał w styczniu 2016 r.
           Grupa spotyka się w każdy piątek w GOKiS w Pilniku. Mimo młodego stażu
           ma już za sobą wiele koncertów. Swój repertuar opiera głównie na
           muzyce rozrywkowej i muzyce nurtu gospels. Można ich usłyszeć podczas
           imprez gminnych, powiatowych oraz okolicznościowych. Muzyków połączyła
-          wspólna pasja, miłość do muzyki i przyjaźń.           <p>Instruktorem jest Ewelina
-          Banach-Bardońska.</p>
+          wspólna pasja, miłość do muzyki i przyjaźń.{" "}
+          <p>Instruktorem jest Ewelina Banach-Bardońska.</p>
         </Description>
       </Content>
     </Section>

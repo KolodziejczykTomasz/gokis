@@ -13,8 +13,11 @@ const Container = styled.div`
 `
 
 const ArticlesWrapper = styled.div`
-
-  margin-bottom: 75px; 
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === true) return "yellow"
+    return "white"
+  }};
+  margin-bottom: 75px;
 `
 
 const AllPost = ({ data, plusSize, minusSize, activeColor }) => {
@@ -22,10 +25,22 @@ const AllPost = ({ data, plusSize, minusSize, activeColor }) => {
     allMdx: { nodes },
   } = data
   return (
-    <Container>
+    <Container
+      plusSize={plusSize}
+      minusSize={minusSize}
+      activeColor={activeColor}
+    >
       <div id="news" style={{ marginTop: "100px" }}>
         <BreakeSection>Wszystkie aktualności</BreakeSection>
-        <ArticlesWrapper>
+        <ArticlesWrapper
+          plusSize={plusSize}
+          minusSize={minusSize}
+          activeColor={activeColor}
+          style={{
+            fontSize: `${16 + plusSize - minusSize}px`,
+            backgroundColor: activeColor === true ? "yellow" : "white",
+          }}
+        >
           {nodes.map(
             ({
               excerpt,
@@ -38,6 +53,9 @@ const AllPost = ({ data, plusSize, minusSize, activeColor }) => {
                 published={published}
                 slug={slug}
                 image={featuredImage.childImageSharp.fluid}
+                plusSize={plusSize}
+                minusSize={minusSize}
+                activeColor={activeColor}
               />
             )
           )}

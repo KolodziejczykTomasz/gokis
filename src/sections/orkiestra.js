@@ -28,24 +28,23 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const Orkiestra = () => (
+const Orkiestra = ({ plusSize, minusSize }) => (
   <div id="orkiestra" style={{ marginTop: "100px" }}>
     <BreakeSection>Gminna Orkiestra Dęta</BreakeSection>
-    <Section>
+    <Section style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
       <PhotoWrapper>
         <Photo src={Logo} alt="Logo" />
       </PhotoWrapper>
       <Content>
-        <Description>
+        <Description style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
           Obecnie liczy 20 muzyków, a kierownikiem zespołu oraz kapelmistrzem
           jest Pan Andrzej Mierzejewski. Większość członków jest
           muzykami-amatorami i sami przez wiele lat kształcili swój warsztat w
           różnych zespołach. Orkiestra uświetnia wiele imprez i uroczystości
           organizowanych przez Urząd Gminy Lidzbark Warmiński- nie tylko jako
           element uroczystości, ale i rozrywkowo, grając najsłynniejsze utwory
-          muzyki rozrywkowej. 
-          <p>Próby odbywają się we wtorki i czwartki w godz.
-          19.00 - 21.00</p>
+          muzyki rozrywkowej.
+          <p>Próby odbywają się we wtorki i czwartki w godz. 19.00 - 21.00</p>
         </Description>
       </Content>
     </Section>
