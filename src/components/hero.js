@@ -83,10 +83,10 @@ const HeroText = styled.div`
   flex-direction: column;
   width: 80%;
   left: 10%;
-  right: 10%;
   z-index: 999;
-  bottom: 30%;
-  background-color: rgba(0,  0,  0,  0.7);
+  padding: 20px 20px;
+  bottom: 0%;
+  margin-bottom: -10px;
   color: white;
 `
 
@@ -104,7 +104,7 @@ const SubTitle = styled.div`
   font-size: 28px;
 `
 
-export const Hero = () => {
+export const Hero = ({ activeColor }) => {
   const [index, setIndex] = useState(0)
   const { allFile } = useStaticQuery(
     graphql`
@@ -141,7 +141,12 @@ export const Hero = () => {
             key={node.id}
             alt={node.name}
           />
-          <HeroText>
+          <HeroText
+            style={{
+              color: activeColor === true ? "black" : "white",
+              backgroundColor: activeColor === true ? "yellow" : "#818190",
+            }}
+          >
             <Title>Gminny Ośrodek Kultury i Sportu w Pilniku</Title>
             <SubTitle>-ZAPRASZAMY-</SubTitle>
           </HeroText>

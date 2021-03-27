@@ -16,7 +16,7 @@ const Layout = ({ children, plusSize, minusSize, activeColor }) => {
           minusSize={minusSize}
           activeColor={activeColor}
         />
-        <Hero />
+        <Hero activeColor={activeColor} />
         {children}
         <CookieConsent
           location="bottom"

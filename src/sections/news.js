@@ -136,6 +136,7 @@ const NewsPage = ({ data, activeColor, plusSize, minusSize }) => {
                   image={featuredImage.childImageSharp.fluid}
                   plusSize={plusSize}
                   minusSize={minusSize}
+                  activeColor={activeColor}
                 />
               )
             )}

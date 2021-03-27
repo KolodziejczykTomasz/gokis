@@ -36,10 +36,18 @@ const CardTitle = styled.div`
   font-weight: 500;
   text-align: left;
   height: 60px;
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === true) return "yellow"
+    return "white"
+  }};
 `
 
 const CardDate = styled.div`
   margin-top: 15px;
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === true) return "yellow"
+    return "white"
+  }};
 `
 
 const CardImage = styled.div`
@@ -120,14 +128,17 @@ const CardItem = ({
       activeColor={activeColor}
       style={{ fontSize: `${16 + plusSize - minusSize}px` }}
     >
-      <CardTitle>{title}</CardTitle>
+      <CardTitle activeColor={activeColor}>{title}</CardTitle>
       <CardDate
         plusSize={plusSize}
         minusSize={minusSize}
         activeColor={activeColor}
         style={{ fontSize: `${16 + plusSize - minusSize}px` }}
       >
-        <FaRegCalendarAlt style={{ marginRight: "5px", marginTop: "-3px" }} />
+        <FaRegCalendarAlt
+          activeColor={activeColor}
+          style={{ marginRight: "5px", marginTop: "-3px" }}
+        />
         {published}
       </CardDate>
       <hr />
@@ -142,7 +153,7 @@ const CardItem = ({
       >
         {excerpt}
       </CardExcerpt>
-      <CardFotter>
+      <CardFotter activeColor={activeColor}>
         <hr />
 
         <ButtonMore

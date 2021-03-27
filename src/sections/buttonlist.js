@@ -17,10 +17,14 @@ const Section = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  margin-bottom: 75px;
+  padding-bottom: 75px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  background-color: ${({ activeColor, value }) => {
+    if (activeColor === true) return "yellow"
+    return "transparent"
+  }};
 `
 
 const ButtonList = ({ plusSize, minusSize, activeColor }) => (
@@ -35,6 +39,7 @@ const ButtonList = ({ plusSize, minusSize, activeColor }) => (
     <Wrapper
       plusSize={plusSize}
       minusSize={minusSize}
+      activeColor={activeColor}
       style={{ fontSize: `${16 + plusSize - minusSize}px` }}
     >
       <ButtonItem
