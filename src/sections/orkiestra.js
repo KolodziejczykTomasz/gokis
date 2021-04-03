@@ -28,15 +28,15 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const Orkiestra = ({ plusSize, minusSize }) => (
+const Orkiestra = ({ plussize, minussize }) => (
   <div id="orkiestra" style={{ marginTop: "100px" }}>
     <BreakeSection>Gminna Orkiestra Dęta</BreakeSection>
-    <Section style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
+    <Section style={{ fontSize: `${16 + plussize - minussize}px` }}>
       <PhotoWrapper>
         <Photo src={Logo} alt="Logo" />
       </PhotoWrapper>
       <Content>
-        <Description style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
+        <Description style={{ fontSize: `${16 + plussize - minussize}px` }}>
           Obecnie liczy 20 muzyków, a kierownikiem zespołu oraz kapelmistrzem
           jest Pan Andrzej Mierzejewski. Większość członków jest
           muzykami-amatorami i sami przez wiele lat kształcili swój warsztat w

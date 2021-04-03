@@ -28,15 +28,15 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const Furman = ({ plusSize, minusSize }) => (
+const Furman = ({ plussize, minussize }) => (
   <div id="furman" style={{ marginTop: "100px" }}>
     <BreakeSection>Zespół Ludowy Furman</BreakeSection>
-    <Section style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
+    <Section style={{ fontSize: `${16 + plussize - minussize}px` }}>
       <PhotoWrapper>
         <Photo src={Logo} alt="Logo" />
       </PhotoWrapper>
       <Content>
-        <Description style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
+        <Description style={{ fontSize: `${16 + plussize - minussize}px` }}>
           Zespół składa się z jedenastu osób, mieszkańców Kraszewa. Mimo
           niedługiego stażu Furman zaistniał już na wielu przeglądach zespołów
           ludowych. Często można ich spotkać na imprezach gminnych i

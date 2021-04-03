@@ -28,15 +28,15 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const Klika = ({ plusSize, minusSize }) => (
+const Klika = ({ plussize, minussize }) => (
   <div id="klika" style={{ marginTop: "100px" }}>
     <BreakeSection>Zespół muzyczny „Klika z Pilnika”</BreakeSection>
-    <Section style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
+    <Section style={{ fontSize: `${16 + plussize - minussize}px` }}>
       <PhotoWrapper>
         <Photo src={Logo} alt="Logo" />
       </PhotoWrapper>
       <Content>
-        <Description style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
+        <Description style={{ fontSize: `${16 + plussize - minussize}px` }}>
           Zespół muzyki dance – Mierzejewski, Darek, Edek, Wojtek. Grupa
           wykonuje własne aranżacje znanych przebojów dance i disco polo w nieco
           rockowej konwencji. <p>Prowadzi: Andrzej Mierzejewski</p>

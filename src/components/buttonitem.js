@@ -115,13 +115,13 @@ const Wrapper = styled(Link)`
     border: 3px dotted #c23b37 !important;
   }
 `
-const ButtonItem = ({ children, linkItem, plusSize, minusSize }) => (
+const ButtonItem = ({ children, linkItem, plussize, minussize }) => (
   <>
     <Wrapper
       to={linkItem}
-      plusSize={plusSize}
-      minusSize={minusSize}
-      style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+      plussize={plussize}
+      minussize={minussize}
+      style={{ fontSize: `${16 + plussize - minussize}px` }}
     >
       {children}
     </Wrapper>

@@ -10,84 +10,84 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "white"
   }};
 `
 
-const ClubList = ({ plusSize, minusSize, activeColor }) => (
+const ClubList = ({ plussize, minussize, activecolor }) => (
   <>
     <div
       id="clubs"
-      style={{ marginTop: "100px", fontSize: `${16 + plusSize - minusSize}px` }}
-      plusSize={plusSize}
-      minusSize={minusSize}
-      activeColor={activeColor}
+      style={{ marginTop: "100px", fontSize: `${16 + plussize - minussize}px` }}
+      plussize={plussize}
+      minussize={minussize}
+      activecolor={activecolor}
     >
       <BreakeSection>Świetlice wiejskie</BreakeSection>
       <Wrapper
         style={{
           marginTop: "100px",
-          fontSize: `${16 + plusSize - minusSize}px`,
+          fontSize: `${16 + plussize - minussize}px`,
         }}
-        plusSize={plusSize}
-        minusSize={minusSize}
-        activeColor={activeColor}
+        plussize={plussize}
+        minussize={minussize}
+        activecolor={activecolor}
       >
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Babiak
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Blanki
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Ignalin
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Jarandowo
         </ButtonItem>
         <ButtonItem plus>Kłębowo</ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Kochanówka
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Koniewo
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Kraszewo
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Łaniewo
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Miejska Wola
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Miłogórze
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Morawa
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Nowa Wieś Wielka
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Nowosady
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Rogóż
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Runowo
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Sarnowo
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Stryjkowo
         </ButtonItem>
-        <ButtonItem plusSize={plusSize} minusSize={minusSize}>
+        <ButtonItem plussize={plussize} minussize={minussize}>
           Zaręby
         </ButtonItem>
       </Wrapper>
@@ -97,7 +97,7 @@ const ClubList = ({ plusSize, minusSize, activeColor }) => (
           style={{
             width: "100%",
             margin: "0 auto",
-            backgroundColor: activeColor === true ? "yellow" : "white",
+            backgroundColor: activecolor === true ? "yellow" : "white",
           }}
         >
           <thead>

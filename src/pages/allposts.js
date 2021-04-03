@@ -14,19 +14,19 @@ const StyledWrapper = styled.div`
   padding: 0;
   max-width: 1250px;
   height: 90%;
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "white"
   }};
 `
 
-const AllPostPage = ( props ) => {
-  const [plusSize, setPlusSize] = useState(0)
-  const [minusSize, setMinusSize] = useState(0)
+const AllPostPage = ({data})  => {
+  const [plussize, setplussize] = useState(0)
+  const [minussize, setminussize] = useState(0)
   const [contrastColor, setContrastColor] = useState(false)
 
   const Reset = () => {
-    setContrastColor("black"), setPlusSize(0), setMinusSize(0)
+    setContrastColor(false), setplussize(0), setminussize(0)
   }
 
   const Contrast = () => {
@@ -34,25 +34,25 @@ const AllPostPage = ( props ) => {
   }
 
   const GrowFontSize = () => {
-    setPlusSize(plusSize + 1)
+    setplussize(plussize + 1)
   }
 
   const ShrinkFontSize = () => {
-    setMinusSize(minusSize + 1)
+    setminussize(minussize + 1)
   }
 
   return (
     <StyledWrapper
-      plusSize={plusSize}
-      minusSize={minusSize}
-      activeColor={contrastColor}
-      style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+      plussize={plussize}
+      minussize={minussize}
+      activecolor={contrastColor}
+      style={{ fontSize: `${16 + plussize - minussize}px` }}
     >
       <SEO title="GOKIS" name="Wszystkie aktualności" />
       <Layout
-        plusSize={plusSize}
-        minusSize={minusSize}
-        activeColor={contrastColor}
+        plussize={plussize}
+        minussize={minussize}
+        activecolor={contrastColor}
       />
       <AsideNavi
         Reset={Reset}
@@ -62,14 +62,14 @@ const AllPostPage = ( props ) => {
       />
       <AllPost
         {...props}
-        plusSize={plusSize}
-        minusSize={minusSize}
-        activeColor={contrastColor}
+        plussize={plussize}
+        minussize={minussize}
+        activecolor={contrastColor}
       />
       <Footer
-        plusSize={plusSize}
-        minusSize={minusSize}
-        activeColor={contrastColor}
+        plussize={plussize}
+        minussize={minussize}
+        activecolor={contrastColor}
       />
     </StyledWrapper>
   )

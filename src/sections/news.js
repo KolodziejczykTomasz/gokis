@@ -7,13 +7,13 @@ import styled from "styled-components"
 const Container = styled.div`
   margin: 0 auto;
   width: 100%;
-  color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "black"
+  color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "black"
     return "white"
   }};
 
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "white"
   }};
 `
@@ -95,7 +95,7 @@ const ButtonMore = styled(Link)`
 
 
 
-const NewsPage = ({ data, activeColor, plusSize, minusSize }) => {
+const NewsPage = ({ data, activecolor, plussize, minussize }) => {
   const {
     allMdx: { nodes },
   } = data
@@ -103,21 +103,21 @@ const NewsPage = ({ data, activeColor, plusSize, minusSize }) => {
   return (
     <Container
       style={{ marginTop: "100px" }}
-      activeColor={activeColor}
-      plusSize={plusSize}
-      minusSize={minusSize}
+      activecolor={activecolor}
+      plussize={plussize}
+      minussize={minussize}
     >
       <BreakeSection>Aktualności</BreakeSection>
       <Wrapper
         id="news"
-        activeColor={activeColor}
-        plusSize={plusSize}
-        minusSize={minusSize}
+        activecolor={activecolor}
+        plussize={plussize}
+        minussize={minussize}
       >
         <ArticlesWrapper
-          activeColor={activeColor}
-          plusSize={plusSize}
-          minusSize={minusSize}
+          activecolor={activecolor}
+          plussize={plussize}
+          minussize={minussize}
         >
           {nodes
             .slice(0, 3)
@@ -134,17 +134,17 @@ const NewsPage = ({ data, activeColor, plusSize, minusSize }) => {
                   published={published}
                   slug={slug}
                   image={featuredImage.childImageSharp.fluid}
-                  plusSize={plusSize}
-                  minusSize={minusSize}
-                  activeColor={activeColor}
+                  plussize={plussize}
+                  minussize={minussize}
+                  activecolor={activecolor}
                 />
               )
             )}
         </ArticlesWrapper>
         <ButtonMore
-          plusSize={plusSize}
-          minusSize={minusSize}
-          style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+          plussize={plussize}
+          minussize={minussize}
+          style={{ fontSize: `${16 + plussize - minussize}px` }}
           to="/allposts"
         >
           Wszystkie aktualności

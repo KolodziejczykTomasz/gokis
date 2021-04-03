@@ -6,39 +6,39 @@ import styled from "styled-components"
 const Container = styled.div`
   margin: 0 auto;
   width: 90%;
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "white"
   }};
 `
 
 const ArticlesWrapper = styled.div`
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "white"
   }};
   margin-bottom: 75px;
 `
 
-const AllPost = ({ data, plusSize, minusSize, activeColor }) => {
+const AllPost = ({ data, plussize, minussize, activecolor }) => {
   const {
     allMdx: { nodes },
   } = data
   return (
     <Container
-      plusSize={plusSize}
-      minusSize={minusSize}
-      activeColor={activeColor}
+      plussize={plussize}
+      minussize={minussize}
+      activecolor={activecolor}
     >
       <div id="news" style={{ marginTop: "100px" }}>
         <BreakeSection>Wszystkie aktualności</BreakeSection>
         <ArticlesWrapper
-          plusSize={plusSize}
-          minusSize={minusSize}
-          activeColor={activeColor}
+          plussize={plussize}
+          minussize={minussize}
+          activecolor={activecolor}
           style={{
-            fontSize: `${16 + plusSize - minusSize}px`,
-            backgroundColor: activeColor === true ? "yellow" : "white",
+            fontSize: `${16 + plussize - minussize}px`,
+            backgroundColor: activecolor === true ? "yellow" : "white",
           }}
         >
           {nodes.map(
@@ -53,9 +53,9 @@ const AllPost = ({ data, plusSize, minusSize, activeColor }) => {
                 published={published}
                 slug={slug}
                 image={featuredImage.childImageSharp.fluid}
-                plusSize={plusSize}
-                minusSize={minusSize}
-                activeColor={activeColor}
+                plussize={plussize}
+                minussize={minussize}
+                activecolor={activecolor}
               />
             )
           )}

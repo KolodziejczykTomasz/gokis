@@ -21,10 +21,10 @@ const IconFacebook = styled(FaFacebookSquare)`
   }
 `
 
-const Navigation = ({ plusSize, minusSize, activeColor }) => {
+const Navigation = ({ plussize, minussize, activecolor }) => {
   const getBackgroundColor = () => {
     let color
-    if (activeColor === true) {
+    if (activecolor === true) {
       color = "yellow"
     } else color = "white"
     return color
@@ -39,9 +39,9 @@ const Navigation = ({ plusSize, minusSize, activeColor }) => {
         fixed="top"
         variant="light"
         className="NavbarTop"
-        activeColor={activeColor}
-        plusSize={plusSize}
-        minusSize={minusSize}
+        activecolor={activecolor}
+        plussize={plussize}
+        minussize={minussize}
         style={{
           backgroundColor: getBackgroundColor(),
         }}
@@ -62,19 +62,19 @@ const Navigation = ({ plusSize, minusSize, activeColor }) => {
             style={{
               margin: "0 auto",
               color: "white",
-              fontSize: `${16 + plusSize - minusSize}px`,
+              fontSize: `${16 + plussize - minussize}px`,
             }}
-            plusSize={plusSize}
-            minusSize={minusSize}
+            plussize={plussize}
+            minussize={minussize}
           >
             <Link
               role="navigation"
               aria-label=" Strona główna"
               to="/#home"
               className="NavLinkItem"
-              plusSize={plusSize}
-              minusSize={minusSize}
-              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+              plussize={plussize}
+              minussize={minussize}
+              style={{ fontSize: `${16 + plussize - minussize}px` }}
             >
               Home
             </Link>
@@ -83,9 +83,9 @@ const Navigation = ({ plusSize, minusSize, activeColor }) => {
               aria-label=" Aktualności"
               to="/#news"
               className="NavLinkItem"
-              plusSize={plusSize}
-              minusSize={minusSize}
-              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+              plussize={plussize}
+              minussize={minussize}
+              style={{ fontSize: `${16 + plussize - minussize}px` }}
             >
               Aktualności
             </Link>
@@ -94,9 +94,9 @@ const Navigation = ({ plusSize, minusSize, activeColor }) => {
               aria-label="O nas"
               to="/#about"
               className="NavLinkItem"
-              plusSize={plusSize}
-              minusSize={minusSize}
-              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+              plussize={plussize}
+              minussize={minussize}
+              style={{ fontSize: `${16 + plussize - minussize}px` }}
             >
               O nas
             </Link>
@@ -105,9 +105,9 @@ const Navigation = ({ plusSize, minusSize, activeColor }) => {
               aria-label="Zajęcia"
               to="/#projects"
               className="NavLinkItem"
-              plusSize={plusSize}
-              minusSize={minusSize}
-              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+              plussize={plussize}
+              minussize={minussize}
+              style={{ fontSize: `${16 + plussize - minussize}px` }}
             >
               Zajęcia
             </Link>
@@ -116,9 +116,9 @@ const Navigation = ({ plusSize, minusSize, activeColor }) => {
               aria-label="Kontakt"
               to="/clubs"
               className="NavLinkItem"
-              plusSize={plusSize}
-              minusSize={minusSize}
-              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+              plussize={plussize}
+              minussize={minussize}
+              style={{ fontSize: `${16 + plussize - minussize}px` }}
             >
               Świetlice
             </Link>
@@ -127,9 +127,9 @@ const Navigation = ({ plusSize, minusSize, activeColor }) => {
               aria-label="Kontakt"
               to="/#contact"
               className="NavLinkItem"
-              plusSize={plusSize}
-              minusSize={minusSize}
-              style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+              plussize={plussize}
+              minussize={minussize}
+              style={{ fontSize: `${16 + plussize - minussize}px` }}
             >
               Kontakt
             </Link>

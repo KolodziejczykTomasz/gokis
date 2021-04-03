@@ -28,15 +28,15 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const Tennis = ({ plusSize, minusSize }) => (
+const Tennis = ({ plussize, minussize }) => (
   <div id="tennis" style={{ marginTop: "100px" }}>
     <BreakeSection>Klub tenisa stołowego</BreakeSection>
-    <Section style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
+    <Section style={{ fontSize: `${16 + plussize - minussize}px` }}>
       <PhotoWrapper>
         <Photo src={Logo} alt="Klub tenisa stołowego" />
       </PhotoWrapper>
       <Content>
-        <Description style={{ fontSize: `${18 + plusSize - minusSize}px` }}>
+        <Description style={{ fontSize: `${18 + plussize - minussize}px` }}>
           Program sekcji tenisa stołowego dla dzieci i dorosłych zaprojektowany
           jest tak, aby promować rekreacyjną stronę aktywności fizycznej, która
           łączy w sobie dobrą zabawę i pasję w gronie znajomych.

@@ -28,15 +28,15 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const Mazoretki = ({ plusSize, minusSize }) => (
+const Mazoretki = ({ plussize, minussize }) => (
   <div id="mazoretki" style={{ marginTop: "100px" }}>
     <BreakeSection>Mażoretki</BreakeSection>
-    <Section style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
+    <Section style={{ fontSize: `${16 + plussize - minussize}px` }}>
       <PhotoWrapper>
         <Photo src={Logo} alt="Logo" />
       </PhotoWrapper>
       <Content>
-        <Description style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
+        <Description style={{ fontSize: `${16 + plussize - minussize}px` }}>
           <p>Zespół dziewczęcy działający przy Gminnej Orkiestrze Dętej.</p>
           Mażoretki to dziewczęta, ubrane w paradne stroje, które z wielką
           wytwornością maszerują przed orkiestrą i prezentują piękne widowisko

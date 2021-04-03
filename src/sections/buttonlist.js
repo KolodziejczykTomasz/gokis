@@ -4,13 +4,13 @@ import styled from "styled-components"
 import ButtonItem from "../components/buttonitem"
 
 const Section = styled.div`
-  color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "black"
+  color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "black"
     return "white"
   }};
 
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "transparent"
   }};
 `
@@ -21,96 +21,96 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "transparent"
   }};
 `
 
-const ButtonList = ({ plusSize, minusSize, activeColor }) => (
+const ButtonList = ({ plussize, minussize, activecolor }) => (
   <Section
     id="projects"
-    style={{ marginTop: "100px", fontSize: `${16 + plusSize - minusSize}px` }}
-    plusSize={plusSize}
-    minusSize={minusSize}
-    activeColor={activeColor}
+    style={{ marginTop: "100px", fontSize: `${16 + plussize - minussize}px` }}
+    plussize={plussize}
+    minussize={minussize}
+    activecolor={activecolor}
   >
     <BreakeSection>Zajęcia</BreakeSection>
     <Wrapper
-      plusSize={plusSize}
-      minusSize={minusSize}
-      activeColor={activeColor}
-      style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+      plussize={plussize}
+      minussize={minussize}
+      activecolor={activecolor}
+      style={{ fontSize: `${16 + plussize - minussize}px` }}
     >
       <ButtonItem
         linkItem="/furman"
-        plusSize={plusSize}
-        minusSize={minusSize}
-        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+        plussize={plussize}
+        minussize={minussize}
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
         Zespół Ludowy Furman
       </ButtonItem>
       <ButtonItem
         linkItem="/rogoz"
-        plusSize={plusSize}
-        minusSize={minusSize}
-        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+        plussize={plussize}
+        minussize={minussize}
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
         Kapela ludowa Rogóżanie
       </ButtonItem>
       <ButtonItem
         linkItem="/contraband"
-        plusSize={plusSize}
-        minusSize={minusSize}
-        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+        plussize={plussize}
+        minussize={minussize}
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
         Zespół wokalno-instrumentalny ContraBand'a
       </ButtonItem>
       <ButtonItem
         linkItem="/orkiestra"
-        plusSize={plusSize}
-        minusSize={minusSize}
-        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+        plussize={plussize}
+        minussize={minussize}
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
         Gminna Orkiestra Dęta
       </ButtonItem>
       <ButtonItem
         linkItem="/klika"
-        plusSize={plusSize}
-        minusSize={minusSize}
-        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+        plussize={plussize}
+        minussize={minussize}
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
         Zespół muzyczny „Klika z Pilnika”
       </ButtonItem>
       <ButtonItem
         linkItem="/tennis"
-        plusSize={plusSize}
-        minusSize={minusSize}
-        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+        plussize={plussize}
+        minussize={minussize}
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
         Klub tenisa stołowego
       </ButtonItem>
       <ButtonItem
         linkItem="/rolny"
-        plusSize={plusSize}
-        minusSize={minusSize}
-        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+        plussize={plussize}
+        minussize={minussize}
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
         Rolny Skład
       </ButtonItem>
       <ButtonItem
         linkItem="/belcanto"
-        plusSize={plusSize}
-        minusSize={minusSize}
-        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+        plussize={plussize}
+        minussize={minussize}
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
         Dziecięcy zespół wokalny Bel Canto
       </ButtonItem>
       <ButtonItem
         linkItem="/mazoretki"
-        plusSize={plusSize}
-        minusSize={minusSize}
-        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+        plussize={plussize}
+        minussize={minussize}
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
         Mażoretki
       </ButtonItem>

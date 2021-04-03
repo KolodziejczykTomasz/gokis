@@ -6,8 +6,8 @@ import styled from "styled-components"
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "transparent"
   }};
 `
@@ -38,8 +38,8 @@ const Description = styled.div`
   color: black;
 `
 
-const About = ({ plusSize, minusSize, activeColor }) => (
-  <Wrapper id="about" activeColor={activeColor}>
+const About = ({ plussize, minussize, activecolor }) => (
+  <Wrapper id="about" activecolor={activecolor}>
     <BreakeSection>O nas</BreakeSection>
     <Section>
       <PhotoWrapper>
@@ -47,11 +47,11 @@ const About = ({ plusSize, minusSize, activeColor }) => (
       </PhotoWrapper>
       <Content>
         <Description
-          activeColor={activeColor}
-          plusSize={plusSize}
-          minusSize={minusSize}
+          activecolor={activecolor}
+          plussize={plussize}
+          minussize={minussize}
           style={{     
-            fontSize: `${20 + plusSize - minusSize}px`,
+            fontSize: `${20 + plussize - minussize}px`,
           }}
         >
           Cele i zadania GOKiS w Pilniku to: organizowanie zespołowego

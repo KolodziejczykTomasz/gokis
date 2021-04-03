@@ -28,15 +28,15 @@ const Description = styled.div`
   line-height: 32px;
 `
 
-const ContraBand = ({ plusSize, minusSize }) => (
+const ContraBand = ({ plussize, minussize }) => (
   <div id="contraBand" style={{ marginTop: "100px" }}>
     <BreakeSection>Zespół wokalno-instrumentalny ContraBand'a</BreakeSection>
-    <Section style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
+    <Section style={{ fontSize: `${16 + plussize - minussize}px` }}>
       <PhotoWrapper>
         <Photo src={Logo} alt="Logo" />
       </PhotoWrapper>
       <Content>
-        <Description style={{ fontSize: `${16 + plusSize - minusSize}px` }}>
+        <Description style={{ fontSize: `${16 + plussize - minussize}px` }}>
           Zespół wokalno-instrumentalny ContraBand'a powstał w styczniu 2016 r.
           Grupa spotyka się w każdy piątek w GOKiS w Pilniku. Mimo młodego stażu
           ma już za sobą wiele koncertów. Swój repertuar opiera głównie na

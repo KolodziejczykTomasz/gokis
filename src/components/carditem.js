@@ -18,8 +18,8 @@ const CardBody = styled.div`
   box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
   color: black;
   text-decoration: none;
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "white"
   }};
   :hover {
@@ -36,16 +36,16 @@ const CardTitle = styled.div`
   font-weight: 500;
   text-align: left;
   height: 60px;
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "white"
   }};
 `
 
 const CardDate = styled.div`
   margin-top: 15px;
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "white"
   }};
 `
@@ -56,14 +56,14 @@ const CardImage = styled.div`
 `
 
 const StyledImage = styled(Image)`
-  display: flex; 
+  display: flex;
   margin: 0 auto;
   height: 100%;
   width: 100%;
   -moz-box-shadow: 2px 2px 6px 0px #444;
   -webkit-box-shadow: 2px 2px 6px 0px #444;
   box-shadow: 2px 2px 6px 0px #444;
-  transition: .1s;
+  transition: 0.1s;
   :hover {
     transform: scale(1.1);
   }
@@ -71,10 +71,11 @@ const StyledImage = styled(Image)`
 
 const CardExcerpt = styled.div`
   margin: 60px 10px 60px 10px;
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "white"
-  }};
+  }}; 
+  word-break: break-word;
 `
 
 const CardFotter = styled.div`
@@ -84,8 +85,8 @@ const CardFotter = styled.div`
   height: auto;
   padding: 0 5px 5px 5px;
   align-content: center;
-  background-color: ${({ activeColor, value }) => {
-    if (activeColor === true) return "yellow"
+  background-color: ${({ activecolor, value }) => {
+    if (activecolor === true) return "yellow"
     return "white"
   }};
 `
@@ -106,7 +107,7 @@ const ButtonMore = styled.div`
     border: 1px solid rgb(236, 0, 0);
     color: rgb(236, 0, 0);
     background-color: #fff;
-    text-decoration: none;    
+    text-decoration: none;
   }
 `
 
@@ -117,26 +118,26 @@ const CardItem = ({
   published,
   excerpt,
   slug,
-  plusSize,
-  minusSize,
-  activeColor,
+  plussize,
+  minussize,
+  activecolor,
 }) => {
   return (
     <CardBody
-      plusSize={plusSize}
-      minusSize={minusSize}
-      activeColor={activeColor}
-      style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+      plussize={plussize}
+      minussize={minussize}
+      activecolor={activecolor}
+      style={{ fontSize: `${16 + plussize - minussize}px` }}
     >
-      <CardTitle activeColor={activeColor}>{title}</CardTitle>
+      <CardTitle activecolor={activecolor}>{title}</CardTitle>
       <CardDate
-        plusSize={plusSize}
-        minusSize={minusSize}
-        activeColor={activeColor}
-        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+        plussize={plussize}
+        minussize={minussize}
+        activecolor={activecolor}
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
         <FaRegCalendarAlt
-          activeColor={activeColor}
+          activecolor={activecolor}
           style={{ marginRight: "5px", marginTop: "-3px" }}
         />
         {published}
@@ -146,21 +147,21 @@ const CardItem = ({
         <StyledImage fluid={image} alt={altText} />
       </CardImage>
       <CardExcerpt
-        plusSize={plusSize}
-        minusSize={minusSize}
-        activeColor={activeColor}
-        style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+        plussize={plussize}
+        minussize={minussize}
+        activecolor={activecolor}
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
         {excerpt}
       </CardExcerpt>
-      <CardFotter activeColor={activeColor}>
+      <CardFotter activecolor={activecolor}>
         <hr />
 
         <ButtonMore
-          plusSize={plusSize}
-          minusSize={minusSize}
-          activeColor={activeColor}
-          style={{ fontSize: `${16 + plusSize - minusSize}px` }}
+          plussize={plussize}
+          minussize={minussize}
+          activecolor={activecolor}
+          style={{ fontSize: `${16 + plussize - minussize}px` }}
           as={Link}
           aria-label="Więcej"
           to={`/${slug}`}

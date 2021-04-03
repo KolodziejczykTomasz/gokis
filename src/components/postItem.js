@@ -98,49 +98,49 @@ const PostItem = ({
   published,
   excerpt,
   slug,
-  plusSize,
-  minusSize,
-  activeColor,
+  plussize,
+  minussize,
+  activecolor,
 }) => {
   return (
     <CardWrapper
-      plusSize={plusSize}
-      minusSize={minusSize}
-      activeColor={activeColor}
+      plussize={plussize}
+      minussize={minussize}
+      activecolor={activecolor}
       style={{
-        fontSize: `${16 + plusSize - minusSize}px`,
-        backgroundColor: activeColor === true ? "yellow" : "white",
+        fontSize: `${16 + plussize - minussize}px`,
+        backgroundColor: activecolor === true ? "yellow" : "white",
       }}
     >
       <CardHeader
-        plusSize={plusSize}
-        minusSize={minusSize}
-        activeColor={activeColor}
+        plussize={plussize}
+        minussize={minussize}
+        activecolor={activecolor}
         style={{
-          fontSize: `${16 + plusSize - minusSize}px`,
-          backgroundColor: activeColor === true ? "yellow" : "white",
+          fontSize: `${16 + plussize - minussize}px`,
+          backgroundColor: activecolor === true ? "yellow" : "white",
         }}
       >
         <CardHeaderDate className="date">{published}</CardHeaderDate>
         <CardHeaderTitle>{title}</CardHeaderTitle>
       </CardHeader>
       <CardMain
-        plusSize={plusSize}
-        minusSize={minusSize}
-        activeColor={activeColor}
+        plussize={plussize}
+        minussize={minussize}
+        activecolor={activecolor}
         style={{
-          fontSize: `${16 + plusSize - minusSize}px`,
-          backgroundColor: activeColor === true ? "yellow" : "white",
+          fontSize: `${16 + plussize - minussize}px`,
+          backgroundColor: activecolor === true ? "yellow" : "white",
         }}
       >
         <CardMainPhoto>
           <CardMainPhotoItem fluid={image} alt={altText} />
         </CardMainPhoto>
         <CardMainContent
-          plusSize={plusSize}
-          minusSize={minusSize}
-          activeColor={activeColor}
-          style={{ backgroundColor: activeColor === true ? "yellow" : "white" }}
+          plussize={plussize}
+          minussize={minussize}
+          activecolor={activecolor}
+          style={{ backgroundColor: activecolor === true ? "yellow" : "white" }}
         >
           {excerpt}
         </CardMainContent>
