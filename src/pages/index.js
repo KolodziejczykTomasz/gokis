@@ -8,7 +8,7 @@ import Footer from "../components/footer"
 import ButtonList from "../sections/buttonlist"
 import NewsPage from "../sections/news"
 import AsideNavi from "../components/navigation/asideNavi"
-
+import { FaClosedCaptioning } from "react-icons/fa"
 
 const StyledWrapper = styled.div`
   display: block;
@@ -17,48 +17,35 @@ const StyledWrapper = styled.div`
   padding: 0;
   max-width: 1250px;
   height: 90%;
-  color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "black"
-    return "white"
-  }};
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "transparent"
-  }};
+  color: ${({ activecolor }) => (activecolor ? "yellow" : "transparent")};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
-
-const IndexPage = ({...props}) => {
-  const [contrastColor, setContrastColor] = useState()
+const IndexPage = ({ ...props }) => {
+  const [activecolor, setactivecolor] = useState(false)
   const [plussize, setplussize] = useState(0)
   const [minussize, setminussize] = useState(0)
 
   const Reset = () => {
-    setContrastColor(), setplussize(0), setminussize(0)
+    setplussize(0), setminussize(0)
   }
 
-  const Contrast = () => {
-    setContrastColor(!contrastColor)
-  }
+  const Contrast = () => setactivecolor(!activecolor)
+  const GrowFontSize = () => setplussize(plussize + 1)
+  const ShrinkFontSize = () => setminussize(minussize + 1)
 
-  const GrowFontSize = () => {
-    setplussize(plussize + 1)
-  }
-
-  const ShrinkFontSize = () => {
-    setminussize(minussize + 1)
-  }
   return (
     <StyledWrapper
       plussize={plussize}
       minussize={minussize}
-      activecolor={contrastColor}
+      activecolor={activecolor}
     >
       <SEO title="GOKIS" name="Gminny Ośrodek Kultury i Sportu w Pilniku" />
       <Layout
         plussize={plussize}
         minussize={minussize}
-        activecolor={contrastColor}
+        activecolor={activecolor}
       />
       <AsideNavi
         Reset={Reset}
@@ -69,23 +56,23 @@ const IndexPage = ({...props}) => {
       <About
         plussize={plussize}
         minussize={minussize}
-        activecolor={contrastColor}
+        activecolor={activecolor}
       />
       <NewsPage
         {...props}
         plussize={plussize}
         minussize={minussize}
-        activecolor={contrastColor}
+        activecolor={activecolor}
       />
       <ButtonList
         plussize={plussize}
         minussize={minussize}
-        activecolor={contrastColor}
+        activecolor={activecolor}
       />
       <Footer
         plussize={plussize}
         minussize={minussize}
-        activecolor={contrastColor}
+        activecolor={activecolor}
       />
     </StyledWrapper>
   )

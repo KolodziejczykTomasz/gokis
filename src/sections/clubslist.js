@@ -4,21 +4,25 @@ import BreakeSection from "../components/breakeSection"
 import styled from "styled-components"
 import ButtonItem from "../components/buttonitem"
 
+
+const Section = styled.div`
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
+`
+
 const Wrapper = styled.div`
   display: flex;
-  margin-bottom: 75px;
+  padding-bottom: 75px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
 const ClubList = ({ plussize, minussize, activecolor }) => (
   <>
-    <div
+    <Section
       id="clubs"
       style={{ marginTop: "100px", fontSize: `${16 + plussize - minussize}px` }}
       plussize={plussize}
@@ -91,13 +95,13 @@ const ClubList = ({ plussize, minussize, activecolor }) => (
           Zaręby
         </ButtonItem>
       </Wrapper>
-      <div className="mainSection" style={{ margin: "150px 0 100px 0" }}>
+      <div className="mainSection" style={{ padding: "150px 0 100px 0" }}>
         <table
           className="table"
           style={{
             width: "100%",
             margin: "0 auto",
-            backgroundColor: activecolor === true ? "yellow" : "white",
+            backgroundColor: activecolor ? "yellow" : "white",
           }}
         >
           <thead>
@@ -135,7 +139,7 @@ const ClubList = ({ plussize, minussize, activecolor }) => (
           </tbody>
         </table>
       </div>
-    </div>
+    </Section>
   </>
 )
 

@@ -7,15 +7,9 @@ import styled from "styled-components"
 const Container = styled.div`
   margin: 0 auto;
   width: 100%;
-  color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "black"
-    return "white"
-  }};
-
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }};
+  color: ${({ activecolor }) => activecolor ? "black" : "white"};
+  background-color:  ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
 const Wrapper = styled.div`

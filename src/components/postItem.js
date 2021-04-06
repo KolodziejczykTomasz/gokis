@@ -109,7 +109,7 @@ const PostItem = ({
       activecolor={activecolor}
       style={{
         fontSize: `${16 + plussize - minussize}px`,
-        backgroundColor: activecolor === true ? "yellow" : "white",
+        backgroundColor: activecolor ? "yellow" : "white",
       }}
     >
       <CardHeader
@@ -118,7 +118,7 @@ const PostItem = ({
         activecolor={activecolor}
         style={{
           fontSize: `${16 + plussize - minussize}px`,
-          backgroundColor: activecolor === true ? "yellow" : "white",
+          backgroundColor: activecolor ? "yellow" : "white",
         }}
       >
         <CardHeaderDate className="date">{published}</CardHeaderDate>
@@ -130,7 +130,7 @@ const PostItem = ({
         activecolor={activecolor}
         style={{
           fontSize: `${16 + plussize - minussize}px`,
-          backgroundColor: activecolor === true ? "yellow" : "white",
+          backgroundColor: activecolor ? "yellow" : "white",
         }}
       >
         <CardMainPhoto>
@@ -140,7 +140,7 @@ const PostItem = ({
           plussize={plussize}
           minussize={minussize}
           activecolor={activecolor}
-          style={{ backgroundColor: activecolor === true ? "yellow" : "white" }}
+          style={{ backgroundColor: activecolor ? "yellow" : "white" }}
         >
           {excerpt}
         </CardMainContent>

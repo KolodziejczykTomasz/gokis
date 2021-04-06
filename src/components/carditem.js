@@ -18,10 +18,9 @@ const CardBody = styled.div`
   box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
   color: black;
   text-decoration: none;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
+  color: ${({ activecolor }) => (activecolor ? "black" : "white")};
   :hover {
     color: black;
     text-decoration: none;
@@ -36,18 +35,15 @@ const CardTitle = styled.div`
   font-weight: 500;
   text-align: left;
   height: 60px;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
+  color: ${({ activecolor }) => (activecolor ? "black" : "white")};
 `
 
 const CardDate = styled.div`
   margin-top: 15px;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
 const CardImage = styled.div`
@@ -71,10 +67,8 @@ const StyledImage = styled(Image)`
 
 const CardExcerpt = styled.div`
   margin: 60px 10px 60px 10px;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }}; 
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
   word-break: break-word;
 `
 
@@ -85,10 +79,8 @@ const CardFotter = styled.div`
   height: auto;
   padding: 0 5px 5px 5px;
   align-content: center;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
 const ButtonMore = styled.div`

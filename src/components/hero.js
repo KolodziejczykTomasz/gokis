@@ -104,7 +104,7 @@ const SubTitle = styled.div`
   font-size: 28px;
 `
 
-export const Hero = ({ activeColor }) => {
+export const Hero = ({ activecolor }) => {
   const [index, setIndex] = useState(0)
   const { allFile } = useStaticQuery(
     graphql`
@@ -143,8 +143,8 @@ export const Hero = ({ activeColor }) => {
           />
           <HeroText
             style={{
-              color: activeColor === true ? "black" : "white",
-              backgroundColor: activeColor === true ? "yellow" : "#818190",
+              color: activecolor === true ? "black" : "white",
+              backgroundColor: activecolor === true ? "yellow" : "#818190",
             }}
           >
             <Title>Gminny Ośrodek Kultury i Sportu w Pilniku</Title>

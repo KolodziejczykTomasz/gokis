@@ -4,15 +4,9 @@ import styled from "styled-components"
 import ButtonItem from "../components/buttonitem"
 
 const Section = styled.div`
-  color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "black"
-    return "white"
-  }};
-
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "transparent"
-  }};
+  color: ${({ activecolor }) => (activecolor ? "black" : "white")};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
 const Wrapper = styled.div`
@@ -21,10 +15,8 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "transparent"
-  }};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
 const ButtonList = ({ plussize, minussize, activecolor }) => (

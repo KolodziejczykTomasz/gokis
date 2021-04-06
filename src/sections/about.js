@@ -6,10 +6,8 @@ import styled from "styled-components"
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "transparent"
-  }};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
 const Section = styled.div`

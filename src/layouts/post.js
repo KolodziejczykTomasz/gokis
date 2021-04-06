@@ -16,16 +16,16 @@ const StyledWrapper = styled.div`
   padding: 0;
   max-width: 1250px;
   height: 90%;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }};
+  padding-bottom: 75px;
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
 const Section = styled.div`
   display: flex;
   flex-direction: row;
-
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
   @media (max-width: 920px) {
       flex-direction: column;
   }
@@ -60,6 +60,8 @@ const Content = styled.div`
   height: 100%;
   width: 60%;
   position: relative;
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 
   @media (max-width: 920px) {
       width: 100%;
@@ -123,7 +125,9 @@ const ButtonMore = styled.div`
 const ButtonWrapper = styled.div`
   width: 100%;
   height: 80px;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
 export const query = graphql`
@@ -152,7 +156,7 @@ const PostLayout = ({ data }) => {
   const [contrastColor, setContrastColor] = useState(false)
 
   const Reset = () => {
-    setContrastColor(false), setplussize(0), setminussize(0)
+    setplussize(0), setminussize(0)
   }
 
   const Contrast = () => {

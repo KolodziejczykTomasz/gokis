@@ -15,30 +15,22 @@ const Wrapper = styled.div`
   display: block;
   width: 100%;
   padding: 20px 20px;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "black"
-  }};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "black"};
   position: absolute;
 `
 
 const WrapperTop = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;
-  color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "black"
-    return "white"
-  }};
+  color: ${({ activecolor }) => (activecolor ? "black" : "white")};
   margin-bottom: 75px;
 `
 
 const WrapperBottom = styled.div`
   display: grid;
   grid-template-columns: 0.3fr 0.4fr 0.3fr;
-  color: ${({ activecolor, value }) => {
-    if (activecolor !== "yellow") return "white"
-    return "black"
-  }};
+  color: ${({ activecolor }) => (activecolor ? "black" : "white")};
   place-items: center;
   padding-bottom: 10px;
 
@@ -56,10 +48,7 @@ const Header = styled.p`
 
 const MenuItem = styled(Link)`
   & span {
-    color: ${({ activecolor, value }) => {
-      if (activecolor === true) return "black"
-      return "white"
-    }};
+    color: ${({ activecolor }) => (activecolor ? "black" : "white")};
   }
 `
 
@@ -68,10 +57,7 @@ const ListItem = styled.li``
 const Copyright = styled.span`
   text-transform: uppercase;
   padding-right: 5px;
-  color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "black"
-    return "white"
-  }};
+  color: ${({ activecolor }) => activecolor ? "black" : "white"};
 `
 
 const Footer = ({ plussize, minussize, activecolor }) => {

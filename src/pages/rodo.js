@@ -13,10 +13,8 @@ const StyledWrapper = styled.div`
   padding: 0;
   max-width: 1250px;
   height: 90%;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 const Wrapper = styled.div`
   padding: 75px 20px;
@@ -33,7 +31,7 @@ const RodoPage = () => {
    const [minussize, setminussize] = useState(0)
 
    const Reset = () => {
-     setContrastColor(false), setplussize(0), setminussize(0)
+     setplussize(0), setminussize(0)
    }
 
    const Contrast = () => {

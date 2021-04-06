@@ -6,18 +6,14 @@ import styled from "styled-components"
 const Container = styled.div`
   margin: 0 auto;
   width: 90%;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }};
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
 const ArticlesWrapper = styled.div`
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }};
-  margin-bottom: 75px;
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
+  padding-bottom: 75px;
 `
 
 const AllPost = ({ data, plussize, minussize, activecolor }) => {
@@ -38,7 +34,7 @@ const AllPost = ({ data, plussize, minussize, activecolor }) => {
           activecolor={activecolor}
           style={{
             fontSize: `${16 + plussize - minussize}px`,
-            backgroundColor: activecolor === true ? "yellow" : "white",
+            backgroundColor: activecolor ? "yellow" : "white",
           }}
         >
           {nodes.map(

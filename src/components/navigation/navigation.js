@@ -22,13 +22,7 @@ const IconFacebook = styled(FaFacebookSquare)`
 `
 
 const Navigation = ({ plussize, minussize, activecolor }) => {
-  const getBackgroundColor = () => {
-    let color
-    if (activecolor === true) {
-      color = "yellow"
-    } else color = "white"
-    return color
-  }
+  const getBackgroundColor = () => activecolor ? "yellow" : "white" 
 
   return (
     <Wrapper id="home">
@@ -43,7 +37,7 @@ const Navigation = ({ plussize, minussize, activecolor }) => {
         plussize={plussize}
         minussize={minussize}
         style={{
-          backgroundColor: getBackgroundColor(),
+          backgroundColor: activecolor ? "yellow" : "white",
         }}
       >
         <Navbar.Brand href="#home">

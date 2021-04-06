@@ -11,11 +11,9 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
   padding: 0;
   max-width: 1250px;
-  height: 90%;
-  background-color: ${({ activecolor, value }) => {
-    if (activecolor === true) return "yellow"
-    return "white"
-  }};
+  height: 90%;  
+  background-color: ${({ activecolor }) =>
+    activecolor ? "yellow" : "transparent"};
 `
 
 const Wrapper = styled.div`
@@ -36,7 +34,7 @@ const AccessiblePage = () => {
   const [minussize, setminussize] = useState(0)
 
   const Reset = () => {
-    setContrastColor(false), setplussize(0), setminussize(0)
+    setplussize(0), setminussize(0)
   }
 
   const Contrast = () => {
