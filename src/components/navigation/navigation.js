@@ -22,7 +22,7 @@ const IconFacebook = styled(FaFacebookSquare)`
 `
 
 const Navigation = ({ plussize, minussize, activecolor }) => {
-  const getBackgroundColor = () => activecolor ? "yellow" : "white" 
+  const getBackgroundColor = () => (activecolor ? "yellow" : "white")
 
   return (
     <Wrapper id="home">
@@ -61,17 +61,6 @@ const Navigation = ({ plussize, minussize, activecolor }) => {
             plussize={plussize}
             minussize={minussize}
           >
-            <Link
-              role="navigation"
-              aria-label=" Strona główna"
-              to="/#home"
-              className="NavLinkItem"
-              plussize={plussize}
-              minussize={minussize}
-              style={{ fontSize: `${16 + plussize - minussize}px` }}
-            >
-              Home
-            </Link>
             <Link
               role="navigation"
               aria-label=" Aktualności"
@@ -115,6 +104,17 @@ const Navigation = ({ plussize, minussize, activecolor }) => {
               style={{ fontSize: `${16 + plussize - minussize}px` }}
             >
               Świetlice
+            </Link>
+            <Link
+              role="navigation"
+              aria-label="Rowery"
+              to="/bike"
+              className="NavLinkItem"
+              plussize={plussize}
+              minussize={minussize}
+              style={{ fontSize: `${16 + plussize - minussize}px` }}
+            >
+              Rowery
             </Link>
             <Link
               role="navigation"
