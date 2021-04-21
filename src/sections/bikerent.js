@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { FaFileDownload } from "react-icons/fa"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import BreakeSection from "../components/breakeSection"
 
 import styled from "styled-components"
@@ -29,61 +29,48 @@ const PhotoItem = styled.div`
   -webkit-box-shadow: 2px 2px 6px 0px #444;
   box-shadow: 2px 2px 6px 0px #444;
 `
-const Photo = styled.img`  &:hover {
-  border: 4px solid black;}`
+const Photo = styled.img`
+    &:hover  {
+    border: 4px solid black;
+  }
+`
 
 const BikeRent = ({ plussize, minussize, activecolor }) => {
   const data = useStaticQuery(graphql`
     query Images {
-      imageOne: file(name: { eq: "bike2" }) {
+      imageOne: file(name: { eq: "bike1" }) {
         childImageSharp {
-          fluid {
-            src
-            srcSet
-            tracedSVG
-          }
+          gatsbyImageData
         }
       }
-      imageTwo: file(name: { eq: "bike1" }) {
+      imageTwo: file(name: { eq: "bike2" }) {
         childImageSharp {
-          fluid {
-            tracedSVG
-            src
-            srcSet
-          }
+          gatsbyImageData
         }
       }
       imageThree: file(name: { eq: "bike3" }) {
         childImageSharp {
-          fluid {
-            tracedSVG
-            src
-            srcSet
-          }
+          gatsbyImageData
         }
       }
       imageFour: file(name: { eq: "bike2" }) {
         childImageSharp {
-          fluid {
-            tracedSVG
-            src
-            srcSet
-          }
+          gatsbyImageData
         }
       }
     }
   `)
 
-  if (!data?.imageOne?.childImageSharp?.fluid) {
+  if (!data?.imageOne?.childImageSharp?.gatsbyImageData) {
     return <div>Picture 1 not found</div>
   }
-  if (!data?.imageTwo?.childImageSharp?.fluid) {
+  if (!data?.imageTwo?.childImageSharp?.gatsbyImageData) {
     return <div>Picture 2 not found</div>
   }
-  if (!data?.imageThree?.childImageSharp?.fluid) {
+  if (!data?.imageThree?.childImageSharp?.gatsbyImageData) {
     return <div>Picture 3 not found</div>
   }
-  if (!data?.imageFour?.childImageSharp?.fluid) {
+  if (!data?.imageFour?.childImageSharp?.gatsbyImageData) {
     return <div>Picture 4 not found</div>
   }
   return (
@@ -110,27 +97,23 @@ const BikeRent = ({ plussize, minussize, activecolor }) => {
         >
           <PhotoGallery>
             <PhotoItem>
-              <Photo
-                src={data.imageOne.childImageSharp.fluid.src}
-                alt="Wypożyczalnia rowerów"
+              <GatsbyImage
+                image={data.imageOne.childImageSharp.gatsbyImageData}
               />
             </PhotoItem>
             <PhotoItem>
-              <Photo
-                src={data.imageTwo.childImageSharp.fluid.src}
-                alt="Wypożyczalnia rowerów"
+              <GatsbyImage
+                image={data.imageTwo.childImageSharp.gatsbyImageData}
               />
             </PhotoItem>
-            <PhotoItem>
-              <Photo
-                src={data.imageThree.childImageSharp.fluid.src}
-                alt="Wypożyczalnia rowerów"
+            <PhotoItem>              
+              <GatsbyImage
+                image={data.imageThree.childImageSharp.gatsbyImageData}
               />
             </PhotoItem>
-            <PhotoItem>
-              <Photo
-                src={data.imageFour.childImageSharp.fluid.src}
-                alt="Wypożyczalnia rowerów"
+            <PhotoItem>              
+              <GatsbyImage
+                image={data.imageFour.childImageSharp.gatsbyImageData}
               />
             </PhotoItem>
           </PhotoGallery>

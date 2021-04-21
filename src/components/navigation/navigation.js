@@ -63,6 +63,17 @@ const Navigation = ({ plussize, minussize, activecolor }) => {
           >
             <Link
               role="navigation"
+              aria-label=" Home"
+              to="/"
+              className="NavLinkItem"
+              plussize={plussize}
+              minussize={minussize}
+              style={{ fontSize: `${16 + plussize - minussize}px` }}
+            >
+              Home
+            </Link>
+            <Link
+              role="navigation"
               aria-label=" Aktualności"
               to="/#news"
               className="NavLinkItem"
@@ -71,18 +82,7 @@ const Navigation = ({ plussize, minussize, activecolor }) => {
               style={{ fontSize: `${16 + plussize - minussize}px` }}
             >
               Aktualności
-            </Link>
-            <Link
-              role="navigation"
-              aria-label="O nas"
-              to="/#about"
-              className="NavLinkItem"
-              plussize={plussize}
-              minussize={minussize}
-              style={{ fontSize: `${16 + plussize - minussize}px` }}
-            >
-              O nas
-            </Link>
+            </Link>            
             <Link
               role="navigation"
               aria-label="Zajęcia"
@@ -97,7 +97,7 @@ const Navigation = ({ plussize, minussize, activecolor }) => {
             <Link
               role="navigation"
               aria-label="Kontakt"
-              to="/clubs"
+              to="/club"
               className="NavLinkItem"
               plussize={plussize}
               minussize={minussize}

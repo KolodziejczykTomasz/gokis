@@ -24,8 +24,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx`,
-    `gatsby-remark-responsive-iframe`,
-    `gatsby-remark-embed-video`,
     `gatsby-plugin-react-helmet`,
   ],
 }

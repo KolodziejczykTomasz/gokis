@@ -20,7 +20,7 @@ const CardBody = styled.div`
   text-decoration: none;
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
-  color: ${({ activecolor }) => (activecolor ? "black" : "white")};
+  color: ${({ activecolor }) => (activecolor ? "black" : "black")};
   :hover {
     color: black;
     text-decoration: none;
@@ -37,7 +37,7 @@ const CardTitle = styled.div`
   height: 60px;
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
-  color: ${({ activecolor }) => (activecolor ? "black" : "white")};
+  color: ${({ activecolor }) => (activecolor ? "black" : "black")};
 `
 
 const CardDate = styled.div`
