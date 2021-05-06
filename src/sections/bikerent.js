@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 
 const PhotoGallery = styled.div`
   display: grid;
-  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+  grid-template-columns: 0.33fr 0.33fr 0.33fr;
   grid-auto-flow: column;
   column-gap: 5px;
 `
@@ -29,9 +29,11 @@ const PhotoItem = styled.div`
   -webkit-box-shadow: 2px 2px 6px 0px #444;
   box-shadow: 2px 2px 6px 0px #444;
 `
-const Photo = styled.img`
-    &:hover  {
-    border: 4px solid black;
+const Photo = styled(GatsbyImage)`
+  :hover {
+    transform: scale(1.1);
+    z-index: 999;
+    border-radius: 15px;   
   }
 `
 
@@ -97,24 +99,13 @@ const BikeRent = ({ plussize, minussize, activecolor }) => {
         >
           <PhotoGallery>
             <PhotoItem>
-              <GatsbyImage
-                image={data.imageOne.childImageSharp.gatsbyImageData}
-              />
+              <Photo image={data.imageOne.childImageSharp.gatsbyImageData} />
             </PhotoItem>
             <PhotoItem>
-              <GatsbyImage
-                image={data.imageTwo.childImageSharp.gatsbyImageData}
-              />
+              <Photo image={data.imageTwo.childImageSharp.gatsbyImageData} />
             </PhotoItem>
-            <PhotoItem>              
-              <GatsbyImage
-                image={data.imageThree.childImageSharp.gatsbyImageData}
-              />
-            </PhotoItem>
-            <PhotoItem>              
-              <GatsbyImage
-                image={data.imageFour.childImageSharp.gatsbyImageData}
-              />
+            <PhotoItem>
+              <Photo image={data.imageThree.childImageSharp.gatsbyImageData} />
             </PhotoItem>
           </PhotoGallery>
         </Wrapper>
