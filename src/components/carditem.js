@@ -28,6 +28,9 @@ const CardBody = styled.div`
     -webkit-box-shadow: 1px 1px 3px 0px #444;
     box-shadow: 1px 1px 3px 0px #444;
   }
+  @media (max-width: 800px) {
+        width: 100%;
+  }
 `
 
 const CardTitle = styled.div`

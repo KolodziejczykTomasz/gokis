@@ -7,8 +7,8 @@ import styled from "styled-components"
 const Container = styled.div`
   margin: 0 auto;
   width: 100%;
-  color: ${({ activecolor }) => activecolor ? "black" : "black"};
-  background-color:  ${({ activecolor }) =>
+  color: ${({ activecolor }) => (activecolor ? "black" : "black")};
+  background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
 `
 
@@ -17,7 +17,10 @@ const Wrapper = styled.div`
   margin-top: 100px;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
+  @media (max-width: 800px) {
+        width: 100%;
+  }
 `
 
 const ArticlesWrapper = styled.div`
@@ -28,6 +31,9 @@ const ArticlesWrapper = styled.div`
   justify-content: center;
   &:last-child {
     justify-content: flex-end;
+  }
+  @media (max-width: 800px) {
+        width: 100%;
   }
 `
 
@@ -51,8 +57,8 @@ const ButtonMore = styled(Link)`
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: .2s; 
-  :after {    
+  transition: 0.2s;
+  :after {
     content: "";
     position: absolute;
     display: block;
@@ -85,9 +91,6 @@ const ButtonMore = styled(Link)`
     border: 3px dotted rgb(215, 58, 30) !important;
   }
 `
-
-
-
 
 const NewsPage = ({ data, activecolor, plussize, minussize }) => {
   const {

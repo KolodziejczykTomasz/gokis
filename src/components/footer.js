@@ -25,6 +25,9 @@ const WrapperTop = styled.div`
   grid-template-columns: 0.5fr 0.5fr;
   color: ${({ activecolor }) => (activecolor ? "black" : "white")};
   margin-bottom: 75px;
+  @media (max-width: 800px) {
+        grid-template-columns: 1fr;
+  }
 `
 
 const WrapperBottom = styled.div`
@@ -33,6 +36,9 @@ const WrapperBottom = styled.div`
   color: ${({ activecolor }) => (activecolor ? "black" : "white")};
   place-items: center;
   padding-bottom: 10px;
+  @media (max-width: 800px) {
+        grid-template-columns: 1fr;
+  }
 
   & a:hover {
     text-decoration: none;

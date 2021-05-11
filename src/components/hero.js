@@ -1,4 +1,3 @@
-
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa"
@@ -89,6 +88,9 @@ const HeroText = styled.div`
   bottom: 0%;
   margin-bottom: -10px;
   color: white;
+  @media (max-width: 766px) {
+       opacity: 0;
+  }
 `
 
 const Title = styled.div`

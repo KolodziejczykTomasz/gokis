@@ -22,18 +22,36 @@ const PhotoGallery = styled.div`
   grid-template-columns: 0.33fr 0.33fr 0.33fr;
   grid-auto-flow: column;
   column-gap: 5px;
+  @media (max-width: 766px) {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    row-gap: 5px;
+    column-gap: 5px;
+    width: 400px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+  }
 `
 const PhotoItem = styled.div`
   width: 100%;
   -moz-box-shadow: 2px 2px 6px 0px #444;
   -webkit-box-shadow: 2px 2px 6px 0px #444;
   box-shadow: 2px 2px 6px 0px #444;
+  @media (max-width: 766px) {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 80%;
+    max-width: 500px;
+  }
 `
 const Photo = styled(GatsbyImage)`
   :hover {
     transform: scale(1.1);
     z-index: 999;
-    border-radius: 15px;   
+    border-radius: 15px;
   }
 `
 

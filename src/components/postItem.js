@@ -8,6 +8,9 @@ const CardHeader = styled.div`
   grid-template-columns: 0.3fr 0.7fr;
   color: rgb(236, 0, 0);
   font-weight: 600;
+  @media (max-width: 766px) {
+        grid-template-columns: 1fr;
+  }
 `
 const CardHeaderTitle = styled.div`
   font-size: 22px;
@@ -31,7 +34,10 @@ const CardHeaderDate = styled.div`
 const CardMain = styled.div`
   display: grid;
   grid-template-columns: 0.3fr 0.7fr;
-  font-size: 15px;  
+  font-size: 15px;
+  @media (max-width: 766px) {
+        grid-template-columns: 1fr;
+  }
 `
 const CardMainPhoto = styled.div`
   margin-bottom: 10px;

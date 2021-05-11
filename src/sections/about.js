@@ -13,6 +13,8 @@ const Wrapper = styled.div`
 const Section = styled.div`
   display: grid;
   grid-template-columns: 0.4fr 0.6fr;
+ @media(max-width: 766px){
+    grid-template-columns: 1fr;}
 `
 const PhotoWrapper = styled.div`
   display: flex;
@@ -48,7 +50,7 @@ const About = ({ plussize, minussize, activecolor }) => (
           activecolor={activecolor}
           plussize={plussize}
           minussize={minussize}
-          style={{     
+          style={{
             fontSize: `${20 + plussize - minussize}px`,
           }}
         >
