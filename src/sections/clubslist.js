@@ -127,7 +127,7 @@ const ClubList = ({ plussize, minussize, activecolor }) => (
               <th>Wniosek o wynajęcie świetlicy</th>
               <td align="center">
                 <a
-                  href="http://gokispilnik.pl/files/regulamin.pdf"
+                  href="http://gokispilnik.pl/files/wniosek.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ marginleft: "15" }}
