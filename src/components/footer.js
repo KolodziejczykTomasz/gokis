@@ -105,6 +105,10 @@ const Footer = ({ plussize, minussize, activecolor }) => {
                 <FaRegEnvelope style={{ marginRight: "10px" }} />
                 poczta@gokispilnik.pl
               </li>
+              <li>
+                <FaRegEnvelope style={{ marginRight: "10px" }} />
+                /GOKiSPilnik/domyslna
+              </li>
             </ul>
           </div>
           <div plussize={plussize} minussize={minussize}>
