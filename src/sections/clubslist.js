@@ -136,6 +136,19 @@ const ClubList = ({ plussize, minussize, activecolor }) => (
                 </a>
               </td>
             </tr>
+            <tr>
+              <th>Cennik</th>
+              <td align="center">
+                <a
+                  href="http://gokispilnik.pl/files/cennik.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ marginleft: "15" }}
+                >
+                  <FaFileDownload style={{ fontSize: 30 }} />
+                </a>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
