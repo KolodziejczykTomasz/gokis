@@ -1,7 +1,9 @@
 import React from "react"
-import styled from "styled-components"
-import Image from "gatsby-image"
 import { Link } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
+import Image from "gatsby-image"
+import styled from "styled-components"
 
 const CardHeader = styled.div`
   display: grid;
@@ -50,7 +52,7 @@ const CardMainPhotoItem = styled(Image)`
   align-items: right;
   -moz-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);  
+  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
 `
 
 const ButtonMore = styled.div`
@@ -76,25 +78,24 @@ const ButtonMore = styled.div`
 
 const CardWrapper = styled.div`
   height: 100%;
-  margin-bottom: 50px;  
+  margin-bottom: 50px;
   -moz-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
   box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
 `
 
 const CardMainContent = styled.div`
-  display: flex;
-  align-items: center;
+  display: block;
+  float: right; 
   padding-right: 50px;
   hyphens: auto;
   word-wrap: break-word;
- 
+  text-align: left;
 `
 
 const CardFooter = styled.div`
   display: flex;
   justify-content: flex-end;
-
 `
 
 const PostItem = ({
@@ -102,7 +103,7 @@ const PostItem = ({
   altText,
   image,
   published,
-  excerpt,
+  body,
   slug,
   plussize,
   minussize,
@@ -148,7 +149,7 @@ const PostItem = ({
           activecolor={activecolor}
           style={{ backgroundColor: activecolor ? "yellow" : "white" }}
         >
-          {excerpt}
+          <MDXRenderer>{body}</MDXRenderer>
         </CardMainContent>
       </CardMain>
       <CardFooter>

@@ -12,8 +12,7 @@ const StyledWrapper = styled.div`
   display: block;
   width: 100%;
   margin: 0 auto;
-  padding: 0;
-  max-width: 1250px;
+  padding: 0 144px;
   height: 90%;
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
@@ -40,6 +39,7 @@ const RolnyPage = ({ data }) => {
     setminussize(minussize + 1)
   }
   return (
+    <>
     <StyledWrapper
       plussize={plussize}
       minussize={minussize}
@@ -68,12 +68,13 @@ const RolnyPage = ({ data }) => {
         minussize={minussize}
         activecolor={contrastColor}
       />
-      <Footer
+     
+    </StyledWrapper> <Footer
         plussize={plussize}
         minussize={minussize}
         activecolor={contrastColor}
       />
-    </StyledWrapper>
+      </>
   )}
 
 export const query = graphql`

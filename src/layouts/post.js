@@ -138,6 +138,7 @@ export const query = graphql`
         slug
         published
         altText
+        author
         featuredImage {
           childImageSharp {
             fixed(width: 500) {

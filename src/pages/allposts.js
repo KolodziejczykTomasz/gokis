@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
+
 import Layout from "../components/layout"
 import styled from "styled-components"
 import Footer from "../components/footer"
@@ -11,14 +12,13 @@ const StyledWrapper = styled.div`
   display: block;
   width: 100%;
   margin: 0 auto;
-  padding: 0;
-  max-width: 1250px;
+  padding: 0 144px;
   height: 90%;
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
 `
 
-const AllPostPage = (props, { data }) => {
+const AllPostPage = (props) => {
   const [plussize, setplussize] = useState(0)
   const [minussize, setminussize] = useState(0)
   const [contrastColor, setContrastColor] = useState(false)
@@ -40,36 +40,38 @@ const AllPostPage = (props, { data }) => {
   }
 
   return (
-    <StyledWrapper
-      plussize={plussize}
-      minussize={minussize}
-      activecolor={contrastColor}
-      style={{ fontSize: `${16 + plussize - minussize}px` }}
-    >
-      <SEO title="GOKIS" name="Wszystkie aktualności" />
-      <Layout
+    <>
+      <StyledWrapper
         plussize={plussize}
         minussize={minussize}
         activecolor={contrastColor}
-      />
-      <AsideNavi
-        Reset={Reset}
-        Contrast={Contrast}
-        ShrinkFontSize={ShrinkFontSize}
-        GrowFontSize={GrowFontSize}
-      />
-      <AllPost
-        {...props}
-        plussize={plussize}
-        minussize={minussize}
-        activecolor={contrastColor}
-      />
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
+      >
+        <SEO title="GOKIS" name="Wszystkie aktualności" />
+        <Layout
+          plussize={plussize}
+          minussize={minussize}
+          activecolor={contrastColor}
+        />
+        <AsideNavi
+          Reset={Reset}
+          Contrast={Contrast}
+          ShrinkFontSize={ShrinkFontSize}
+          GrowFontSize={GrowFontSize}
+        />
+        <AllPost
+          {...props}
+          plussize={plussize}
+          minussize={minussize}
+          activecolor={contrastColor}
+        />
+      </StyledWrapper>{" "}
       <Footer
         plussize={plussize}
         minussize={minussize}
         activecolor={contrastColor}
       />
-    </StyledWrapper>
+    </>
   )
 }
 
@@ -80,6 +82,7 @@ export const query = graphql`
         frontmatter {
           title
           slug
+          altText
           published
           featuredImage {
             childImageSharp {
@@ -89,7 +92,9 @@ export const query = graphql`
             }
           }
         }
-        excerpt
+        excerpt(pruneLength: 200)
+        body
+        rawBody
       }
     }
   }

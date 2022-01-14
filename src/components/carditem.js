@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import { Link } from "gatsby"
 import { FaRegCalendarAlt } from "react-icons/fa"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const CardBody = styled.div`
   display: flex;
@@ -69,6 +70,14 @@ const StyledImage = styled(Image)`
 `
 
 const CardExcerpt = styled.div`
+  display: block;
+  display: -webkit-box;
+  line-height: 1.6;
+  max-height: 7.8em;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 60px 10px 60px 10px;
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
@@ -111,7 +120,7 @@ const CardItem = ({
   altText,
   image,
   published,
-  excerpt,
+  body,
   slug,
   plussize,
   minussize,
@@ -147,7 +156,7 @@ const CardItem = ({
         activecolor={activecolor}
         style={{ fontSize: `${16 + plussize - minussize}px` }}
       >
-        {excerpt}
+        <MDXRenderer>{body}</MDXRenderer>
       </CardExcerpt>
       <CardFotter activecolor={activecolor}>
         <hr />

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Gminny Ośrodek Kultury i Sportu w Pilniku`,
     description: `Bieżące informacje z działaności Gminnnego Ośrodka Kultury i Sportu w Pilniku`,
-    author: `NETTOM`,
+    author: `NETTOM24`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

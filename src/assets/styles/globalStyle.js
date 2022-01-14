@@ -12,9 +12,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    margin: 0 auto; 
-    width: 100vw;   
-    max-width: 1920px;    
+    display: block;
+  width: 100%;
+  height: auto; 
+  max-width: 1920px;
+  margin: 0 auto;    
   }
 `
 

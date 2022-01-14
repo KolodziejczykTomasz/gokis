@@ -10,7 +10,6 @@ const StyledWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 0;
-  max-width: 1250px;
   height: 90%;  
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
@@ -128,12 +127,12 @@ const AccessiblePage = () => {
             miejscu lub online.
           </p>
         </Wrapper>
-        <Footer
+        
+      </StyledWrapper><Footer
           plussize={plussize}
           minussize={minussize}
           activecolor={contrastColor}
         />
-      </StyledWrapper>
     </>
   )
 }

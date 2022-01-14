@@ -7,6 +7,7 @@ import BreakeSection from "../components/breakeSection"
 import styled from "styled-components"
 
 const Section = styled.div`
+  margin: 0 144px;
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
 `

@@ -5,25 +5,26 @@ import { FaRegEnvelope, FaMobileAlt, FaTemperatureHigh } from "react-icons/fa"
 import styled from "styled-components"
 
 const WrapperFullWidth = styled.div`
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  position: relative;
+  display: block;
+  max-width: 1920px;
+  height: 100%;  
+  background-image: linear-gradient(
+    5deg,
+    rgba(83, 111, 122, 1) 0%,
+    rgba(41, 53, 86, 0) 65%
+  );
 `
 
 const Wrapper = styled.div`
   display: block;
   width: 100%;
-  padding: 20px 20px;
-  background-color: ${({ activecolor }) =>
-    activecolor ? "yellow" : "black"};
-  position: absolute;
+  padding: 20px 144px;
 `
 
 const WrapperTop = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;
-  color: ${({ activecolor }) => (activecolor ? "black" : "white")};
+  color: ${({ activecolor }) => (activecolor ? "black" : "#536F7A")};
   margin-bottom: 75px;
   @media (max-width: 800px) {
         grid-template-columns: 1fr;
@@ -33,7 +34,7 @@ const WrapperTop = styled.div`
 const WrapperBottom = styled.div`
   display: grid;
   grid-template-columns: 0.3fr 0.4fr 0.3fr;
-  color: ${({ activecolor }) => (activecolor ? "black" : "white")};
+  color: ${({ activecolor }) => (activecolor ? "black" : "#536F7A")};
   place-items: center;
   padding-bottom: 10px;
   @media (max-width: 800px) {
@@ -63,13 +64,15 @@ const ListItem = styled.li``
 const Copyright = styled.span`
   text-transform: uppercase;
   padding-right: 5px;
-  color: ${({ activecolor }) => activecolor ? "black" : "white"};
+  color: ${({ activecolor }) => (activecolor ? "black" : "#536F7A")};
+  font-weight: 700;
+  
 `
 
 const Footer = ({ plussize, minussize, activecolor }) => {
   return (
-    <WrapperFullWidth>
-      <Wrapper id="contact" activecolor={activecolor}>
+    <WrapperFullWidth id="contact" activecolor={activecolor}>
+      <Wrapper activecolor={activecolor}>
         <WrapperTop
           plussize={plussize}
           minussize={minussize}
@@ -83,7 +86,7 @@ const Footer = ({ plussize, minussize, activecolor }) => {
             >
               Kontakt
             </Header>
-            <ul style={{ fontSize: `${14 + plussize - minussize}px` }}>
+            <ul style={{ fontSize: `${16 + plussize - minussize}px` }}>
               <ListItem
                 style={{
                   fontWeight: 600,
@@ -96,7 +99,7 @@ const Footer = ({ plussize, minussize, activecolor }) => {
               <ListItem>Pilnik 2</ListItem>
               <ListItem>11-100 Lidzbark Warmiński</ListItem>
             </ul>
-            <ul style={{ fontSize: `${14 + plussize - minussize}px` }}>
+            <ul style={{ fontSize: `${16 + plussize - minussize}px` }}>
               <li>
                 <FaMobileAlt style={{ marginRight: "10px" }} />
                 +48 665 988 473
@@ -167,9 +170,9 @@ const Footer = ({ plussize, minussize, activecolor }) => {
               activecolor={activecolor}
               plussize={plussize}
               minussize={minussize}
-              style={{ fontSize: `${14 + plussize - minussize}px` }}
+              style={{ fontSize: `${15 + plussize - minussize}px` }}
             >
-              © {new Date().getFullYear()}, Webside developed by
+              © {new Date().getFullYear()}
               <span> NETTOM</span>
             </Copyright>
           </div>

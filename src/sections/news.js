@@ -5,7 +5,9 @@ import CardItem from "../components/carditem"
 import styled from "styled-components"
 
 const Container = styled.div`
+  display: block;
   margin: 0 auto;
+  padding: 0 144px;
   width: 100%;
   color: ${({ activecolor }) => (activecolor ? "black" : "black")};
   background-color: ${({ activecolor }) =>
@@ -121,11 +123,15 @@ const NewsPage = ({ data, activecolor, plussize, minussize }) => {
             .map(
               ({
                 excerpt,
+                body,
+                rawBody,
                 frontmatter: { title, altText, published, featuredImage, slug },
               }) => (
                 <CardItem
                   key={slug}
                   title={title}
+                  body={body}
+                  rawBody={rawBody}
                   altText={altText}
                   excerpt={excerpt}
                   published={published}

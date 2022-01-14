@@ -8,14 +8,13 @@ import Footer from "../components/footer"
 import ButtonList from "../sections/buttonlist"
 import NewsPage from "../sections/news"
 import AsideNavi from "../components/navigation/asideNavi"
-import { FaClosedCaptioning } from "react-icons/fa"
+
 
 const StyledWrapper = styled.div`
   display: block;
   width: 100%;
   margin: 0 auto;
-  padding: 0;
-  max-width: 1250px;
+  padding: 0;  
   height: 90%;
   color: ${({ activecolor }) => (activecolor ? "yellow" : "transparent")};
   background-color: ${({ activecolor }) =>
@@ -96,6 +95,8 @@ export const query = graphql`
           }
         }
         excerpt(pruneLength: 200)
+        body
+        rawBody
       }
     }
   }

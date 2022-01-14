@@ -28,7 +28,8 @@ const WrapperText = styled.div`
   text-align: center;
   font-size: 30px;
   font-weight: 600;
-  color: #5b5b5b;
+  color: #536f7a;
+  text-transform: uppercase;
   letter-spacing: 0.2rem;
 `
 

@@ -10,8 +10,7 @@ const StyledWrapper = styled.div`
   display: block;
   width: 100%;
   margin: 0 auto;
-  padding: 0;
-  max-width: 1250px;
+  padding: 0 144px;
   height: 90%;
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
@@ -47,6 +46,7 @@ const RodoPage = () => {
    }
   
   return (
+    <>
     <StyledWrapper
       plussize={plussize}
       minussize={minussize}
@@ -212,12 +212,12 @@ const RodoPage = () => {
           </p>
         </div>
       </Wrapper>
-      <Footer
+   </StyledWrapper> <Footer
         plussize={plussize}
         minussize={minussize}
         activecolor={contrastColor}
       />
-    </StyledWrapper>
+      </>
   )
 }
 export default RodoPage

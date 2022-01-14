@@ -5,6 +5,7 @@ import styled from "styled-components"
 
 const Wrapper = styled.div`
   display: grid;
+  margin: 0 144px;
   grid-template-columns: 1fr;
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};

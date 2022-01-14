@@ -5,6 +5,7 @@ import styled from "styled-components"
 
 const Section = styled.div`
   display: grid;
+  margin: 0 144px;
   grid-template-columns: 0.4fr 0.6fr;
   @media (max-width: 766px) {
         grid-template-columns: 1fr;

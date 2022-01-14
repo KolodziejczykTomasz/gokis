@@ -24,12 +24,12 @@ const MenuItem = styled.div`
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  background-color: blue;
-  color: white;
+  background-color: white;
+  color: blue;
   transition: 0.3s;
   :hover {
-    background-color: white;
-    color: blue;
+    background-color: blue;
+    color: white;
   }
 `
 

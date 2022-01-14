@@ -6,6 +6,7 @@ import ButtonItem from "../components/buttonitem"
 
 
 const Section = styled.div`
+  margin: 0 144px;
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
 `

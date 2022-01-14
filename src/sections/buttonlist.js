@@ -4,13 +4,15 @@ import styled from "styled-components"
 import ButtonItem from "../components/buttonitem"
 
 const Section = styled.div`
+width: 100%
+  margin: 0 auto;padding: 0 144px;
   color: ${({ activecolor }) => (activecolor ? "black" : "white")};
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
 `
 
 const Wrapper = styled.div`
-  display: flex;
+  display: flex;  
   padding-bottom: 75px;
   flex-wrap: wrap;
   justify-content: center;

@@ -12,8 +12,7 @@ const StyledWrapper = styled.div`
   display: block;
   width: 100%;
   margin: 0 auto;
-  padding: 0;
-  max-width: 1250px;
+  padding: 0 144px;
   height: 90%;
   background-color: ${({ activecolor }) =>
     activecolor ? "yellow" : "transparent"};
@@ -40,40 +39,47 @@ const OrkiestraPage = ({ data }) => {
      setminussize(minussize + 1)
    }
   return (
-    <StyledWrapper
-      plussize={plussize}
-      minussize={minussize}
-      activecolor={contrastColor}
-      style={{ fontSize: `${16 + plussize - minussize}px` }}
-    >
-      <SEO title="GOKIS" name="Gminna Orkiestra Dęta" />
-      <AsideNavi
-        Reset={Reset}
-        Contrast={Contrast}
-        ShrinkFontSize={ShrinkFontSize}
-        GrowFontSize={GrowFontSize}
-      />
-      <Layout
+    <>
+      <StyledWrapper
         plussize={plussize}
         minussize={minussize}
         activecolor={contrastColor}
-      />
-      <Orkiestra
-        plussize={plussize}
-        minussize={minussize}
-        activecolor={contrastColor}
-      />
-      <ButtonList
-        plussize={plussize}
-        minussize={minussize}
-        activecolor={contrastColor}
-      />
+        style={{ fontSize: `${16 + plussize - minussize}px` }}
+      >
+        <SEO title="GOKIS" name="Gminna Orkiestra Dęta" />
+        <AsideNavi
+          Reset={Reset}
+          Contrast={Contrast}
+          ShrinkFontSize={ShrinkFontSize}
+          GrowFontSize={GrowFontSize}
+        />
+        <Layout
+          plussize={plussize}
+          minussize={minussize}
+          activecolor={contrastColor}
+        />
+        <Orkiestra
+          plussize={plussize}
+          minussize={minussize}
+          activecolor={contrastColor}
+        />
+        <ButtonList
+          plussize={plussize}
+          minussize={minussize}
+          activecolor={contrastColor}
+        />
+        <Footer
+          plussize={plussize}
+          minussize={minussize}
+          activecolor={contrastColor}
+        />
+      </StyledWrapper>
       <Footer
         plussize={plussize}
         minussize={minussize}
         activecolor={contrastColor}
       />
-    </StyledWrapper>
+    </>
   )}
 
 export const query = graphql`

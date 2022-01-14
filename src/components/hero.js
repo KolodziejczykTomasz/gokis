@@ -13,12 +13,29 @@ const Wrapper = styled.div`
   display: block;
   height: auto;
   max-height: 920px;
+ height: 700px;
   width: 100%;
   position: relative;
 `
-const Photo = styled(Image)`
-  display: block;
+
+const PhotoWrapper = styled.div`
+  display: flex;
   position: relative;
+  justify-content: center;
+  align-items: center;
+  -moz-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  height: 100%;
+`
+
+const Photo = styled(Image)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 63%;
+  object-fit: cover;
 `
 const Menu = styled.div`
   position: absolute;
@@ -86,18 +103,15 @@ const HeroText = styled.div`
   z-index: 999;
   padding: 20px 20px;
   bottom: 0%;
-  margin-bottom: -10px;
-  color: white;
+  margin-bottom: -10px; 
+  font-weight: 700; 
+  letter-spacing: 1px;
+  -moz-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
   @media (max-width: 766px) {
        opacity: 0;
   }
-`
-
-const Title = styled.div`
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-size: 48px;
 `
 
 const SubTitle = styled.div`
@@ -118,7 +132,7 @@ export const Hero = ({ activecolor }) => {
               id
               name
               childImageSharp {
-                fluid(maxHeight: 400) {
+                fluid{
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
@@ -138,7 +152,7 @@ export const Hero = ({ activecolor }) => {
   return (
     <Section>
       <Wrapper>
-        <div>
+        <PhotoWrapper>
           <Photo
             fluid={node.childImageSharp.fluid}
             key={node.id}
@@ -146,14 +160,13 @@ export const Hero = ({ activecolor }) => {
           />
           <HeroText
             style={{
-              color: activecolor === true ? "black" : "white",
-              backgroundColor: activecolor === true ? "yellow" : "#818190",
+              color: activecolor === true ? "black" : "#536F7A",
+              backgroundColor: activecolor === true ? "yellow" : "white",
             }}
           >
-            <Title>Gminny Ośrodek Kultury i Sportu w Pilniku</Title>
-            <SubTitle>-ZAPRASZAMY-</SubTitle>
+            <SubTitle>- ZAPRASZAMY -</SubTitle>
           </HeroText>
-        </div>
+        </PhotoWrapper>
         <Menu>
           <WrapperButtonLeft>
             <ButtonLeft onClick={() => handlePrevious()}>
