@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   display: block;
   height: auto;
   max-height: 920px;
- height: 700px;
+  height: 700px;
   width: 100%;
   position: relative;
 `
@@ -103,8 +103,8 @@ const HeroText = styled.div`
   z-index: 999;
   padding: 20px 20px;
   bottom: 0%;
-  margin-bottom: -10px; 
-  font-weight: 700; 
+  margin-bottom: -10px;
+  font-weight: 700;
   letter-spacing: 1px;
   -moz-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
@@ -132,7 +132,7 @@ export const Hero = ({ activecolor }) => {
               id
               name
               childImageSharp {
-                fluid{
+                fluid {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
@@ -164,7 +164,17 @@ export const Hero = ({ activecolor }) => {
               backgroundColor: activecolor === true ? "yellow" : "white",
             }}
           >
-            <SubTitle>- ZAPRASZAMY -</SubTitle>
+            <SubTitle>
+              <span
+                style={{
+                  color: "rgb(215, 58, 30)",
+                  textTransform: "uppercase",
+                  textDecorationLine: "underline",
+                }}
+              >
+                * Strona w modernizacji *
+              </span>
+            </SubTitle>
           </HeroText>
         </PhotoWrapper>
         <Menu>

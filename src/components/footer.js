@@ -113,6 +113,12 @@ const Footer = ({ plussize, minussize, activecolor }) => {
                 /GOKiSPilnik/domyslna
               </li>
             </ul>
+            <div style={{ marginTop: "40px" }}>
+              <p style={{fontWeight: "600"}}>Godziny otwarcia:</p>
+              <p style={{ marginTop: "-15px" }}>
+                Poniedziałek - Piątek: 8.00 – 16.00
+              </p>
+            </div>
           </div>
           <div plussize={plussize} minussize={minussize}>
             <Header
