@@ -30,10 +30,7 @@ const ArticlesWrapper = styled.div`
   margin-bottom: 75px;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  &:last-child {
-    justify-content: flex-end;
-  }
+  justify-content: center;   
   @media (max-width: 800px) {
         width: 100%;
   }
@@ -119,7 +116,7 @@ const NewsPage = ({ data, activecolor, plussize, minussize }) => {
           minussize={minussize}
         >
           {nodes
-            .slice(0, 3)
+            .slice(0, 4)
             .map(
               ({
                 excerpt,
