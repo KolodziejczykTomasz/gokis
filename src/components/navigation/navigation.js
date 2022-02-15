@@ -117,6 +117,17 @@ const Navigation = ({ plussize, minussize, activecolor }) => {
               Rowery
             </Link>
             <Link
+                role="navigation"
+                aria-label="IOD"
+                to="/iod"
+                className="NavLinkItem"
+                plussize={plussize}
+                minussize={minussize}
+                style={{ fontSize: `${16 + plussize - minussize}px` }}
+            >
+              IOD
+            </Link>
+            <Link
               role="navigation"
               aria-label="Kontakt"
               to="/#contact"
