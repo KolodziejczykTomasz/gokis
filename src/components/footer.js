@@ -102,7 +102,7 @@ const Footer = ({ plussize, minussize, activecolor }) => {
             <ul style={{ fontSize: `${16 + plussize - minussize}px` }}>
               <li>
                 <FaMobileAlt style={{ marginRight: "10px" }} />
-                +48 665 988 473
+                +48 89 767 40 17
               </li>
               <li>
                 <FaRegEnvelope style={{ marginRight: "10px" }} />
